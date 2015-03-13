@@ -4,8 +4,8 @@ import java.io.File;
 
 import javax.servlet.annotation.WebServlet;
 
-import com.example.vaddin_test.DocEditor;
-import com.example.vaddin_test.Vaddin_testUI;
+import com.example.mmowgli_2_0.DocEditor;
+import com.example.mmowgli_2_0.Mmowgli_2_0UI;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.data.Property.ValueChangeListener;
