@@ -33,4 +33,9 @@
   @include valo;
 
   // Insert your own theme rules here
+  .v-nativebutton-borderless {
+  	color: blue;
+  	background-image: url(../Images/buttons/gameBlog.png);
+  	border: 0;
+  }
 }
