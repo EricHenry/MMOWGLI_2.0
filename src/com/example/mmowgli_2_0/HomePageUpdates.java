@@ -159,8 +159,8 @@ public class HomePageUpdates extends CustomComponent {
 		// trendingTags_2
 		trendingTags_2 = new TrendingTags();
 		trendingTags_2.setImmediate(false);
-		trendingTags_2.setWidth("-1px");
-		trendingTags_2.setHeight("-1px");
+		trendingTags_2.setWidth("100.0%");
+		trendingTags_2.setHeight("100.0%");
 		gridLayout_1.addComponent(trendingTags_2, 1, 0);
 		gridLayout_1.setComponentAlignment(trendingTags_2, new Alignment(48));
 		
@@ -183,8 +183,8 @@ public class HomePageUpdates extends CustomComponent {
 		// popularTags_2
 		popularTags_2 = new PopularTags();
 		popularTags_2.setImmediate(false);
-		popularTags_2.setWidth("-1px");
-		popularTags_2.setHeight("-1px");
+		popularTags_2.setWidth("100.0%");
+		popularTags_2.setHeight("100.0%");
 		gridLayout_1.addComponent(popularTags_2, 1, 1);
 		gridLayout_1.setComponentAlignment(popularTags_2, new Alignment(48));
 		

@@ -145,14 +145,14 @@ public class PopularTags extends CustomComponent {
 		label_title.setHeight("-1px");
 		label_title.setValue("All Time Most popular Tags");
 		mainLayout.addComponent(label_title);
-		mainLayout.setExpandRatio(label_title, 0.5f);
+		mainLayout.setExpandRatio(label_title, 0.23f);
 		mainLayout.setComponentAlignment(label_title, new Alignment(24));
 		
 		// gridLayout_2
 		gridLayout_2 = buildGridLayout_2();
 		mainLayout.addComponent(gridLayout_2);
 		mainLayout.setExpandRatio(gridLayout_2, 1.0f);
-		mainLayout.setComponentAlignment(gridLayout_2, new Alignment(48));
+		mainLayout.setComponentAlignment(gridLayout_2, new Alignment(20));
 		
 		return mainLayout;
 	}
@@ -162,8 +162,8 @@ public class PopularTags extends CustomComponent {
 		// common part: create layout
 		gridLayout_2 = new GridLayout();
 		gridLayout_2.setImmediate(false);
-		gridLayout_2.setWidth("50.0%");
-		gridLayout_2.setHeight("75.0%");
+		gridLayout_2.setWidth("85.0%");
+		gridLayout_2.setHeight("85.0%");
 		gridLayout_2.setMargin(false);
 		gridLayout_2.setSpacing(true);
 		gridLayout_2.setColumns(3);
