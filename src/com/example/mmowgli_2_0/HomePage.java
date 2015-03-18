@@ -77,7 +77,7 @@ public class HomePage extends CustomComponent {
 		sideBar_1.setWidth("100.0%");
 		sideBar_1.setHeight("100.0%");
 		horizontalLayout_2.addComponent(sideBar_1);
-		horizontalLayout_2.setExpandRatio(sideBar_1, 0.13f);
+		horizontalLayout_2.setExpandRatio(sideBar_1, 0.135f);
 		
 		// homePageUpdates_1
 		homePageUpdates_1 = new HomePageUpdates();
