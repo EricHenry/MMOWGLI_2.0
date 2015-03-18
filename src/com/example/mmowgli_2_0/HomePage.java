@@ -52,7 +52,7 @@ public class HomePage extends CustomComponent {
 		topBar_1.setWidth("100.0%");
 		topBar_1.setHeight("100.0%");
 		mainLayout.addComponent(topBar_1);
-		mainLayout.setExpandRatio(topBar_1, 0.1f);
+		mainLayout.setExpandRatio(topBar_1, 0.05f);
 		
 		// horizontalLayout_2
 		horizontalLayout_2 = buildHorizontalLayout_2();
