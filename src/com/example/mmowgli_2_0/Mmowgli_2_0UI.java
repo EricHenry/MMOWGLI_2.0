@@ -26,7 +26,8 @@ public class Mmowgli_2_0UI extends UI {
 	//Label docView = new Label("", ContentMode.HTML); //replaced with Doceditor
 	private DocEditor docView = new DocEditor();
 	private SideBar staticbar = new SideBar();
-	private HomePageUpdates homePage = new HomePageUpdates();
+	private HomePageUpdates hpUpdates = new HomePageUpdates();
+	private HomePage home = new HomePage();
 	
 	@WebServlet(value = "/*", asyncSupported = true)
 	@VaadinServletConfiguration(productionMode = false, ui = Mmowgli_2_0UI.class)
@@ -46,17 +47,17 @@ public class Mmowgli_2_0UI extends UI {
 		setContent(split);
 		
 		//add the doclist and docView as components
-		split.addComponent(staticbar);
-		split.addComponent(homePage);
-		//split.addComponent(doclist);
-		//split.addComponent(docView);
-		//tell the doclist to use all the space that the split panel allows for
-		doclist.setSizeFull();
+		//split.addComponent(staticbar);
+		//split.addComponent(homePage);
+		split.addComponent(home);
+			//split.addComponent(doclist);
+			//split.addComponent(docView);
+			//tell the doclist to use all the space that the split panel allows for
+			//doclist.setSizeFull();
 		
 		//set the aspect ratio
-		split.setExpandRatio(staticbar, 0.1f);
-		//split.setExpandRatio(doclist, 1.0f);
-		split.setExpandRatio(homePage, 1.0f);
+		//split.setExpandRatio(staticbar, 0.1f);
+		//split.setExpandRatio(homePage, 1.0f);
 		
 		//Event Handler
 		doclist.addValueChangeListener(new ValueChangeListener() {
@@ -71,10 +72,10 @@ public class Mmowgli_2_0UI extends UI {
 
 		});
 		//Send events after choosing the file to show
-		doclist.setImmediate(true);
+		//doclist.setImmediate(true);
 		
 		//selection isnt enabled for tables automatically, so we will enable it here
-		doclist.setSelectable(true);
+		//doclist.setSelectable(true);
 		
 	}
 
