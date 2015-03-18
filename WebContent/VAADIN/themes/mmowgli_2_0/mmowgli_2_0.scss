@@ -51,28 +51,48 @@
   	border: 0;
   }
   
+  //Links
+  .v-link-link {
+  	text-decoration: none;
+  	color: #4D51AC;
+  }
+  
+  //Home Page card displays
   .v-nativebutton-counter {
   	border: 0px;
   	border-radius: 25px;
   	background-color: rgb(236,157,186);
+  	color: #4D51AC;
   }
   
   .v-nativebutton-expand {
   	border: 0px;
   	border-radius: 25px;
   	background-color: rgb(250,207,156);
+  	color: #4D51AC;
   }
   
   .v-nativebutton-adapt {
   	border: 0px;
   	border-radius: 25px;
   	background-color: rgb(133,209,241);
+  	color: #4D51AC;
   }
   
   .v-nativebutton-explore {
   	border: 0px;
   	border-radius: 25px;
   	background-color: rgb(219,233,154);
+  	color: #4D51AC;
+  }
+  
+  //Custom Component Stylings
+  .v-customcomponent-updateBorders {
+  	border-right: 1px solid #7E7FB5;
+  	border-bottom: 1px solid #7E7FB5;
+  	padding-right: 100px;
+  	padding-left: 100px;
+  	padding-bottom: 10px;
   }
   
 }

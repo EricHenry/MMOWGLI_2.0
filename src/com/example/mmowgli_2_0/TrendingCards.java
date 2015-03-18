@@ -65,7 +65,6 @@ public class TrendingCards extends CustomComponent {
 		mainLayout.setWidth("100%");
 		mainLayout.setHeight("100%");
 		mainLayout.setMargin(false);
-		mainLayout.setSpacing(true);
 		
 		// top-level component properties
 		setWidth("100.0%");
@@ -78,7 +77,7 @@ public class TrendingCards extends CustomComponent {
 		label_trending.setHeight("-1px");
 		label_trending.setValue("Trending Cards");
 		mainLayout.addComponent(label_trending);
-		mainLayout.setComponentAlignment(label_trending, new Alignment(48));
+		mainLayout.setComponentAlignment(label_trending, new Alignment(24));
 		
 		// verticalLayout_2
 		verticalLayout_2 = buildVerticalLayout_2();

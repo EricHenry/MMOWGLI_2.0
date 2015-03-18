@@ -282,6 +282,7 @@ public class TrendingTags extends CustomComponent {
 		
 		// link_17
 		link_17 = new Link();
+		link_17.setStyleName("link");
 		link_17.setCaption("Link");
 		link_17.setImmediate(false);
 		link_17.setWidth("-1px");
@@ -311,6 +312,7 @@ public class TrendingTags extends CustomComponent {
 		
 		// link_18
 		link_18 = new Link();
+		link_18.setStyleName("link");
 		link_18.setCaption("Link");
 		link_18.setImmediate(false);
 		link_18.setWidth("-1px");
@@ -340,6 +342,7 @@ public class TrendingTags extends CustomComponent {
 		
 		// link_21
 		link_21 = new Link();
+		link_21.setStyleName("link");
 		link_21.setCaption("Link");
 		link_21.setImmediate(false);
 		link_21.setWidth("-1px");
@@ -369,6 +372,7 @@ public class TrendingTags extends CustomComponent {
 		
 		// link_1
 		link_1 = new Link();
+		link_1.setStyleName("link");
 		link_1.setCaption("Link");
 		link_1.setImmediate(false);
 		link_1.setWidth("-1px");
@@ -398,6 +402,7 @@ public class TrendingTags extends CustomComponent {
 		
 		// link_2
 		link_2 = new Link();
+		link_2.setStyleName("link");
 		link_2.setCaption("Link");
 		link_2.setImmediate(false);
 		link_2.setWidth("-1px");
@@ -427,6 +432,7 @@ public class TrendingTags extends CustomComponent {
 		
 		// link_3
 		link_3 = new Link();
+		link_3.setStyleName("link");
 		link_3.setCaption("Link");
 		link_3.setImmediate(false);
 		link_3.setWidth("-1px");
@@ -456,6 +462,7 @@ public class TrendingTags extends CustomComponent {
 		
 		// link_4
 		link_4 = new Link();
+		link_4.setStyleName("link");
 		link_4.setCaption("Link");
 		link_4.setImmediate(false);
 		link_4.setWidth("-1px");
@@ -485,6 +492,7 @@ public class TrendingTags extends CustomComponent {
 		
 		// link_5
 		link_5 = new Link();
+		link_5.setStyleName("link");
 		link_5.setCaption("Link");
 		link_5.setImmediate(false);
 		link_5.setWidth("-1px");
@@ -514,6 +522,7 @@ public class TrendingTags extends CustomComponent {
 		
 		// link_6
 		link_6 = new Link();
+		link_6.setStyleName("link");
 		link_6.setCaption("Link");
 		link_6.setImmediate(false);
 		link_6.setWidth("-1px");
@@ -543,6 +552,7 @@ public class TrendingTags extends CustomComponent {
 		
 		// link_7
 		link_7 = new Link();
+		link_7.setStyleName("link");
 		link_7.setCaption("Link");
 		link_7.setImmediate(false);
 		link_7.setWidth("-1px");
@@ -572,6 +582,7 @@ public class TrendingTags extends CustomComponent {
 		
 		// link_9
 		link_9 = new Link();
+		link_9.setStyleName("link");
 		link_9.setCaption("Link");
 		link_9.setImmediate(false);
 		link_9.setWidth("-1px");
@@ -601,6 +612,7 @@ public class TrendingTags extends CustomComponent {
 		
 		// link_8
 		link_8 = new Link();
+		link_8.setStyleName("link");
 		link_8.setCaption("Link");
 		link_8.setImmediate(false);
 		link_8.setWidth("-1px");
@@ -630,6 +642,7 @@ public class TrendingTags extends CustomComponent {
 		
 		// link_10
 		link_10 = new Link();
+		link_10.setStyleName("link");
 		link_10.setCaption("Link");
 		link_10.setImmediate(false);
 		link_10.setWidth("-1px");
@@ -659,6 +672,7 @@ public class TrendingTags extends CustomComponent {
 		
 		// link_11
 		link_11 = new Link();
+		link_11.setStyleName("link");
 		link_11.setCaption("Link");
 		link_11.setImmediate(false);
 		link_11.setWidth("-1px");
@@ -688,6 +702,7 @@ public class TrendingTags extends CustomComponent {
 		
 		// link_12
 		link_12 = new Link();
+		link_12.setStyleName("link");
 		link_12.setCaption("Link");
 		link_12.setImmediate(false);
 		link_12.setWidth("-1px");
