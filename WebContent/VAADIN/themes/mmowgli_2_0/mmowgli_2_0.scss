@@ -37,6 +37,7 @@
   	color: blue;
   	text-align:center;
   	border: 0;
+  	background-color: #CCCCCC;
   }
   
   .v-nativebutton-idea {
@@ -86,13 +87,61 @@
   	color: #4D51AC;
   }
   
-  //Custom Component Stylings
-  .v-customcomponent-updateBorders {
-  	border-right: 1px solid #7E7FB5;
-  	border-bottom: 1px solid #7E7FB5;
-  	padding-right: 100px;
-  	padding-left: 100px;
-  	padding-bottom: 10px;
+  //topbar labels
+  //.v-horizontallayout-topbar{
+  	//background-color: #CCCCCC;
+  //}
+  .v-customcomponent-topbar{
+  	background-color: #CCCCCC;
+  	//border: 0;
+  	border-bottom: 2px solid #949494;
   }
+  
+  //sidebar cutomization
+  .v-customcomponent-sidebar{
+  	background-color: #CCCCCC;
+  	//border: 0;
+  	//border-bottom: 2px solid #949494;
+  }
+  
+  //Custom Component Stylings
+  .v-customcomponent-updateBorders{
+  	border-right: 2px solid #7E7FB5;
+  	//position: relative;
+  	//top: 50%;
+  	//bottom: 75%;
+  	
+  	//border-bottom: 1px solid #7E7FB5;
+  	//z-index: 1;
+  	//padding-right: 100px;
+  	//padding-left: 100px;
+  	//padding-bottom: 10px;
+  }
+  
+  	//root button styling
+ 	.v-nativebutton-root1 {
+		background-image: url(images/icons/updates/bluePanel.png);
+		border: 0px;
+		border-radius: 15px;
+	}
+	
+	.v-nativebutton-root2 {
+		background-image: url(images/icons/updates/greenPanel.png);
+		border: 0px;
+		border-radius: 15px;
+	}
+	
+	.v-nativebutton-rootToggle {
+		border: 0px;
+		border-radius: 20px;
+		text-align: center;
+  		height: 20px;
+  		background-color: #CCCCCC;
+	}
+  
+   
+   
+  
+
   
 }

@@ -61,7 +61,7 @@ public class SideBar extends CustomComponent {
 		
 		
 		nativeButton_Search.setStyleName("borderless");
-		nativeButton_Search.setIcon(new ThemeResource("images/icons/sidebar/SearchGlassSmall.png"));
+		nativeButton_Search.setIcon(new ThemeResource("images/icons/sidebar/spyglass25.png"));
 		nativeButton_Search.setCaption(null);
 		
 		//set the icons for each button
@@ -99,14 +99,15 @@ public class SideBar extends CustomComponent {
 		// common part: create layout
 		mainLayout = new GridLayout();
 		mainLayout.setImmediate(false);
-		mainLayout.setWidth("100%");
-		mainLayout.setHeight("100%");
+		mainLayout.setWidth("165px");
+		mainLayout.setHeight("-1px");
 		mainLayout.setMargin(false);
+		mainLayout.setSpacing(true);
 		mainLayout.setRows(11);
 		
 		// top-level component properties
-		setWidth("100.0%");
-		setHeight("100.0%");
+		setWidth("165px");
+		setHeight("-1px");
 		
 		// nButton_home
 		nButton_home = new NativeButton();
@@ -220,7 +221,7 @@ public class SideBar extends CustomComponent {
 		textField_search = new TextField();
 		textField_search.setImmediate(false);
 		textField_search.setWidth("100.0%");
-		textField_search.setHeight("50.0%");
+		textField_search.setHeight("100.0%");
 		horizontalLayout_1.addComponent(textField_search);
 		horizontalLayout_1.setExpandRatio(textField_search, 1.0f);
 		horizontalLayout_1.setComponentAlignment(textField_search,
@@ -231,7 +232,7 @@ public class SideBar extends CustomComponent {
 		nativeButton_Search.setCaption("NativeButton");
 		nativeButton_Search.setImmediate(true);
 		nativeButton_Search.setWidth("100.0%");
-		nativeButton_Search.setHeight("50.0%");
+		nativeButton_Search.setHeight("100.0%");
 		horizontalLayout_1.addComponent(nativeButton_Search);
 		horizontalLayout_1.setExpandRatio(nativeButton_Search, 0.25f);
 		horizontalLayout_1.setComponentAlignment(nativeButton_Search,

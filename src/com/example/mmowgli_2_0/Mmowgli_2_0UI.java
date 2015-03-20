@@ -34,7 +34,7 @@ public class Mmowgli_2_0UI extends UI {
 	
 	//Windows
 	//private Window mainWindow = new Window();
-	private HorizontalLayout split = new HorizontalLayout();
+	private HorizontalLayout content = new HorizontalLayout();
 	private AbsoluteLayout holder = new AbsoluteLayout();
 	private Panel main = new Panel();
 	private Window mainWindow = new Window("My Application");
@@ -49,14 +49,16 @@ public class Mmowgli_2_0UI extends UI {
 	protected void init(VaadinRequest request) {
 		
 
-		main.setContent(split);
+		main.setContent(content);
 		
-		split.addComponent(home);
-		split.setWidth("1366px");
-		split.setHeight("800px");
+		content.addComponent(home);
+		//content.setWidth("1366px");
+		//content.setHeight("800px");
 
 	
-		setContent(main);
+		//setContent(main);
+		content.setSizeFull();
+		setContent(content);
 		
 		//set the aspect ratio
 		//split.setExpandRatio(staticbar, 0.1f);
