@@ -132,7 +132,6 @@ public class PopularTags extends CustomComponent {
 		mainLayout.setWidth("100%");
 		mainLayout.setHeight("100%");
 		mainLayout.setMargin(false);
-		mainLayout.setSpacing(true);
 		
 		// top-level component properties
 		setWidth("100.0%");
@@ -145,7 +144,7 @@ public class PopularTags extends CustomComponent {
 		label_title.setHeight("-1px");
 		label_title.setValue("All Time Most popular Tags");
 		mainLayout.addComponent(label_title);
-		mainLayout.setExpandRatio(label_title, 0.23f);
+		mainLayout.setExpandRatio(label_title, 0.2f);
 		mainLayout.setComponentAlignment(label_title, new Alignment(24));
 		
 		// gridLayout_2

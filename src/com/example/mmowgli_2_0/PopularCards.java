@@ -78,23 +78,27 @@ public class PopularCards extends CustomComponent {
 		label_popular.setHeight("-1px");
 		label_popular.setValue("All Time Most Popular Cards");
 		mainLayout.addComponent(label_popular);
-		mainLayout.setComponentAlignment(label_popular, new Alignment(48));
+		mainLayout.setComponentAlignment(label_popular, new Alignment(24));
 		
 		// verticalLayout_2
 		verticalLayout_2 = buildVerticalLayout_2();
 		mainLayout.addComponent(verticalLayout_2);
+		mainLayout.setComponentAlignment(verticalLayout_2, new Alignment(20));
 		
 		// verticalLayout_3
 		verticalLayout_3 = buildVerticalLayout_3();
 		mainLayout.addComponent(verticalLayout_3);
+		mainLayout.setComponentAlignment(verticalLayout_3, new Alignment(20));
 		
 		// verticalLayout_4
 		verticalLayout_4 = buildVerticalLayout_4();
 		mainLayout.addComponent(verticalLayout_4);
+		mainLayout.setComponentAlignment(verticalLayout_4, new Alignment(20));
 		
 		// verticalLayout_5
 		verticalLayout_5 = buildVerticalLayout_5();
 		mainLayout.addComponent(verticalLayout_5);
+		mainLayout.setComponentAlignment(verticalLayout_5, new Alignment(20));
 		
 		return mainLayout;
 	}
@@ -104,7 +108,7 @@ public class PopularCards extends CustomComponent {
 		// common part: create layout
 		verticalLayout_2 = new VerticalLayout();
 		verticalLayout_2.setImmediate(false);
-		verticalLayout_2.setWidth("100.0%");
+		verticalLayout_2.setWidth("70.0%");
 		verticalLayout_2.setHeight("-1px");
 		verticalLayout_2.setMargin(false);
 		
@@ -132,7 +136,7 @@ public class PopularCards extends CustomComponent {
 		// common part: create layout
 		verticalLayout_3 = new VerticalLayout();
 		verticalLayout_3.setImmediate(false);
-		verticalLayout_3.setWidth("100.0%");
+		verticalLayout_3.setWidth("70.0%");
 		verticalLayout_3.setHeight("-1px");
 		verticalLayout_3.setMargin(false);
 		
@@ -160,7 +164,7 @@ public class PopularCards extends CustomComponent {
 		// common part: create layout
 		verticalLayout_4 = new VerticalLayout();
 		verticalLayout_4.setImmediate(false);
-		verticalLayout_4.setWidth("100.0%");
+		verticalLayout_4.setWidth("70.0%");
 		verticalLayout_4.setHeight("-1px");
 		verticalLayout_4.setMargin(false);
 		
@@ -188,7 +192,7 @@ public class PopularCards extends CustomComponent {
 		// common part: create layout
 		verticalLayout_5 = new VerticalLayout();
 		verticalLayout_5.setImmediate(false);
-		verticalLayout_5.setWidth("100.0%");
+		verticalLayout_5.setWidth("70.0%");
 		verticalLayout_5.setHeight("-1px");
 		verticalLayout_5.setMargin(false);
 		

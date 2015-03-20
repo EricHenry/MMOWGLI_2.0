@@ -121,13 +121,13 @@ public class HomePageUpdates extends CustomComponent {
 		nativeButton_1.setWidth("100.0%");
 		nativeButton_1.setHeight("-1px");
 		mainLayout.addComponent(nativeButton_1);
-		mainLayout.setExpandRatio(nativeButton_1, 0.1f);
-		mainLayout.setComponentAlignment(nativeButton_1, new Alignment(20));
+		mainLayout.setExpandRatio(nativeButton_1, 0.05f);
+		mainLayout.setComponentAlignment(nativeButton_1, new Alignment(48));
 		
 		// gridLayout_1
 		gridLayout_1 = buildGridLayout_1();
 		mainLayout.addComponent(gridLayout_1);
-		mainLayout.setExpandRatio(gridLayout_1, 1.0f);
+		mainLayout.setExpandRatio(gridLayout_1, 0.75f);
 		mainLayout.setComponentAlignment(gridLayout_1, new Alignment(48));
 		
 		// gridLayout_2
@@ -146,15 +146,16 @@ public class HomePageUpdates extends CustomComponent {
 		gridLayout_1.setImmediate(false);
 		gridLayout_1.setWidth("100.0%");
 		gridLayout_1.setHeight("100.0%");
-		gridLayout_1.setMargin(true);
+		gridLayout_1.setMargin(false);
+		gridLayout_1.setSpacing(true);
 		gridLayout_1.setColumns(3);
 		gridLayout_1.setRows(2);
 		
 		// trendingCards_1
 		trendingCards_1 = new TrendingCards();
 		trendingCards_1.setImmediate(false);
-		trendingCards_1.setWidth("-1px");
-		trendingCards_1.setHeight("-1px");
+		trendingCards_1.setWidth("100.0%");
+		trendingCards_1.setHeight("100.0%");
 		gridLayout_1.addComponent(trendingCards_1, 0, 0);
 		gridLayout_1.setComponentAlignment(trendingCards_1, new Alignment(48));
 		
@@ -169,16 +170,16 @@ public class HomePageUpdates extends CustomComponent {
 		// recentlyPlayed_1
 		recentlyPlayed_1 = new RecentlyPlayed();
 		recentlyPlayed_1.setImmediate(false);
-		recentlyPlayed_1.setWidth("-1px");
-		recentlyPlayed_1.setHeight("-1px");
+		recentlyPlayed_1.setWidth("100.0%");
+		recentlyPlayed_1.setHeight("100.0%");
 		gridLayout_1.addComponent(recentlyPlayed_1, 2, 0);
 		gridLayout_1.setComponentAlignment(recentlyPlayed_1, new Alignment(48));
 		
 		// popularCards_1
 		popularCards_1 = new PopularCards();
 		popularCards_1.setImmediate(false);
-		popularCards_1.setWidth("-1px");
-		popularCards_1.setHeight("-1px");
+		popularCards_1.setWidth("100.0%");
+		popularCards_1.setHeight("100.0%");
 		gridLayout_1.addComponent(popularCards_1, 0, 1);
 		gridLayout_1.setComponentAlignment(popularCards_1, new Alignment(48));
 		

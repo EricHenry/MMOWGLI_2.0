@@ -48,42 +48,15 @@ public class Mmowgli_2_0UI extends UI {
 	@Override
 	protected void init(VaadinRequest request) {
 		
-		
-		//mainWindow.setSizeUndefined();
-		//setContent(mainWindow);
-		//mainWindow.setContent(split);
-		
-		//main.setSizeUndefined();
-		//main.addComponent(split);
-		//split.setSizeUndefined();
-		//split.setSizeFull();
-		//split.setWidth("100%");
-		//main.setSizeFull();
-		
-		//setMainWindow(mainWindow);
-		
-		//main.setSizeUndefined();
+
 		main.setContent(split);
-		main.setSizeFull();
-		split.setSizeFull();
-		//main.setContent(holder);
-		//home.setSizeFull();
-		//holder.setSizeFull();
-		//main.setContent();
-		//split.setWidth("90%");
-		//split.setHeight("90%");
-		//Push split onto the screen
-		setContent(main);
 		
-		//add the doclist and docView as components
-		//split.addComponent(staticbar);
-		//split.addComponent(homePage);
 		split.addComponent(home);
-		//holder.addComponent(home);
-			//split.addComponent(doclist);
-			//split.addComponent(docView);
-			//tell the doclist to use all the space that the split panel allows for
-			//doclist.setSizeFull();
+		split.setWidth("1366px");
+		split.setHeight("800px");
+
+	
+		setContent(main);
 		
 		//set the aspect ratio
 		//split.setExpandRatio(staticbar, 0.1f);
