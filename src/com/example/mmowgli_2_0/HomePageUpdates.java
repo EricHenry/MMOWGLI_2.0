@@ -266,7 +266,7 @@ public class HomePageUpdates extends CustomComponent {
 		// test_layout
 		test_layout = buildTest_layout();
 		verticalLayout_root.addComponent(test_layout);
-		verticalLayout_root.setExpandRatio(test_layout, 0.5f);
+		verticalLayout_root.setExpandRatio(test_layout, 0.1f);
 		verticalLayout_root.setComponentAlignment(test_layout,
 				new Alignment(20));
 		
