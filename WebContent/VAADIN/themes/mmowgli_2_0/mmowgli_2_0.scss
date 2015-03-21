@@ -139,9 +139,21 @@
   		background-color: #CCCCCC;
 	}
   
+   //center main content
+   .v-verticallayout-center {
+   		
+   			text-align: center;
+   		
+   }
    
-   
+	.v-verticallayout-white{
+   		background: none repeat scroll 0% 0% #FFF;
+   	}
   
-
+	.v-panel-borderless {
+		border: 0;
+		background: none repeat scroll 0% 0% #FFF;
+		text-align: center;
+	}
   
 }
