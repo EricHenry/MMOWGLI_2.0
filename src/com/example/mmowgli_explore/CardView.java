@@ -141,7 +141,7 @@ public class CardView extends CustomComponent {
 		// button_favorite
 		button_favorite = new NativeButton();
 		button_favorite.setCaption("NativeButton");
-		button_favorite.setImmediate(false);
+		button_favorite.setImmediate(true);
 		button_favorite.setWidth("-1px");
 		button_favorite.setHeight("-1px");
 		horizontalLayout_1.addComponent(button_favorite);
@@ -161,7 +161,7 @@ public class CardView extends CustomComponent {
 		// button_upvote
 		button_upvote = new NativeButton();
 		button_upvote.setCaption("NativeButton");
-		button_upvote.setImmediate(false);
+		button_upvote.setImmediate(true);
 		button_upvote.setWidth("-1px");
 		button_upvote.setHeight("-1px");
 		verticalLayout_2.addComponent(button_upvote);
@@ -169,7 +169,7 @@ public class CardView extends CustomComponent {
 		// button_downvote
 		button_downvote = new NativeButton();
 		button_downvote.setCaption("NativeButton");
-		button_downvote.setImmediate(false);
+		button_downvote.setImmediate(true);
 		button_downvote.setWidth("-1px");
 		button_downvote.setHeight("-1px");
 		verticalLayout_2.addComponent(button_downvote);
@@ -189,7 +189,7 @@ public class CardView extends CustomComponent {
 		// nativeButton_5
 		nativeButton_5 = new NativeButton();
 		nativeButton_5.setCaption("NativeButton");
-		nativeButton_5.setImmediate(false);
+		nativeButton_5.setImmediate(true);
 		nativeButton_5.setWidth("100.0%");
 		nativeButton_5.setHeight("100.0%");
 		horizontalLayout_2.addComponent(nativeButton_5);
@@ -202,14 +202,14 @@ public class CardView extends CustomComponent {
 		// common part: create layout
 		horizontalLayout_3 = new HorizontalLayout();
 		horizontalLayout_3.setImmediate(false);
-		horizontalLayout_3.setWidth("-1px");
+		horizontalLayout_3.setWidth("100.0%");
 		horizontalLayout_3.setHeight("-1px");
 		horizontalLayout_3.setMargin(false);
 		
 		// nativeButton_1
 		nativeButton_1 = new NativeButton();
 		nativeButton_1.setCaption("NativeButton");
-		nativeButton_1.setImmediate(false);
+		nativeButton_1.setImmediate(true);
 		nativeButton_1.setWidth("-1px");
 		nativeButton_1.setHeight("-1px");
 		horizontalLayout_3.addComponent(nativeButton_1);
@@ -217,7 +217,7 @@ public class CardView extends CustomComponent {
 		// nativeButton_2
 		nativeButton_2 = new NativeButton();
 		nativeButton_2.setCaption("NativeButton");
-		nativeButton_2.setImmediate(false);
+		nativeButton_2.setImmediate(true);
 		nativeButton_2.setWidth("-1px");
 		nativeButton_2.setHeight("-1px");
 		horizontalLayout_3.addComponent(nativeButton_2);
@@ -225,7 +225,7 @@ public class CardView extends CustomComponent {
 		// nativeButton_3
 		nativeButton_3 = new NativeButton();
 		nativeButton_3.setCaption("NativeButton");
-		nativeButton_3.setImmediate(false);
+		nativeButton_3.setImmediate(true);
 		nativeButton_3.setWidth("-1px");
 		nativeButton_3.setHeight("-1px");
 		horizontalLayout_3.addComponent(nativeButton_3);
@@ -233,7 +233,7 @@ public class CardView extends CustomComponent {
 		// nativeButton_4
 		nativeButton_4 = new NativeButton();
 		nativeButton_4.setCaption("NativeButton");
-		nativeButton_4.setImmediate(false);
+		nativeButton_4.setImmediate(true);
 		nativeButton_4.setWidth("-1px");
 		nativeButton_4.setHeight("-1px");
 		horizontalLayout_3.addComponent(nativeButton_4);

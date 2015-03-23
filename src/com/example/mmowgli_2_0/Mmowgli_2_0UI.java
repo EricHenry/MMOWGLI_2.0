@@ -31,6 +31,7 @@ public class Mmowgli_2_0UI extends UI {
 	private HorizontalLayout content = new HorizontalLayout();
 	private Panel mainWindow = new Panel();
 	private HomePage home = new HomePage();
+	private ExplorePage explore = new ExplorePage();
 	
 	@WebServlet(value = "/*", asyncSupported = true)
 	@VaadinServletConfiguration(productionMode = false, ui = Mmowgli_2_0UI.class)
@@ -44,7 +45,8 @@ public class Mmowgli_2_0UI extends UI {
 
 		mainWindow.setContent(content);
 		
-		content.addComponent(home);
+		//content.addComponent(home);
+		content.addComponent(explore);
 		//content.setWidth("1366px");
 		//content.setHeight("800px");
 
