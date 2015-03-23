@@ -104,18 +104,20 @@
   	//border-bottom: 2px solid #949494;
   }
   
+  .v-slot-borderless {
+  	height: 80px;
+  }
+  
+  .v-horizontallayout-userLayout {
+  	text-align:center;
+  	border: 0;
+  	background-color: #CCCCCC;
+  	padding-top: 20px;
+  }
+  
   //Custom Component Stylings
   .v-customcomponent-updateBorders{
   	border-right: 2px solid #7E7FB5;
-  	//position: relative;
-  	//top: 50%;
-  	//bottom: 75%;
-  	
-  	//border-bottom: 1px solid #7E7FB5;
-  	//z-index: 1;
-  	//padding-right: 100px;
-  	//padding-left: 100px;
-  	//padding-bottom: 10px;
   }
   
   	//root button styling

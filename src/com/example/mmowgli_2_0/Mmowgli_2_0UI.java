@@ -23,21 +23,14 @@ import com.vaadin.ui.Window;
 public class Mmowgli_2_0UI extends UI {
 	
 	private FilesystemContainer doc = new FilesystemContainer(new File("C:\\Users\\Kilsuf"));
-//	ComboBox doclist = new ComboBox("Documents", doc);
-	//create a table instead of combobox
 	private Table doclist = new Table("Documents", doc);
-	//Label docView = new Label("", ContentMode.HTML); //replaced with Doceditor
 	private DocEditor docView = new DocEditor();
-	private SideBar staticbar = new SideBar();
-	private HomePageUpdates hpUpdates = new HomePageUpdates();
-	private HomePage home = new HomePage();
+
 	
 	//Windows
-	//private Window mainWindow = new Window();
 	private HorizontalLayout content = new HorizontalLayout();
-	private AbsoluteLayout holder = new AbsoluteLayout();
-	private Panel main = new Panel();
-	private Window mainWindow = new Window("My Application");
+	private Panel mainWindow = new Panel();
+	private HomePage home = new HomePage();
 	
 	@WebServlet(value = "/*", asyncSupported = true)
 	@VaadinServletConfiguration(productionMode = false, ui = Mmowgli_2_0UI.class)
@@ -49,7 +42,7 @@ public class Mmowgli_2_0UI extends UI {
 	protected void init(VaadinRequest request) {
 		
 
-		main.setContent(content);
+		mainWindow.setContent(content);
 		
 		content.addComponent(home);
 		//content.setWidth("1366px");
