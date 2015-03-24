@@ -256,5 +256,80 @@
   	padding-bottom: 5px;
   }
   
+  //mini cards
+    .v-slot-cardTypeExpandMini {
+  	border-top-right-radius:17px;
+  	border-top-left-radius: 17px;
+  	border:0;
+  	background-color: #F79E3A;
+  }
+  
+  .v-slot-cardTypeCounterMini {
+  	border-top-right-radius:17px;
+  	border-top-left-radius: 17px;
+  	border:0;
+  	background-color: #D51C5B;
+  }
+  
+  .v-slot-cardTypeAdaptMini {
+  	border-top-right-radius:17px;
+  	border-top-left-radius: 17px;
+  	border:0;
+  	background-color: #09A5E4;
+  }
+  
+  .v-slot-cardTypeExploreMini {
+  	border-top-right-radius:17px;
+  	border-top-left-radius: 17px;
+  	border:0;
+  	background-color: #B8D438;
+  }
+  
+   .v-nativebutton-cardTextMini {
+  	border:0 none;
+  	background: transparent;
+  	  font-size: 13px;
+  }
+  
+//Tree Styling
+	.v-tree-node-caption-root1 {
+		background-color: #005800;
+		border: 0px;
+		border-radius: 15px;
+		font-weight: bold;
+		color: #FFFFFF;
+	}
+	
+	.v-tree-node-caption-expand {
+		background-color: #F79E3A;
+		border: 0px;
+		border-radius: 15px;
+		font-weight: bold;
+		color: #000000;
+	}
+	
+	.v-tree-node-caption-explore {
+		background-color: #B8D438;
+		border: 0px;
+		border-radius: 15px;
+		font-weight: bold;
+		color: #000000;
+	}
+	
+	.v-tree-node-caption-adapt {
+		background-color: #09A5E4;
+		border: 0px;
+		border-radius: 15px;
+		font-weight: bold;
+		color: #000000;
+	}
+	
+	.v-tree-node-caption-counter {
+		background-color: #D51C5B;
+		border: 0px;
+		border-radius: 15px;
+		font-weight: bold;
+		color: #000000;
+	}
 
 }
