@@ -214,8 +214,8 @@ public class SideBar extends CustomComponent {
 		// common part: create layout
 		horizontalLayout_user = new HorizontalLayout();
 		horizontalLayout_user.setImmediate(false);
-		horizontalLayout_user.setWidth("-1px");
-		horizontalLayout_user.setHeight("-1px");
+		horizontalLayout_user.setWidth("100.0%");
+		horizontalLayout_user.setHeight("130px");
 		horizontalLayout_user.setMargin(false);
 		
 		// verticalLayout_profile
@@ -254,7 +254,7 @@ public class SideBar extends CustomComponent {
 		label_userName.setValue("Kilsuf");
 		verticalLayout_profile.addComponent(label_userName);
 		verticalLayout_profile.setComponentAlignment(label_userName,
-				new Alignment(9));
+				new Alignment(48));
 		
 		return verticalLayout_profile;
 	}
