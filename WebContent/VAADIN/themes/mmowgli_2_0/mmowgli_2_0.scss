@@ -187,7 +187,7 @@
 		text-align: center;
 	}
   
-  //Card styling
+//Card styling
   .v-nativebutton-cardButtons {
   	border:0 none;
   	background: transparent;
@@ -196,12 +196,64 @@
   .cardButtons .v-icon{	//THIS HANDLES THE CHILD CLASS OF THE VOTE BUTTON
   	padding-bottom: 15px;
   }
-	
-  .v-slot-infoBar {
+  
+  //Top Bar Labels and links
+  .v-label-center {
+  	padding-top: 5px;
+  	font-weight: bold;
+  }
+  
+  .v-link-center {
+  	padding-top: 5px;
+  	font-weight: bold;
+  }
+  
+  //Top Bar Styling
+  .v-slot-cardTypeExpand {
   	border-top-right-radius:17px;
   	border-top-left-radius: 17px;
   	border:0;
   	background-color: #F79E3A;
+  }
+  
+  .v-slot-cardTypeCounter {
+  	border-top-right-radius:17px;
+  	border-top-left-radius: 17px;
+  	border:0;
+  	background-color: #D51C5B;
+  }
+  
+  .v-slot-cardTypeAdapt {
+  	border-top-right-radius:17px;
+  	border-top-left-radius: 17px;
+  	border:0;
+  	background-color: #09A5E4;
+  }
+  
+  .v-slot-cardTypeExplore {
+  	border-top-right-radius:17px;
+  	border-top-left-radius: 17px;
+  	border:0;
+  	background-color: #B8D438;
+  }
+  
+  //Card Borders
+  .v-slot-cardText {
+  	border-left: 1px solid #949494;
+  	border-right: 1px solid #949494;
+  	border-top: 1px solid #949494;
+  }
+  
+  .v-nativebutton-cardText {
+  	border:0 none;
+  	background: transparent;
+  }
+  
+  .v-slot-cardBottom {
+  	border-left: 1px solid #949494;
+  	border-right: 1px solid #949494;
+  	border-bottom: 1px solid #949494;
+  	padding-bottom: 5px;
   }
   
 
