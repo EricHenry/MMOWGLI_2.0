@@ -50,7 +50,6 @@ public class Mmowgli_2_0UI extends UI {
 		//content.setWidth("1366px");
 		//content.setHeight("800px");
 
-	
 		//setContent(main);
 		content.setSizeFull();
 		setContent(content);

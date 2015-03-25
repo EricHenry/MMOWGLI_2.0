@@ -115,22 +115,15 @@
   	background-color: rgb(219,233,154);
   	color: #4D51AC;
   }
-  
-  //topbar labels
-  //.v-horizontallayout-topbar{
-  	//background-color: #CCCCCC;
-  //}
+
   .v-customcomponent-topbar{
   	background-color: #CCCCCC;
-  	//border: 0;
   	border-bottom: 2px solid #949494;
   }
   
   //sidebar cutomization
   .v-customcomponent-sidebar{
   	background-color: #CCCCCC;
-  	//border: 0;
-  	//border-bottom: 2px solid #949494;
   }
   
   .v-slot-borderless {
@@ -288,7 +281,8 @@
    .v-nativebutton-cardTextMini {
   	border:0 none;
   	background: transparent;
-  	  font-size: 13px;
+  	font-size: 13px;
+  	font-weight: none;  
   }
   
 //Tree Styling
