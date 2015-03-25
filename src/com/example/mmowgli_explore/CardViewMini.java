@@ -255,7 +255,7 @@ public class CardViewMini extends CustomComponent {
 		nativeButton_text.setCaption("NativeButton");
 		nativeButton_text.setImmediate(true);
 		nativeButton_text.setWidth("100.0%");
-		nativeButton_text.setHeight("50.0%");
+		nativeButton_text.setHeight("100.0%");
 		horizontalLayout_cardText.addComponent(nativeButton_text);
 		
 		return horizontalLayout_cardText;

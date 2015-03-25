@@ -135,7 +135,9 @@ public class CardExplorationView extends CustomComponent {
 
 
 	//Attributes
-	private CardView currentCard = new CardView();				//Keep track of the card view that has been clicked.
+	private CardView currentCard;				//Keep track of the card view that has been clicked.
+	private CardView[] cardsToAdd = new CardView[10];
+	private CardView[] children = new CardView[10];
 	
 	
 	/**
