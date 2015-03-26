@@ -136,6 +136,9 @@ public class CardView extends CustomComponent {
 		button_downvote.setIcon(new ThemeResource("images/icons/cards/downArrow.png"));
 		button_downvote.setStyleName("cardButtons");
 		
+		//vote number styling
+		//label_voteCount.setStyleName("cardVotes");
+		
 		//card favorite
 		button_favorite.setCaption(null);
 		button_favorite.setIcon(new ThemeResource("images/icons/cards/star.png"));
@@ -483,8 +486,8 @@ public class CardView extends CustomComponent {
 		// common part: create layout
 		verticalLayout_votes = new VerticalLayout();
 		verticalLayout_votes.setImmediate(false);
-		verticalLayout_votes.setWidth("20px");
-		verticalLayout_votes.setHeight("35px");
+		verticalLayout_votes.setWidth("-1px");
+		verticalLayout_votes.setHeight("-1px");
 		verticalLayout_votes.setMargin(false);
 		
 		// button_upvote

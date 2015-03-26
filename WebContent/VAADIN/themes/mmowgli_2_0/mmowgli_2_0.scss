@@ -201,6 +201,15 @@
   	font-weight: bold;
   }
   
+  .v-slot-cardVotes {
+  	color: red;
+  	border: 0px;
+	border-radius: 15px;
+	background-color: white;
+	padding-top: 5px;
+  	font-weight: bold;
+  }
+  
   //Top Bar Styling
   .v-slot-cardTypeExpand {
   	border-top-right-radius:17px;
