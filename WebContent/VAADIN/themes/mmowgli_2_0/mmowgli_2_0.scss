@@ -210,6 +210,12 @@
   	font-weight: bold;
   }
   
+  //Transparency
+  .v-customcomponent-transparent{
+  	opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+  }
+  
   //Top Bar Styling
   .v-slot-cardTypeExpand {
   	border-top-right-radius:17px;
@@ -380,5 +386,6 @@
 		color: #000000;
 		font-size: 12px;
 	}
+	
 
 }

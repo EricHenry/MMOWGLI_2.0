@@ -90,6 +90,7 @@ public class CardExplorationView extends CustomComponent {
 
 
 	//Attributes
+	private String chosenCardId;
 	private CardView currentChosenCard = null;						//Keep track of the card view that has been clicked.
 	private CardView[] currentlyDisplayedCards;						//Current List of cards listed in the middle panel
 	private CardView[] currentlyDisplayedChildren;					//Current List of child cards being displyed
@@ -210,6 +211,8 @@ public class CardExplorationView extends CustomComponent {
 		initCards();
 		initChildCards();
 		
+		
+		
 		cardViewMini_1.setCardType("Expand");
 		cardViewMini_2.setCardType("Explore");
 		cardViewMini_3.setCardType("Adapt");
@@ -237,6 +240,14 @@ public class CardExplorationView extends CustomComponent {
 			cardsToAdd[i].setHeight("-1px");
 			verticalLayout_2.addComponent(cardsToAdd[i]);
 			verticalLayout_2.setExpandRatio(cardsToAdd[i], 1.0f);
+			
+			//make transparent
+			addTransparency(cardsToAdd[i]);
+			
+			//set the card as inside the main view of the card explorer
+			cardsToAdd[i].setInMainView(true);
+			
+			
 			listen(cardsToAdd[i]);
 		}
 
@@ -255,30 +266,33 @@ public class CardExplorationView extends CustomComponent {
 	
 	public void initChildCards(){
 		for(int i = 0; i < cardsToAdd.length; i++){
-			String id = Integer.toBinaryString(i);
-			cardsToAdd[i] = new CardView(id);
+			String id = Integer.toBinaryString(i+50);
+			children[i] = new CardView(id);
 			
 			//basic card styling
 			//cardView_3 = new CardView();
-			cardsToAdd[i].setImmediate(false);
-			cardsToAdd[i].setWidth("340px");
-			cardsToAdd[i].setHeight("-1px");
-			verticalLayout_3.addComponent(cardsToAdd[i]);
-			verticalLayout_3.setExpandRatio(cardsToAdd[i], 1.0f);
-			listen(cardsToAdd[i]);
+			children[i].setImmediate(false);
+			children[i].setWidth("340px");
+			children[i].setHeight("-1px");
+			verticalLayout_3.addComponent(children[i]);
+			verticalLayout_3.setExpandRatio(children[i], 1.0f);			
+			listen(children[i]);
+		
+			//set the card as inside the main view of the card explorer
+			children[i].setInChildView(true);
 		}
-
+		
 		//set different background colors for cards
-		cardsToAdd[0].setCardType("Counter");
-		cardsToAdd[1].setCardType("Explore");
-		cardsToAdd[2].setCardType("Adapt");
-		cardsToAdd[3].setCardType("Adapt");
-		cardsToAdd[4].setCardType("Counter");
-		cardsToAdd[5].setCardType("Adapt");
-		cardsToAdd[6].setCardType("Expand");
-		cardsToAdd[7].setCardType("Expand");
-		cardsToAdd[8].setCardType("Explore");
-		cardsToAdd[9].setCardType("Adapt");
+		children[0].setCardType("Counter");
+		children[1].setCardType("Explore");
+		children[2].setCardType("Adapt");
+		children[3].setCardType("Adapt");
+		children[4].setCardType("Counter");
+		children[5].setCardType("Adapt");
+		children[6].setCardType("Expand");
+		children[7].setCardType("Expand");
+		children[8].setCardType("Explore");
+		children[9].setCardType("Adapt");
 	}
 	
 	public void initHistoryCards(){
@@ -286,13 +300,21 @@ public class CardExplorationView extends CustomComponent {
 		
 	}
 	
+	public void addTransparency(CardView chosenCard){
+		chosenCard.setStyleName("transparent");
+	}
+	
+	public void removeTransparency(CardView chosenCard){
+		chosenCard.removeStyleName("transparent");
+	}
+	
 	/**
 	 * Test listener
 	 */
-	public void listen(CardView card){
+	public void listen(CardView clickedCard){
 		
 		//Listen to the cards text button
-		card.getNativeButton_text().addClickListener(new NativeButton.ClickListener(){
+		clickedCard.getNativeButton_text().addClickListener(new NativeButton.ClickListener(){
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
@@ -301,18 +323,23 @@ public class CardExplorationView extends CustomComponent {
 				
 				//check if the card that is initiating the button click has already been chosen and set as the current card
 				//if it is not, then minimize the current card and maximize the new chosen card
-				if(!card.equals(currentChosenCard)){
+				if(!clickedCard.equals(currentChosenCard)){
 
 					//Make sure the current card is not null
 					try{
+						addTransparency(currentChosenCard);
 						currentChosenCard.shrinkCard();
-						card.expandCard();
+						
+						clickedCard.expandCard();
+						removeTransparency(clickedCard);
+						
 					}catch(NullPointerException e){
-						card.expandCard();
+						clickedCard.expandCard();
+						removeTransparency(clickedCard);
 					}
 					
 					//Set the clicked card as the 
-					currentChosenCard = new CardView(card);
+					currentChosenCard = new CardView(clickedCard);
 				}
 			}
 			
