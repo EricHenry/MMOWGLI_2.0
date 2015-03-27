@@ -32,7 +32,7 @@ public class CardViewMini extends CustomComponent {
 		
 		//card text
 		nativeButton_text.setCaption("Lorem ipsum dolor sit amet, consectetur adipiscing elit Cras sodales eros ut ipsum ultricies eleifend. Vivamus justo ipsum, rutrum vel orciv"); //140 characters
-		nativeButton_text.setStyleName("cardTextTiny");
+		//nativeButton_text.setStyleName("cardTextTiny");
 		
 	}
 	
@@ -42,7 +42,7 @@ public class CardViewMini extends CustomComponent {
 	 */
 	public void setCardColor(String cardType){
 		
-		mainLayout.setStyleName("cardType" + cardType + "Tiny");
+		nativeButton_text.setStyleName("cardType" + cardType + "Tiny");
 		
 	}
 	
@@ -66,12 +66,12 @@ public class CardViewMini extends CustomComponent {
 		// common part: create layout
 		mainLayout = new VerticalLayout();
 		mainLayout.setImmediate(false);
-		mainLayout.setWidth("340px");
+		mainLayout.setWidth("290px");
 		mainLayout.setHeight("75px");
 		mainLayout.setMargin(false);
 		
 		// top-level component properties
-		setWidth("340px");
+		setWidth("290px");
 		setHeight("75px");
 		
 		// nativeButton_text

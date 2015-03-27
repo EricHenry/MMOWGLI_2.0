@@ -370,9 +370,10 @@ public class CardExplorationView extends CustomComponent {
 		// common part: create layout
 		verticalLayout_1 = new VerticalLayout();
 		verticalLayout_1.setImmediate(false);
-		verticalLayout_1.setWidth("340px");
+		verticalLayout_1.setWidth("300px");
 		verticalLayout_1.setHeight("-1px");
 		verticalLayout_1.setMargin(false);
+		verticalLayout_1.setSpacing(true);
 		
 		// cardViewMini_1
 		cardViewMini_1 = new CardViewMini();
@@ -380,6 +381,7 @@ public class CardExplorationView extends CustomComponent {
 		cardViewMini_1.setWidth("-1px");
 		cardViewMini_1.setHeight("-1px");
 		verticalLayout_1.addComponent(cardViewMini_1);
+		verticalLayout_1.setExpandRatio(cardViewMini_1, 1.0f);
 		
 		// cardViewMini_2
 		cardViewMini_2 = new CardViewMini();
@@ -387,6 +389,7 @@ public class CardExplorationView extends CustomComponent {
 		cardViewMini_2.setWidth("-1px");
 		cardViewMini_2.setHeight("-1px");
 		verticalLayout_1.addComponent(cardViewMini_2);
+		verticalLayout_1.setExpandRatio(cardViewMini_2, 1.0f);
 		
 		// cardViewMini_3
 		cardViewMini_3 = new CardViewMini();
@@ -394,6 +397,7 @@ public class CardExplorationView extends CustomComponent {
 		cardViewMini_3.setWidth("-1px");
 		cardViewMini_3.setHeight("-1px");
 		verticalLayout_1.addComponent(cardViewMini_3);
+		verticalLayout_1.setExpandRatio(cardViewMini_3, 1.0f);
 		
 		// cardViewMini_4
 		cardViewMini_4 = new CardViewMini();
@@ -401,6 +405,7 @@ public class CardExplorationView extends CustomComponent {
 		cardViewMini_4.setWidth("-1px");
 		cardViewMini_4.setHeight("-1px");
 		verticalLayout_1.addComponent(cardViewMini_4);
+		verticalLayout_1.setExpandRatio(cardViewMini_4, 1.0f);
 		
 		// cardViewMini_5
 		cardViewMini_5 = new CardViewMini();
@@ -408,6 +413,7 @@ public class CardExplorationView extends CustomComponent {
 		cardViewMini_5.setWidth("-1px");
 		cardViewMini_5.setHeight("-1px");
 		verticalLayout_1.addComponent(cardViewMini_5);
+		verticalLayout_1.setExpandRatio(cardViewMini_5, 1.0f);
 		
 		return verticalLayout_1;
 	}
