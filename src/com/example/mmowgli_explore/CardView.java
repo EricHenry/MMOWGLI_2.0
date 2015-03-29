@@ -126,38 +126,38 @@ public class CardView extends CustomComponent {
 	 */
 	public void initCardStyling(){
 		//set topbar label & link styling
-				cardType.setStyleName("center");
-				user.setStyleName("center");
-				date.setStyleName("center");
-				voteCount.setStyleName("center");
+		cardType.setStyleName("center");
+		user.setStyleName("center");
+		date.setStyleName("center");
+		voteCount.setStyleName("center");
 				
 				
-				//card upvote / downvote
-				nativeButton_upvote.setCaption(null);
-				nativeButton_upvote.setIcon(new ThemeResource("images/icons/cards/upArrrow.png"));
-				nativeButton_upvote.setStyleName("cardButtons");
+		//card upvote / downvote
+		nativeButton_upvote.setCaption(null);
+		nativeButton_upvote.setIcon(new ThemeResource("images/icons/cards/upArrrow.png"));
+		nativeButton_upvote.setStyleName("cardButtons");
 				
-				nativeButton_downvote.setCaption(null);
-				nativeButton_downvote.setIcon(new ThemeResource("images/icons/cards/downArrow.png"));
-				nativeButton_downvote.setStyleName("cardButtons");
+		nativeButton_downvote.setCaption(null);
+		nativeButton_downvote.setIcon(new ThemeResource("images/icons/cards/downArrow.png"));
+		nativeButton_downvote.setStyleName("cardButtons");
 				
-				//vote number styling
-				//label_voteCount.setStyleName("cardVotes");
+		//vote number styling
+		//label_voteCount.setStyleName("cardVotes");
 				
-				//card favorite
-				nativeButton_favorite.setCaption(null);
-				nativeButton_favorite.setIcon(new ThemeResource("images/icons/cards/star.png"));
-				nativeButton_favorite.setStyleName("cardTextMini");
+		//card favorite
+		nativeButton_favorite.setCaption(null);
+		nativeButton_favorite.setIcon(new ThemeResource("images/icons/cards/star.png"));
+		nativeButton_favorite.setStyleName("cardTextMini");
 				
-				//card text
-				nativeButton_text.setCaption("Lorem ipsum dolor sit amet, consectetur adipiscing elit Cras sodales eros ut ipsum ultricies eleifend. Vivamus justo ipsum, rutrum vel orciv"); //140 characters
+		//card text
+		nativeButton_text.setCaption("Lorem ipsum dolor sit amet, consectetur adipiscing elit Cras sodales eros ut ipsum ultricies eleifend. Vivamus justo ipsum, rutrum vel orciv"); //140 characters
 				
-				//add card
-				nativeButton_addCard.setCaption(null);
-				nativeButton_addCard.setIcon(new ThemeResource("images/icons/cards/plus.png"));
+		//add card
+		nativeButton_addCard.setCaption(null);
+		nativeButton_addCard.setIcon(new ThemeResource("images/icons/cards/plus.png"));
 				
-				horizontalLayout_cardText.setStyleName("cardText");
-				horizontalLayout_cardLinks.setStyleName("cardBottom");
+		horizontalLayout_cardText.setStyleName("cardText");
+		horizontalLayout_cardLinks.setStyleName("cardBottom");
 	}
 
 	
@@ -186,7 +186,7 @@ public class CardView extends CustomComponent {
 	}
 	
 	/**
-	 * Set the styling of the card to a mini view
+	 * Set the styling of the card to a shrunken view
 	 */
 	public void shrinkCard(){
 		//cardView_1.getNativeButton_text().setCaption("POOP");
@@ -210,6 +210,22 @@ public class CardView extends CustomComponent {
 		mainLayout.setExpandRatio(horizontalLayout_cardLinks, 0.1f);
 		mainLayout.setHeight("200px");
 		isMini = false;
+	}
+	
+	/**
+	 * Add opacity to the card, making the card appear more transparent / faded
+	 */
+	public void addTransparency(){
+		mainLayout.setStyleName("transparent");
+		System.out.println("HEY! card: " + getCardId() + " should be transparent!");
+	}
+	
+	/**
+	 * Remove the card's opacity. This takes away the faded effect of the card.
+	 */
+	public void removeTransparency(){
+		mainLayout.removeStyleName("transparent");
+		System.out.println("Woot! card: " + getCardId() + " should be NOT transparent!");
 	}
 	
 	/**

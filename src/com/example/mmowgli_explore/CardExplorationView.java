@@ -242,7 +242,7 @@ public class CardExplorationView extends CustomComponent {
 			verticalLayout_2.setExpandRatio(cardsToAdd[i], 1.0f);
 			
 			//make transparent
-			addTransparency(cardsToAdd[i]);
+			cardsToAdd[i].addTransparency();
 			
 			//set the card as inside the main view of the card explorer
 			cardsToAdd[i].setInMainView(true);
@@ -300,14 +300,6 @@ public class CardExplorationView extends CustomComponent {
 		
 	}
 	
-	public void addTransparency(CardView chosenCard){
-		chosenCard.setStyleName("transparent");
-	}
-	
-	public void removeTransparency(CardView chosenCard){
-		chosenCard.removeStyleName("transparent");
-	}
-	
 	/**
 	 * Test listener
 	 */
@@ -327,15 +319,15 @@ public class CardExplorationView extends CustomComponent {
 
 					//Make sure the current card is not null
 					try{
-						addTransparency(currentChosenCard);
+						currentChosenCard.addTransparency();
 						currentChosenCard.shrinkCard();
 						
 						clickedCard.expandCard();
-						removeTransparency(clickedCard);
+						clickedCard.removeTransparency();
 						
 					}catch(NullPointerException e){
 						clickedCard.expandCard();
-						removeTransparency(clickedCard);
+						clickedCard.removeTransparency();
 					}
 					
 					//Set the clicked card as the 
