@@ -142,6 +142,9 @@ public class CardExplorationView extends CustomComponent {
 		}
 	}
 	
+	/**
+	 * 
+	 */
 	public void initCards(){
 		
 		System.out.println(cardsToMainView.size());
