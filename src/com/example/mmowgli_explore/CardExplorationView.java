@@ -111,6 +111,10 @@ public class CardExplorationView extends CustomComponent {
 		
 		//set different background colors for cards
 		initCards();
+		
+		currentChosenCard= new CardView((CardView)verticalLayout_2.getComponent(4));
+		currentChosenCard.expandCardView();
+		currentChosenCard.removeTransparency();
 		//initChildCards();
 		//initHistoryCards();
 
@@ -133,19 +137,25 @@ public class CardExplorationView extends CustomComponent {
 		for(int i = 0; i < 30; i++){
 			random[i] = new Card (i, (i + 100), text, "Expand", 5, 60, new Timestamp(2015, 5, 25, 12, 0, 0, 0)); 
 			
+			System.out.print(i+100);
+			
 			if(i < 10)
 				cardsToMainView.addCard(random[i]);
-			else if(i >= 10 && i < 25)
+			else if(i >= 10 && i < 25){
 				cardsToChildView.addCard(random[i]);
-			else
+				random[i].parent = 105;
+			}else
 				cardsToHistoryView.addCard(random[i]);
+			
 		}
 	}
 	
 	/**
-	 * 
+	 * Initialize Cards that need to be added to the Main View of the Card Explorer
+	 * 	Should only be used after a query is made to get the corresponding CardList 
+	 * 	from the database.
 	 */
-	public void initCards(){
+	private void initCards(){
 		
 		System.out.println(cardsToMainView.size());
 		
@@ -155,48 +165,24 @@ public class CardExplorationView extends CustomComponent {
 			//get the current first node of the card list
 			Card currentCardData = cardsToMainView.getCard();
 			
-			//get the current Id
-			String id = Integer.toBinaryString(currentCardData.cardId);
-			String pId = Integer.toBinaryString(currentCardData.playerId);
+			//get the current card data
+			String id = Integer.toString(currentCardData.cardId);
+			String pId = Integer.toString(currentCardData.playerId);
 			String cardText = currentCardData.textUser;
 			String cardType = currentCardData.cardType;
-			String parent = Integer.toBinaryString(currentCardData.parent);
-			String votes = Integer.toBinaryString(currentCardData.votes);
+			String parent = Integer.toString(currentCardData.parent);
+			String votes = Integer.toString(currentCardData.votes);
 			String date = new SimpleDateFormat("MM/dd/yyyy").format(currentCardData.time.getDate());
 			
 			//create a new card view using the card data.
 			CardView newCard = new CardView(id, pId, cardText, cardType, parent, votes, date);
 			newCard.setCardType(cardType);
 			
-			//basic card styling
-			//cardView_3 = new CardView();
-			newCard.setImmediate(false);
-			newCard.setWidth("340px");
-			newCard.setHeight("-1px");
-			verticalLayout_2.addComponent(newCard);
-			verticalLayout_2.setExpandRatio(newCard, 1.0f);
-			
-			//make transparent
-			newCard.addTransparency();
-			
-			//set the card as inside the main view of the card explorer
-			//newCard.setInMainView(true);
-			
-			
-			mainViewClickListener(newCard);
-		}
-
-		//set different background colors for cards
-//		cardsToAdd[0].setCardType("Expand");
-//		cardsToAdd[1].setCardType("Adapt");
-//		cardsToAdd[2].setCardType("Explore");
-//		cardsToAdd[3].setCardType("Counter");
-//		cardsToAdd[4].setCardType("Counter");
-//		cardsToAdd[5].setCardType("Adapt");
-//		cardsToAdd[6].setCardType("Expand");
-//		cardsToAdd[7].setCardType("Expand");
-//		cardsToAdd[8].setCardType("Explore");
-//		cardsToAdd[9].setCardType("Counter");
+			//add card to the component
+			verticalLayout_2.addComponent(newCard);			
+		} 
+		
+		styleCardsInMainView();
 	}
 	
 	public void initChildCards(){
@@ -218,16 +204,16 @@ public class CardExplorationView extends CustomComponent {
 		}
 		
 		//set different background colors for cards
-		children[0].setCardType("Counter");
-		children[1].setCardType("Explore");
-		children[2].setCardType("Adapt");
-		children[3].setCardType("Adapt");
-		children[4].setCardType("Counter");
-		children[5].setCardType("Adapt");
-		children[6].setCardType("Expand");
-		children[7].setCardType("Expand");
-		children[8].setCardType("Explore");
-		children[9].setCardType("Adapt");
+//		children[0].setCardType("Counter");
+//		children[1].setCardType("Explore");
+//		children[2].setCardType("Adapt");
+//		children[3].setCardType("Adapt");
+//		children[4].setCardType("Counter");
+//		children[5].setCardType("Adapt");
+//		children[6].setCardType("Expand");
+//		children[7].setCardType("Expand");
+//		children[8].setCardType("Explore");
+//		children[9].setCardType("Adapt");
 	}
 	
 	public void initHistoryCards(){
@@ -280,13 +266,13 @@ public class CardExplorationView extends CustomComponent {
 					//Make sure the current card is not null
 					try{
 						currentChosenCard.addTransparency();
-						currentChosenCard.shrinkCard();
+						currentChosenCard.shrinkCardView();
 						
-						clickedCard.expandCard();
+						clickedCard.expandCardView();
 						clickedCard.removeTransparency();
 						
 					}catch(NullPointerException e){
-						clickedCard.expandCard();
+						clickedCard.expandCardView();
 						clickedCard.removeTransparency();
 					}
 					
@@ -300,7 +286,7 @@ public class CardExplorationView extends CustomComponent {
 	
 	/**
 	 * 
-	 * @param clickedCard
+	 * @param clickedCard -> The card that was clicked by the user
 	 */
 	public void childViewClickListener(CardView clickedCard){
 		
@@ -311,13 +297,56 @@ public class CardExplorationView extends CustomComponent {
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				
-				//move the current chosen card and add it to the history view
-				//remove the current list of card in the main view
-				//move the current child view list move it to the main view
+				try{
+					//move the current chosen card and add it to the history view
+					verticalLayout_1.addComponent(new CardView(currentChosenCard));
+					
+					//remove the current list of card in the main view
+					verticalLayout_2.removeAllComponents();
+					
+					//move the current child view list move it to the main view
+					int numberOfChildren = verticalLayout_3.getComponentCount();
+					for(int index = 0; index < numberOfChildren; index++)
+						verticalLayout_2.addComponent(verticalLayout_3.getComponent(index));
+
+					//remove the current child components
+					verticalLayout_3.removeAllComponents();
+					
+					//TODO add the children Cards to the ChildView
+					
+					//style the cards added to 
+				}catch(NullPointerException e){
+					//TODO ADD ERROR HANDLING
+				}
 				
+				//set the clicked card as the new chosencard
+				currentChosenCard = new CardView(clickedCard);
+				currentChosenCard.expandCardView();
 			}
 			
 		});		
+	}
+	
+	/**
+	 * Style the cards in the main view with the default values
+	 */
+	private void styleCardsInMainView(){
+		int cardsInMainView = verticalLayout_2.getComponentCount();
+		
+		for(int index = 0; index < cardsInMainView; index++){
+			((CardView)verticalLayout_2.getComponent(index)).setImmediate(false);
+			((CardView)verticalLayout_2.getComponent(index)).setWidth("340px");
+			((CardView)verticalLayout_2.getComponent(index)).setHeight("-1px");
+			
+			//set expantionRatio of this card
+			verticalLayout_2.setExpandRatio(((CardView)verticalLayout_2.getComponent(index)), 1.0f);
+			
+			//make cards transparent by default
+			((CardView)verticalLayout_2.getComponent(index)).addTransparency();
+			
+			//attach the appropriate listener
+			mainViewClickListener(((CardView)verticalLayout_2.getComponent(index)));
+		}
 	}
 	
 	/**
@@ -339,13 +368,13 @@ public class CardExplorationView extends CustomComponent {
 					//Make sure the current card is not null
 					try{
 						currentChosenCard.addTransparency();
-						currentChosenCard.shrinkCard();
+						currentChosenCard.shrinkCardView();
 								
-						clickedCard.expandCard();
+						clickedCard.expandCardView();
 						clickedCard.removeTransparency();
 								
 					}catch(NullPointerException e){
-						clickedCard.expandCard();
+						clickedCard.expandCardView();
 						clickedCard.removeTransparency();
 					}
 							

@@ -76,7 +76,7 @@ public class CardView extends CustomComponent {
 		// TODO add user code here
 		initCardStyling();
 		
-		shrinkCard();
+		shrinkCardView();
 	}
 
 	/**
@@ -95,9 +95,20 @@ public class CardView extends CustomComponent {
 		
 		initCardStyling();
 		
-		shrinkCard();
+		shrinkCardView();
 	}
 	
+	/**
+	 * Constructor with specified card data.
+	 * 
+	 * @param id			-> The unique card ID
+	 * @param playerId		-> The unique player who created this card
+	 * @param cardText		-> Text written by the player
+	 * @param cardType		-> The one of 6 card types the card can be 
+	 * @param parent		-> The ID of this card's parent
+	 * @param vote			-> The number of votes that the card has acquired
+	 * @param date			-> When the card was created
+	 */
 	public CardView(String id, String playerId, String cardText, String cardType, String parent, String vote, String date) {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
@@ -115,7 +126,7 @@ public class CardView extends CustomComponent {
 		
 		initCardStyling();
 		
-		shrinkCard();
+		shrinkCardView();
 	}
 	
 	/**
@@ -208,7 +219,7 @@ public class CardView extends CustomComponent {
 	/**
 	 * Set the styling of the card to a shrunken view
 	 */
-	public void shrinkCard(){
+	public void shrinkCardView(){
 		//cardView_1.getNativeButton_text().setCaption("POOP");
 		nativeButton_text.setStyleName("cardTextMini");
 		nativeButton_addCard.setStyleName("cardTextMini");
@@ -222,7 +233,7 @@ public class CardView extends CustomComponent {
 	/**
 	 * Set the styling of the card to the full view
 	 */
-	public void expandCard(){
+	public void expandCardView(){
 		nativeButton_text.setStyleName("cardButtons");
 		nativeButton_addCard.setStyleName("cardButtons");
 		
