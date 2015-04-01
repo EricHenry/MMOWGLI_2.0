@@ -10,7 +10,7 @@
  * 
  */
 
-package com.example.mmowgli_managers;
+package com.example.mmowgli_backend;
 
 import java.util.*;
 
