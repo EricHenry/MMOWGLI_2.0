@@ -119,7 +119,7 @@ public class CardView extends CustomComponent {
 		this.cardId = id;
 		this.user.setCaption(playerId);
 		this.nativeButton_text.setCaption(cardText);
-		//this.cardType.setCaption(cardType);
+		setCardType(cardType);
 		this.parent = parent;
 		this.voteCount.setValue(vote);
 		this.date.setValue(date);
@@ -189,6 +189,8 @@ public class CardView extends CustomComponent {
 				
 		horizontalLayout_cardText.setStyleName("cardText");
 		horizontalLayout_cardLinks.setStyleName("cardBottom");
+		
+
 	}
 
 	
