@@ -192,7 +192,24 @@ public class CardView extends CustomComponent {
 		
 
 	}
+	
+	
+	public void setAddCardButtonListener(){
+		
+		
+	}
+	
+	public void setFavoriteButtonListener(){
+		
+	}
 
+	public void setUpVoteButtonListener(){
+		
+	}
+	
+	public void setDownVoteButtonListener(){
+		
+	}
 	
 	/**
 	 * Sets a card's background of the top bar

@@ -45,8 +45,8 @@ public class Mmowgli_2_0UI extends UI {
 
 		mainWindow.setContent(content);
 		
-		//content.addComponent(home);
-		content.addComponent(explore);
+		content.addComponent(home);
+		//content.addComponent(explore);
 		//content.setWidth("1366px");
 		//content.setHeight("800px");
 
