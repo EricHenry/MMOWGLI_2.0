@@ -62,85 +62,266 @@
   @include valo;
 
   // Insert your own theme rules here
-  .v-nativebutton-borderless {
-  	color: blue;
-  	text-align:center;
-  	border: 0;
-  	background-color: #CCCCCC;
-  }
   
-  .v-nativebutton-idea {
-    display: block;
-  	background-image: url(../Images/icons/h.png);
-  	background-repeat: no-repeat;
+/* --------------- HOME PAGE --------------- */
 
-  	margin-left:auto;
-  	margin-right:auto;
-  	margin-top:auto;
-  	margin-bottom:auto;
-  	border: 0;
-  }
+	.v-nativebutton-borderless {
+		color: blue;
+  		text-align:center;
+  		border: 0;
+  		background-color: #CCCCCC;
+  	}
   
-  //Links
-  .v-link-link {
-  	text-decoration: none;
-  	color: #4D51AC;
-  }
-  
-  //Home Page card displays
-  .v-nativebutton-counter {
-  	border: 0px;
-  	border-radius: 25px;
-  	background-color: rgb(236,157,186);
-  	color: #4D51AC;
-  }
-  
-  .v-nativebutton-expand {
-  	border: 0px;
-  	border-radius: 25px;
-  	background-color: rgb(250,207,156);
-  	color: #4D51AC;
-  }
-  
-  .v-nativebutton-adapt {
-  	border: 0px;
-  	border-radius: 25px;
-  	background-color: rgb(133,209,241);
-  	color: #4D51AC;
-  }
-  
-  .v-nativebutton-explore {
-  	border: 0px;
-  	border-radius: 25px;
-  	background-color: rgb(219,233,154);
-  	color: #4D51AC;
-  }
+  	.v-nativebutton-idea {
+    	display: block;
+  		background-image: url(../Images/icons/h.png);
+  		background-repeat: no-repeat;
 
-  .v-customcomponent-topbar{
-  	background-color: #CCCCCC;
-  	border-bottom: 2px solid #949494;
-  }
+  		margin-left:auto;
+  		margin-right:auto;
+  		margin-top:auto;
+  		margin-bottom:auto;
+  		border: 0;
+  	}
   
-  //sidebar cutomization
-  .v-customcomponent-sidebar{
-  	background-color: #CCCCCC;
-  }
+  	//Links
+  	.v-link-link {
+  		text-decoration: none;
+  		color: #4D51AC;
+  	}
+  	
+  	.v-verticallayout-white{
+   		background: none repeat scroll 0% 0% #FFF;
+   	}
   
-  .v-slot-borderless {
-  	height: 80px;
-  }
+	.v-panel-borderless {
+		border: 0;
+		background: none repeat scroll 0% 0% #FFF;
+		text-align: center;
+	}
   
-  .v-horizontallayout-userLayout {
-  	text-align:center;
-  	border: 0;
-  	background-color: #CCCCCC;
-  	padding-top: 20px;
-  }
   
+
+/* --------------- HOME PAGE TOP BAR --------------- */
+
+	//Top Bar
+	.v-customcomponent-topbar{
+	  	background-color: #CCCCCC;
+	  	border-bottom: 2px solid #949494;
+	}
+
+/* --------------- HOME PAGE SIDE BAR --------------- */
+
+	.v-customcomponent-sidebar{
+		background-color: #CCCCCC;
+	}
+  
+  	.v-slot-borderless {
+	  	height: 80px; 
+	}
+  
+	.v-horizontallayout-userLayout {
+	  	text-align:center;
+	  	border: 0;
+	  	background-color: #CCCCCC;
+ 	 	padding-top: 20px;
+  	}
+
+/* --------------- VIDEO DISPLAYER DROPDOWN --------------- */
+
+	.v-nativebutton-videoDisplay {
+		border: 0px;
+		border-radius: 20px;
+		text-align: center;
+  		height: 20px;
+  		background-color: #CCCCCC;
+	}
+	
+	.videoDisplay .v-icon{	//THIS HANDLES THE CHILD CLASS OF THE VIDEO DISPLAY BUTTON
+  		padding-bottom: 11px;
+	}
+
+/* --------------- GAME UPDATER --------------- */
+
+  //Updater Button stylings
+  	.v-nativebutton-counter {
+	  	border: 0px;
+	  	border-radius: 25px;
+  		background-color: rgb(236,157,186);
+  		color: #4D51AC;
+  	}
+  
+  	.v-nativebutton-expand {
+	  	border: 0px;
+ 	 	border-radius: 25px;
+	  	background-color: rgb(250,207,156);
+  		color: #4D51AC;
+ 	 }
+  
+  	.v-nativebutton-adapt {
+  		border: 0px;
+  		border-radius: 25px;
+  		background-color: rgb(133,209,241);
+  		color: #4D51AC;
+  	}
+  
+	.v-nativebutton-explore {
+	  	border: 0px;
+	  	border-radius: 25px;
+	  	background-color: rgb(219,233,154);
+	  	color: #4D51AC;
+	}
+	
   //Custom Component Stylings
-  .v-customcomponent-updateBorders{
-  	border-right: 2px solid #7E7FB5;
-  }
+	.v-customcomponent-updateBorders{
+  		border-right: 2px solid #7E7FB5;
+	}
+
+/* --------------- CARD EXPLORER --------------- */
+
+  //Card Top Bar Styling
+	.v-slot-cardTypeExpand {
+  		border-top-right-radius:17px;
+  		border-top-left-radius: 17px;
+  		border:0;
+  		background-color: #F79E3A;
+	}
+  
+	.v-slot-cardTypeCounter {
+  		border-top-right-radius:17px;
+  		border-top-left-radius: 17px;
+  		border:0;
+  		background-color: #D51C5B;
+	}
+  
+	.v-slot-cardTypeAdapt {
+  		border-top-right-radius:17px;
+  		border-top-left-radius: 17px;
+  		border:0;
+  		background-color: #09A5E4;
+	}
+  
+	.v-slot-cardTypeExplore {
+  		border-top-right-radius:17px;
+  		border-top-left-radius: 17px;
+  		border:0;
+  		background-color: #B8D438;
+	}
+  
+  //mini cards
+    .v-slot-cardTypeExpandMini {
+  		border-top-right-radius:17px;
+  		border-top-left-radius: 17px;
+  		border:0;
+  		background-color: #F79E3A;
+	}
+  
+	.v-slot-cardTypeCounterMini {
+  		border-top-right-radius:17px;
+  		border-top-left-radius: 17px;
+  		border:0;
+  		background-color: #D51C5B;
+	}
+  
+	.v-slot-cardTypeAdaptMini {
+  		border-top-right-radius:17px;
+  		border-top-left-radius: 17px;
+  		border:0;
+  		background-color: #09A5E4;
+	}
+  
+	.v-slot-cardTypeExploreMini {
+		border-top-right-radius:17px;
+		border-top-left-radius: 17px;
+		border:0;
+		background-color: #B8D438;
+	}
+  
+	.v-nativebutton-cardTextMini {
+		border:0 none;
+		background: transparent;
+		font-size: 13px;
+		font-weight: none;  
+	}
+
+/* --------------- CARD EXPLORER CARD VIEWS --------------- */
+
+  //center main content -> Card Top bars
+	.v-verticallayout-center {
+   		text-align: center;
+	}
+	
+  //Transparency
+	.v-customcomponent-transparent{
+  		opacity: 0.4;
+    	filter: alpha(opacity=40); /* For IE8 and earlier */
+	}
+  
+	.v-verticallayout-transparent{
+  		opacity: 0.4;
+    	filter: alpha(opacity=40); /* For IE8 and earlier */
+	}
+	
+	.v-nativebutton-cardButtons {
+  		border:0 none;
+  		background: transparent;
+	}
+  
+	.cardButtons .v-icon{	//THIS HANDLES THE CHILD CLASS OF THE VOTE BUTTON
+  		padding-bottom: 15px;
+	}
+  
+  //Top Bar Labels and links
+	.v-label-center {
+  		padding-top: 5px;
+  		font-weight: bold;
+	}
+  
+	.v-link-center {
+  		padding-top: 5px;
+  		font-weight: bold;
+	}
+  
+	.v-slot-cardVotes {
+  		color: red;
+  		border: 0px;
+		border-radius: 15px;
+		background-color: white;
+		padding-top: 5px;
+  		font-weight: bold;
+	}
+	
+  //Card Borders
+	.v-slot-cardText {
+  		border-left: 1px solid #949494;
+  		border-right: 1px solid #949494;
+  		border-top: 1px solid #949494;
+	}
+  
+	.v-nativebutton-cardText {
+  		border:0 none;
+  		background: transparent;
+	}
+  
+	.v-slot-cardBottom {
+  		border-left: 1px solid #949494;
+  		border-right: 1px solid #949494;
+  		border-bottom: 1px solid #949494;
+  		padding-bottom: 5px;
+	}
+
+/* --------------- FOOTER --------------- */
+  
+
+
+
+
+
+
+	  
+
+  
+
   
   	//root button styling
  	.v-nativebutton-root1 {
@@ -155,241 +336,19 @@
 		border-radius: 15px;
 	}
 	
-	.v-nativebutton-rootToggle {
-		border: 0px;
-		border-radius: 20px;
-		text-align: center;
-  		height: 20px;
-  		background-color: #CCCCCC;
-	}
+
   
-   //center main content
-   .v-verticallayout-center {
-   		
-   			text-align: center;
-   		
-   }
+
    
-	.v-verticallayout-white{
-   		background: none repeat scroll 0% 0% #FFF;
-   	}
+
+//Card styling - Card Explorer
+
   
-	.v-panel-borderless {
-		border: 0;
-		background: none repeat scroll 0% 0% #FFF;
-		text-align: center;
-	}
+
   
-//Card styling
-  .v-nativebutton-cardButtons {
-  	border:0 none;
-  	background: transparent;
-  }
-  
-  .cardButtons .v-icon{	//THIS HANDLES THE CHILD CLASS OF THE VOTE BUTTON
-  	padding-bottom: 15px;
-  }
-  
-  //Top Bar Labels and links
-  .v-label-center {
-  	padding-top: 5px;
-  	font-weight: bold;
-  }
-  
-  .v-link-center {
-  	padding-top: 5px;
-  	font-weight: bold;
-  }
-  
-  .v-slot-cardVotes {
-  	color: red;
-  	border: 0px;
-	border-radius: 15px;
-	background-color: white;
-	padding-top: 5px;
-  	font-weight: bold;
-  }
-  
-  //Transparency
-  .v-customcomponent-transparent{
-  	opacity: 0.4;
-    filter: alpha(opacity=40); /* For IE8 and earlier */
-  }
-  .v-verticallayout-transparent{
-  	opacity: 0.4;
-    filter: alpha(opacity=40); /* For IE8 and earlier */
-  }
-  
-  //Top Bar Styling
-  .v-slot-cardTypeExpand {
-  	border-top-right-radius:17px;
-  	border-top-left-radius: 17px;
-  	border:0;
-  	background-color: #F79E3A;
-  }
-  
-  .v-slot-cardTypeCounter {
-  	border-top-right-radius:17px;
-  	border-top-left-radius: 17px;
-  	border:0;
-  	background-color: #D51C5B;
-  }
-  
-  .v-slot-cardTypeAdapt {
-  	border-top-right-radius:17px;
-  	border-top-left-radius: 17px;
-  	border:0;
-  	background-color: #09A5E4;
-  }
-  
-  .v-slot-cardTypeExplore {
-  	border-top-right-radius:17px;
-  	border-top-left-radius: 17px;
-  	border:0;
-  	background-color: #B8D438;
-  }
-  
-  //Card Borders
-  .v-slot-cardText {
-  	border-left: 1px solid #949494;
-  	border-right: 1px solid #949494;
-  	border-top: 1px solid #949494;
-  }
-  
-  .v-nativebutton-cardText {
-  	border:0 none;
-  	background: transparent;
-  }
-  
-  .v-slot-cardBottom {
-  	border-left: 1px solid #949494;
-  	border-right: 1px solid #949494;
-  	border-bottom: 1px solid #949494;
-  	padding-bottom: 5px;
-  }
-  
-  //mini cards
-    .v-slot-cardTypeExpandMini {
-  	border-top-right-radius:17px;
-  	border-top-left-radius: 17px;
-  	border:0;
-  	background-color: #F79E3A;
-  }
-  
-  .v-slot-cardTypeCounterMini {
-  	border-top-right-radius:17px;
-  	border-top-left-radius: 17px;
-  	border:0;
-  	background-color: #D51C5B;
-  }
-  
-  .v-slot-cardTypeAdaptMini {
-  	border-top-right-radius:17px;
-  	border-top-left-radius: 17px;
-  	border:0;
-  	background-color: #09A5E4;
-  }
-  
-  .v-slot-cardTypeExploreMini {
-  	border-top-right-radius:17px;
-  	border-top-left-radius: 17px;
-  	border:0;
-  	background-color: #B8D438;
-  }
-  
-   .v-nativebutton-cardTextMini {
-  	border:0 none;
-  	background: transparent;
-  	font-size: 13px;
-  	font-weight: none;  
-  }
-  
-//Tree Styling
-	.v-tree-node-caption-root1 {
-		background-color: #005800;
-		border: 0px;
-		border-radius: 15px;
-		font-weight: bold;
-		color: #FFFFFF;
-	}
+
 	
-	.v-tree-node-caption-expand {
-		background-color: #F79E3A;
-		border: 0px;
-		border-radius: 15px;
-		font-weight: bold;
-		color: #000000;
-	}
-	
-	.v-tree-node-caption-explore {
-		background-color: #B8D438;
-		border: 0px;
-		border-radius: 15px;
-		font-weight: bold;
-		color: #000000;
-	}
-	
-	.v-tree-node-caption-adapt {
-		background-color: #09A5E4;
-		border: 0px;
-		border-radius: 15px;
-		font-weight: bold;
-		color: #000000;
-	}
-	
-	.v-tree-node-caption-counter {
-		background-color: #D51C5B;
-		border: 0px;
-		border-radius: 15px;
-		font-weight: bold;
-		color: #000000;
-	}
-	
-//History View
-	.v-nativebutton-cardTypeRoot1Tiny {
-		background-color: #005800;
-		border: 0px;
-		border-radius: 15px;
-		font-weight: bold;
-		color: #FFFFFF;
-		font-size: 12px;
-	}
-	
-	.v-nativebutton-cardTypeExpandTiny {
-		background-color: #F79E3A;
-		border: 0px;
-		border-radius: 15px;
-		font-weight: bold;
-		color: #000000;
-		font-size: 12px;
-	}
-	
-	.v-nativebutton-cardTypeExploreTiny {
-		background-color: #B8D438;
-		border: 0px;
-		border-radius: 15px;
-		font-weight: bold;
-		color: #000000;
-		font-size: 12px;
-	}
-	
-	.v-nativebutton-cardTypeAdaptTiny {
-		background-color: #09A5E4;
-		border: 0px;
-		border-radius: 15px;
-		font-weight: bold;
-		color: #000000;
-		font-size: 12px;
-	}
-	
-	.v-nativebutton-cardTypeCounterTiny {
-		background-color: #D51C5B;
-		border: 0px;
-		border-radius: 15px;
-		font-weight: bold;
-		color: #000000;
-		font-size: 12px;
-	}
+
 	
 
 }

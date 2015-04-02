@@ -182,7 +182,8 @@ public class CardView extends CustomComponent {
 				
 		//card text
 		//nativeButton_text.setCaption("Lorem ipsum dolor sit amet, consectetur adipiscing elit Cras sodales eros ut ipsum ultricies eleifend. Vivamus justo ipsum, rutrum vel orciv vel orciv"); //150 characters
-				
+		//mainLayout.setExpandRatio(horizontalLayout_cardLinks, 1.0f);
+		
 		//add card
 		nativeButton_addCard.setCaption(null);
 		nativeButton_addCard.setIcon(new ThemeResource("images/icons/cards/plus.png"));
