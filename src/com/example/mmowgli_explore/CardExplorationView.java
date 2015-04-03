@@ -431,12 +431,12 @@ public class CardExplorationView extends CustomComponent {
 		mainLayout = new HorizontalLayout();
 		mainLayout.setImmediate(false);
 		mainLayout.setWidth("100%");
-		mainLayout.setHeight("600px");
+		mainLayout.setHeight("37.5em");
 		mainLayout.setMargin(false);
 		
 		// top-level component properties
 		setWidth("100.0%");
-		setHeight("600px");
+		setHeight("37.5em");
 		
 		// verticalLayout_2
 		verticalLayout_2 = buildVerticalLayout_2();
@@ -462,7 +462,7 @@ public class CardExplorationView extends CustomComponent {
 		verticalLayout_2 = new VerticalLayout();
 		verticalLayout_2.setImmediate(false);
 		verticalLayout_2.setWidth("-1px");
-		verticalLayout_2.setHeight("500px");
+		verticalLayout_2.setHeight("31.25em");
 		verticalLayout_2.setMargin(false);
 		
 		// label_HistoryTitle
@@ -494,7 +494,7 @@ public class CardExplorationView extends CustomComponent {
 		// verticalLayout_historyView
 		verticalLayout_historyView = new VerticalLayout();
 		verticalLayout_historyView.setImmediate(false);
-		verticalLayout_historyView.setWidth("-1px");
+		verticalLayout_historyView.setWidth("22.5em");
 		verticalLayout_historyView.setHeight("-1px");
 		verticalLayout_historyView.setMargin(false);
 		verticalLayout_historyView.setSpacing(true);
@@ -509,7 +509,7 @@ public class CardExplorationView extends CustomComponent {
 		verticalLayout_3 = new VerticalLayout();
 		verticalLayout_3.setImmediate(false);
 		verticalLayout_3.setWidth("-1px");
-		verticalLayout_3.setHeight("500px");
+		verticalLayout_3.setHeight("31.25em");
 		verticalLayout_3.setMargin(false);
 		
 		// label_mainTitle
@@ -541,7 +541,7 @@ public class CardExplorationView extends CustomComponent {
 		// verticalLayout_mainView
 		verticalLayout_mainView = new VerticalLayout();
 		verticalLayout_mainView.setImmediate(false);
-		verticalLayout_mainView.setWidth("-1px");
+		verticalLayout_mainView.setWidth("22.5em");
 		verticalLayout_mainView.setHeight("-1px");
 		verticalLayout_mainView.setMargin(false);
 		verticalLayout_mainView.setSpacing(true);
@@ -556,7 +556,7 @@ public class CardExplorationView extends CustomComponent {
 		verticalLayout_4 = new VerticalLayout();
 		verticalLayout_4.setImmediate(false);
 		verticalLayout_4.setWidth("-1px");
-		verticalLayout_4.setHeight("500px");
+		verticalLayout_4.setHeight("31.25em");
 		verticalLayout_4.setMargin(false);
 		
 		// label_childTitle
@@ -587,15 +587,15 @@ public class CardExplorationView extends CustomComponent {
 		// common part: create layout
 		horizontalLayout_1 = new HorizontalLayout();
 		horizontalLayout_1.setImmediate(false);
-		horizontalLayout_1.setWidth("375px");
+		horizontalLayout_1.setWidth("23.438em");
 		horizontalLayout_1.setHeight("-1px");
 		horizontalLayout_1.setMargin(false);
 		
 		// textField_search
 		textField_search = new TextField();
 		textField_search.setImmediate(false);
-		textField_search.setWidth("90px");
-		textField_search.setHeight("25px");
+		textField_search.setWidth("5.625em");
+		textField_search.setHeight("1.563em");
 		horizontalLayout_1.addComponent(textField_search);
 		
 		// nativeButton_search
@@ -618,8 +618,8 @@ public class CardExplorationView extends CustomComponent {
 		// comboBox_1
 		comboBox_1 = new ComboBox();
 		comboBox_1.setImmediate(false);
-		comboBox_1.setWidth("90px");
-		comboBox_1.setHeight("25px");
+		comboBox_1.setWidth("5.625em");
+		comboBox_1.setHeight("1.563em");
 		horizontalLayout_1.addComponent(comboBox_1);
 		
 		return horizontalLayout_1;
@@ -636,7 +636,7 @@ public class CardExplorationView extends CustomComponent {
 		// verticalLayout_childView
 		verticalLayout_childView = new VerticalLayout();
 		verticalLayout_childView.setImmediate(false);
-		verticalLayout_childView.setWidth("-1px");
+		verticalLayout_childView.setWidth("22.5em");
 		verticalLayout_childView.setHeight("-1px");
 		verticalLayout_childView.setMargin(false);
 		verticalLayout_childView.setSpacing(true);

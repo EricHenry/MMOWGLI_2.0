@@ -96,7 +96,7 @@ public class HomePage extends CustomComponent {
 		// sideBar_1
 		sideBar_1 = new SideBar();
 		sideBar_1.setImmediate(false);
-		sideBar_1.setWidth("160px");
+		sideBar_1.setWidth("10.0em");
 		sideBar_1.setHeight("100.0%");
 		horizontalLayout_2.addComponent(sideBar_1);
 		
@@ -155,8 +155,8 @@ public class HomePage extends CustomComponent {
 		// common part: create layout
 		gridLayout_content = new GridLayout();
 		gridLayout_content.setImmediate(false);
-		gridLayout_content.setWidth("1120px");
-		gridLayout_content.setHeight("1500px");
+		gridLayout_content.setWidth("70.0em");
+		gridLayout_content.setHeight("93.75em");
 		gridLayout_content.setMargin(false);
 		gridLayout_content.setSpacing(true);
 		gridLayout_content.setRows(3);

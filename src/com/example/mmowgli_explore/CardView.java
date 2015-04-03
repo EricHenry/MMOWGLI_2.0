@@ -66,8 +66,6 @@ public class CardView extends CustomComponent {
 	private boolean isFavorite 				= false;
 	private boolean upvoted 				= false;
 	private boolean downvoted 				= false;
-	private boolean previouslyDownvoted 	= false; 
-	private boolean previouslyUpvoted 		= false;
 	private int votes = 0;
 	
 	/**
@@ -181,7 +179,7 @@ public class CardView extends CustomComponent {
 				
 		//card upvote / downvote
 		nativeButton_upvote.setCaption(null);
-		nativeButton_upvote.setIcon(new ThemeResource("images/icons/cards/upArrrow.png"));
+		nativeButton_upvote.setIcon(new ThemeResource("images/icons/cards/upArrow.png"));
 		nativeButton_upvote.setStyleName("cardButtons");
 				
 		nativeButton_downvote.setCaption(null);
@@ -189,7 +187,7 @@ public class CardView extends CustomComponent {
 		nativeButton_downvote.setStyleName("cardButtons");
 				
 		//vote number styling
-		//label_voteCount.setStyleName("cardVotes");
+		voteCount.setStyleName("cardVotes");
 				
 		//card favorite
 		nativeButton_favorite.setCaption(null);
@@ -612,13 +610,13 @@ public class CardView extends CustomComponent {
 		// common part: create layout
 		mainLayout = new VerticalLayout();
 		mainLayout.setImmediate(false);
-		mainLayout.setWidth("340px");
-		mainLayout.setHeight("200px");
+		mainLayout.setWidth("21.25em");
+		mainLayout.setHeight("12.5em");
 		mainLayout.setMargin(false);
 		
 		// top-level component properties
-		setWidth("340px");
-		setHeight("200px");
+		setWidth("21.25em");
+		setHeight("12.5em");
 		
 		// gridLayout_cardInfo
 		gridLayout_cardInfo = buildGridLayout_cardInfo();
@@ -644,8 +642,8 @@ public class CardView extends CustomComponent {
 		// common part: create layout
 		gridLayout_cardInfo = new GridLayout();
 		gridLayout_cardInfo.setImmediate(false);
-		gridLayout_cardInfo.setWidth("340px");
-		gridLayout_cardInfo.setHeight("35px");
+		gridLayout_cardInfo.setWidth("21.25em");
+		gridLayout_cardInfo.setHeight("2.188em");
 		gridLayout_cardInfo.setMargin(false);
 		gridLayout_cardInfo.setColumns(6);
 		
@@ -654,11 +652,13 @@ public class CardView extends CustomComponent {
 		cardType.setImmediate(false);
 		cardType.setWidth("-1px");
 		cardType.setHeight("-1px");
+		cardType.setValue("Label");
 		gridLayout_cardInfo.addComponent(cardType, 0, 0);
 		gridLayout_cardInfo.setComponentAlignment(cardType, new Alignment(48));
 		
 		// user
 		user = new Link();
+		user.setCaption("Link");
 		user.setImmediate(false);
 		user.setWidth("-1px");
 		user.setHeight("-1px");
@@ -670,6 +670,7 @@ public class CardView extends CustomComponent {
 		date.setImmediate(false);
 		date.setWidth("-1px");
 		date.setHeight("-1px");
+		date.setValue("Label");
 		gridLayout_cardInfo.addComponent(date, 2, 0);
 		gridLayout_cardInfo.setComponentAlignment(date, new Alignment(34));
 		
@@ -678,6 +679,7 @@ public class CardView extends CustomComponent {
 		voteCount.setImmediate(false);
 		voteCount.setWidth("-1px");
 		voteCount.setHeight("-1px");
+		voteCount.setValue("Label");
 		gridLayout_cardInfo.addComponent(voteCount, 3, 0);
 		gridLayout_cardInfo.setComponentAlignment(voteCount, new Alignment(34));
 		
@@ -691,8 +693,8 @@ public class CardView extends CustomComponent {
 		nativeButton_favorite = new NativeButton();
 		nativeButton_favorite.setCaption("NativeButton");
 		nativeButton_favorite.setImmediate(true);
-		nativeButton_favorite.setWidth("35px");
-		nativeButton_favorite.setHeight("35px");
+		nativeButton_favorite.setWidth("2.188em");
+		nativeButton_favorite.setHeight("2.188em");
 		gridLayout_cardInfo.addComponent(nativeButton_favorite, 5, 0);
 		gridLayout_cardInfo.setComponentAlignment(nativeButton_favorite,
 				new Alignment(33));
@@ -705,24 +707,24 @@ public class CardView extends CustomComponent {
 		// common part: create layout
 		voteContainer = new VerticalLayout();
 		voteContainer.setImmediate(false);
-		voteContainer.setWidth("25px");
-		voteContainer.setHeight("35px");
+		voteContainer.setWidth("1.563em");
+		voteContainer.setHeight("2.188em");
 		voteContainer.setMargin(false);
 		
 		// nativeButton_upvote
 		nativeButton_upvote = new NativeButton();
 		nativeButton_upvote.setCaption("NativeButton");
 		nativeButton_upvote.setImmediate(true);
-		nativeButton_upvote.setWidth("20px");
-		nativeButton_upvote.setHeight("15px");
+		nativeButton_upvote.setWidth("1.25em");
+		nativeButton_upvote.setHeight("0.938em");
 		voteContainer.addComponent(nativeButton_upvote);
 		
 		// nativeButton_downvote
 		nativeButton_downvote = new NativeButton();
 		nativeButton_downvote.setCaption("NativeButton");
 		nativeButton_downvote.setImmediate(true);
-		nativeButton_downvote.setWidth("20px");
-		nativeButton_downvote.setHeight("15px");
+		nativeButton_downvote.setWidth("1.25em");
+		nativeButton_downvote.setHeight("0.938em");
 		voteContainer.addComponent(nativeButton_downvote);
 		
 		return voteContainer;

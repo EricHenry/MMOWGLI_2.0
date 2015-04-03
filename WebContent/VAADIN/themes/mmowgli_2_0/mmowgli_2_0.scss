@@ -107,7 +107,7 @@
 	//Top Bar
 	.v-customcomponent-topbar{
 	  	background-color: #CCCCCC;
-	  	border-bottom: 2px solid #949494;
+	  	border-bottom: 0.125em solid #949494;
 	}
 
 /* --------------- HOME PAGE SIDE BAR --------------- */
@@ -117,28 +117,39 @@
 	}
   
   	.v-slot-borderless {
-	  	height: 80px; 
+	  	height: 5.000em; 
 	}
   
 	.v-horizontallayout-userLayout {
 	  	text-align:center;
 	  	border: 0;
 	  	background-color: #CCCCCC;
- 	 	padding-top: 20px;
+ 	 	padding-top: 1.250em;
   	}
 
 /* --------------- VIDEO DISPLAYER DROPDOWN --------------- */
 
 	.v-nativebutton-videoDisplay {
 		border: 0px;
-		border-radius: 20px;
+		border-radius: 1.250em;
 		text-align: center;
-  		height: 20px;
+  		height: 1.250em;
   		background-color: #CCCCCC;
 	}
 	
 	.videoDisplay .v-icon{	//THIS HANDLES THE CHILD CLASS OF THE VIDEO DISPLAY BUTTON
-  		padding-bottom: 11px;
+  		padding-bottom: 0.688em;
+	}
+	
+	.v-label-videoDescription {
+		word-wrap: break-word; /* IE  */
+		 /* white-space: -moz-pre-wrap;Firefox */
+		 white-space: normal;
+		 text-align: left;
+	}
+	
+	.v-label-videoTitle {
+	
 	}
 
 /* --------------- GAME UPDATER --------------- */
@@ -146,93 +157,93 @@
   //Updater Button stylings
   	.v-nativebutton-counter {
 	  	border: 0px;
-	  	border-radius: 25px;
+	  	border-radius: 1.563em;
   		background-color: rgb(236,157,186);
   		color: #4D51AC;
   	}
   
   	.v-nativebutton-expand {
 	  	border: 0px;
- 	 	border-radius: 25px;
+ 	 	border-radius: 1.563em;
 	  	background-color: rgb(250,207,156);
   		color: #4D51AC;
  	 }
   
   	.v-nativebutton-adapt {
   		border: 0px;
-  		border-radius: 25px;
+  		border-radius: 1.563em;
   		background-color: rgb(133,209,241);
   		color: #4D51AC;
   	}
   
 	.v-nativebutton-explore {
 	  	border: 0px;
-	  	border-radius: 25px;
+	  	border-radius: 1.563em;
 	  	background-color: rgb(219,233,154);
 	  	color: #4D51AC;
 	}
 	
   //Custom Component Stylings
 	.v-customcomponent-updateBorders{
-  		border-right: 3px solid #7E7FB5;
+  		border-right: 0.188em solid #7E7FB5;
 	}
 
 /* --------------- CARD EXPLORER --------------- */
 
-  //Card Top Bar Styling
+  //Card size styling
 	.v-slot-cardTypeExpand {
-  		border-top-right-radius:17px;
-  		border-top-left-radius: 17px;
+  		border-top-right-radius:1.063em;
+  		border-top-left-radius: 1.063em;
   		border:0;
   		background-color: #F79E3A;
 	}
   
 	.v-slot-cardTypeCounter {
-  		border-top-right-radius:17px;
-  		border-top-left-radius: 17px;
+  		border-top-right-radius:1.063em;
+  		border-top-left-radius: 1.063em;
   		border:0;
   		background-color: #D51C5B;
 	}
   
 	.v-slot-cardTypeAdapt {
-  		border-top-right-radius:17px;
-  		border-top-left-radius: 17px;
+  		border-top-right-radius:1.063em;
+  		border-top-left-radius: 1.063em;
   		border:0;
   		background-color: #09A5E4;
 	}
   
 	.v-slot-cardTypeExplore {
-  		border-top-right-radius:17px;
-  		border-top-left-radius: 17px;
+  		border-top-right-radius:1.063em;
+  		border-top-left-radius: 1.063em;
   		border:0;
   		background-color: #B8D438;
 	}
   
   //mini cards
     .v-slot-cardTypeExpandMini {
-  		border-top-right-radius:17px;
-  		border-top-left-radius: 17px;
+  		border-top-right-radius:1.063em;
+  		border-top-left-radius: 1.063em;
   		border:0;
   		background-color: #F79E3A;
 	}
   
 	.v-slot-cardTypeCounterMini {
-  		border-top-right-radius:17px;
-  		border-top-left-radius: 17px;
+  		border-top-right-radius:1.063em;
+  		border-top-left-radius: 1.063em;
   		border:0;
   		background-color: #D51C5B;
 	}
   
 	.v-slot-cardTypeAdaptMini {
-  		border-top-right-radius:17px;
-  		border-top-left-radius: 17px;
+  		border-top-right-radius:1.063em;
+  		border-top-left-radius: 1.063em;
   		border:0;
   		background-color: #09A5E4;
 	}
   
 	.v-slot-cardTypeExploreMini {
-		border-top-right-radius:17px;
-		border-top-left-radius: 17px;
+		border-top-right-radius:1.063em;
+		border-top-left-radius: 1.063em;
 		border:0;
 		background-color: #B8D438;
 	}
@@ -240,7 +251,7 @@
 	.v-nativebutton-cardTextMini {
 		border:0 none;
 		background: transparent;
-		font-size: 13px;
+		font-size: 0.813em;
 		font-weight: none;  
 	}
 
@@ -268,34 +279,36 @@
 	}
   
 	.cardButtons .v-icon{	//THIS HANDLES THE CHILD CLASS OF THE VOTE BUTTON
-  		padding-bottom: 15px;
+  		padding-bottom: 0.938em;
 	}
   
   //Top Bar Labels and links
 	.v-label-center {
-  		padding-top: 5px;
+  		padding-top: 0.313em;
   		font-weight: bold;
 	}
   
 	.v-link-center {
-  		padding-top: 5px;
+  		padding-top: 0.313em;
   		font-weight: bold;
 	}
   
-	.v-slot-cardVotes {
-  		color: red;
-  		border: 0px;
-		border-radius: 15px;
-		background-color: white;
-		padding-top: 5px;
-  		font-weight: bold;
+	.v-label-cardVotes {
+  		color: #890606;
+		border: 0px none;
+		background-color: #FFF;
+		font-weight: bold;
+		margin-top: 0.188em;
+		padding-left: 0.188em;
+		border-radius: 0.625em;
+		padding-right: 0.188em;
 	}
 	
   //Card Borders
 	.v-slot-cardText {
-  		border-left: 1px solid #949494;
-  		border-right: 1px solid #949494;
-  		border-top: 1px solid #949494;
+  		border-left: 0.063em solid #949494;
+  		border-right: 0.063em solid #949494;
+  		border-top: 0.063em solid #949494;
 	}
   
 	.v-nativebutton-cardText {
@@ -304,10 +317,10 @@
 	}
   
 	.v-slot-cardBottom {
-  		border-left: 1px solid #949494;
-  		border-right: 1px solid #949494;
-  		border-bottom: 1px solid #949494;
-  		padding-bottom: 5px;
+  		border-left: 0.063em solid #949494;
+  		border-right: 0.063em solid #949494;
+  		border-bottom: 0.063em solid #949494;
+  		padding-bottom: 0.313em;
 	}
 
 /* --------------- FOOTER --------------- */
