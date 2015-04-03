@@ -24,6 +24,10 @@ public class Card
 	public int parent;			//Holds the ID of the card's parent
 	public int votes;			//Holds the card's total number of votes
 	public Timestamp time; 		//The date and time the card was created
+
+	//NEED TO KNOW IF THE CARD IS FAVORITED BY USER
+	//IF IT HAS BEEN FAVORTIED THEN FAVORITE == 1  ??
+	public int favorite; 
 	
 	/*
 	 * Card - takes in all of the variables for the object as parameters
