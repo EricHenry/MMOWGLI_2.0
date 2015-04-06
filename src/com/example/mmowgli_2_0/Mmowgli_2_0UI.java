@@ -22,11 +22,6 @@ import com.vaadin.ui.Window;
 @Theme("mmowgli_2_0")
 public class Mmowgli_2_0UI extends UI {
 	
-	private FilesystemContainer doc = new FilesystemContainer(new File("C:\\Users\\Kilsuf"));
-	private Table doclist = new Table("Documents", doc);
-	private DocEditor docView = new DocEditor();
-
-	
 	//Windows
 	private HorizontalLayout content = new HorizontalLayout();
 	private Panel mainWindow = new Panel();
@@ -59,17 +54,17 @@ public class Mmowgli_2_0UI extends UI {
 		//split.setExpandRatio(homePage, 1.0f);
 		
 		//Event Handler
-		doclist.addValueChangeListener(new ValueChangeListener() {
-			@Override
-			public void valueChange(
-					com.vaadin.data.Property.ValueChangeEvent event) {
-				// TODO Auto-generated method stub
-				//display the data once it is chosen by the doclist
-				docView.setPropertyDataSource(new TextFileProperty((File) event.getProperty().getValue()));
-
-			}
-
-		});
+//		doclist.addValueChangeListener(new ValueChangeListener() {
+//			@Override
+//			public void valueChange(
+//					com.vaadin.data.Property.ValueChangeEvent event) {
+//				// TODO Auto-generated method stub
+//				//display the data once it is chosen by the doclist
+//				docView.setPropertyDataSource(new TextFileProperty((File) event.getProperty().getValue()));
+//
+//			}
+//
+//		});
 		//Send events after choosing the file to show
 		//doclist.setImmediate(true);
 		
