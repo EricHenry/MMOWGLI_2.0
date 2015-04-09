@@ -1,3 +1,10 @@
+/**
+ * @Author: Eric H Correia
+ *
+ * This class creates 
+ * 
+ */
+
 package com.example.mmowgli_2_0;
 
 import com.example.mmowgli_explore.CardExplorationView;

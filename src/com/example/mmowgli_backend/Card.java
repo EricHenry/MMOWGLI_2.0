@@ -10,6 +10,8 @@
  * 
  */
 
+
+
 package com.example.mmowgli_backend;
 
 import java.sql.Timestamp;
@@ -24,7 +26,7 @@ public class Card
 	public int parent;			//Holds the ID of the card's parent
 	public int votes;			//Holds the card's total number of votes
 	public Timestamp time; 		//The date and time the card was created
-
+	
 	//NEED TO KNOW IF THE CARD IS FAVORITED BY USER
 	//IF IT HAS BEEN FAVORTIED THEN FAVORITE == 1  ??
 	public int favorite; 
@@ -42,6 +44,23 @@ public class Card
 	    parent = par;
 	    votes = vote;
 	    time = t;
+	}
+	
+	/*
+	 * Card - this alternate constructor method creates a blank card object.
+	 */
+	public Card ()
+	{
+		java.util.Date now = new java.util.Date();
+		Timestamp timeNow = new java.sql.Timestamp(now.getTime());
+		
+		cardId = 0;
+	    playerId = 0;
+	    textUser = "";
+	    cardType = "Blank";
+	    parent = 0;
+	    votes = 0;
+	    time = timeNow;
 	}
 
 }
