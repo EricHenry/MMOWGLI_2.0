@@ -116,4 +116,24 @@ public class CardList
 		return frontCard;
 	}
 	
+    /*
+	 * getEndTag - removes the first node in the list and returns a String with the values
+
+	 * contained in the first node.
+	 */
+	public Card getEndCard()
+	{
+		if(isEmpty())
+		{
+			throw new NoSuchElementException();
+		}
+		
+		Card backCard = back.prev.item;
+		back.prev = back.prev.prev;
+        back.prev.next = back;
+		numElements--;
+		
+		return backCard;
+	}
+	
 }

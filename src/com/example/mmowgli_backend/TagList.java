@@ -116,6 +116,26 @@ public class TagList
 		
 		return frontTag;
 	}
+
+        /*
+	 * getEndTag - removes the first node in the list and returns a String with the values
+
+	 * contained in the first node.
+	 */
+	public String getEndTag()
+	{
+		if(isEmpty())
+		{
+			throw new NoSuchElementException();
+		}
+		
+		String backTag = back.prev.item;
+		back.prev = back.prev.prev;
+                back.prev.next = back;
+		numElements--;
+		
+		return backTag;
+	}
 	
 	/*
 	 * checkTagExists - returns true if the tag is in the list and false if it is not

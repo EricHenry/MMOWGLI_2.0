@@ -437,7 +437,7 @@ public class MmowgliDB
 			/** A variable is set to hold the results of the query */
 			int parentCardId = results.getInt(1);
 			
-			/** If the parent card Id is 0, then this is a root car that has no parent */
+			/** If the parent card Id is 0, then this is an idea card that has no parent */
 			if (parentCardId == 0)
 			{
 				return null;
@@ -469,17 +469,18 @@ public class MmowgliDB
 		/** Creates a card object to hold the value of the returned current card */
 		Card currentCard = oneCardQuery(idNum);
 		
-		/** If there is no parent because the passed in card is a root card
+
+		/** If there is no parent because the passed in card is an Idea card
 		 * then the function simply returns an empty list.
 		 */
-		if(currentCard.cardType.equals("Root1") || currentCard.cardType.equals("Root2"))
+		if(currentCard.parent == 0)
 		{
 			return allParents;
 		}
 		else
 		{
 			/** The while loop continues until a root card is found */
-			while(!currentCard.cardType.equals("Root") && !currentCard.cardType.equals("Root"))
+			while(!(currentCard.parent == 0))
 			{
 				/** A card object is set to hold the value of the parent */
 				Card parentCard = parentCardQuery(tempId);
@@ -1106,7 +1107,7 @@ public class MmowgliDB
 		Connection conn = null;
 		
 		/**Checks first to see if the card is a valid type */
-		if(card.cardType.equals("Root1") || card.cardType.equals("Root2") || card.cardType.equals("Expand") || card.cardType.equals("Adapt") || card.cardType.equals("Counter") || card.cardType.equals("Explore"))
+		if(card.cardType.equals("Idea1") || card.cardType.equals("Idea2") ||card.cardType.equals("Root1") || card.cardType.equals("Root2") || card.cardType.equals("Expand") || card.cardType.equals("Adapt") || card.cardType.equals("Counter") || card.cardType.equals("Explore"))
 		{
 			
 			/**Hard-coded query - to insert the new card into the database */
