@@ -143,8 +143,10 @@ public class HomePage extends CustomComponent {
 				String currentTag = topTags.getTag();
 				
 				//create a tag
-				Link tag = new Link();
+				NativeButton tag = new NativeButton();
+				tag.setId(currentTag);
 				tag.setCaption(index + ".) " + currentTag);
+				setUpdaterTagListener(tag);
 				
 				//insert the tag into the display
 				homePageUpdates.getTrendingTags().getLink_container().addComponent(tag, column, row);
@@ -259,8 +261,10 @@ public class HomePage extends CustomComponent {
 				String currentTag = topTags.getTag();
 				
 				//create a tag
-				Link tag = new Link();
+				NativeButton tag = new NativeButton();
+				tag.setId(currentTag);
 				tag.setCaption(index + ".) " + currentTag);
+				setUpdaterTagListener(tag);
 				
 				//insert the tag into the display
 				homePageUpdates.getPopularTags().getLink_container().addComponent(tag, column, row);
@@ -283,6 +287,10 @@ public class HomePage extends CustomComponent {
 	}
 
 
+	/**
+	 * 
+	 * @param baseCard
+	 */
 	public void setUpdaterButtonListener(BaseCardView baseCard){
 		
 		baseCard.getNativeButton_text().addClickListener(new NativeButton.ClickListener(){
@@ -295,13 +303,42 @@ public class HomePage extends CustomComponent {
 				try {
 					Card data = MmowgliDB.oneCardQuery(Integer.parseInt(baseCard.getCardId()));
 					
-					//CardView newCard = MmowgliDB.createCardView(data);
-					
 					cardExplorationView.setNewChosenCard(data);
 					
 				} catch (NumberFormatException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+		});
+	}
+	
+	/**
+	 * 
+	 * @param tag
+	 */
+	public void setUpdaterTagListener(NativeButton tag){
+		
+		tag.addClickListener(new NativeButton.ClickListener(){
+			
+			@Override
+			public void buttonClick(ClickEvent event){
+				//TODO add a popup window to add a card.
+				
+				//get card data list from database
+				try {
+					CardList data = MmowgliDB.taggedCardsQuery(tag.getId());
+					
+					//clear the card explorer
+					cardExplorationView.clearExplorationView();
+					
+					//display the tagged cards
+					cardExplorationView.displayCardList(data, cardExplorationView.getVerticalLayout_mainView());
+					
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
