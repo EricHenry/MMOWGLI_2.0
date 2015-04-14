@@ -295,9 +295,9 @@ public class HomePage extends CustomComponent {
 				try {
 					Card data = MmowgliDB.oneCardQuery(Integer.parseInt(baseCard.getCardId()));
 					
-					CardView newCard = MmowgliDB.createCardView(data);
+					//CardView newCard = MmowgliDB.createCardView(data);
 					
-					cardExplorationView.setNewChosenCard(newCard);
+					cardExplorationView.setNewChosenCard(data);
 					
 				} catch (NumberFormatException e) {
 					// TODO Auto-generated catch block

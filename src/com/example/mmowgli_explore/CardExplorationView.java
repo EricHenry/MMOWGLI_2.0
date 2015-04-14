@@ -151,15 +151,20 @@ public class CardExplorationView extends CustomComponent {
 		//create random cards
 		createRandomCards();
 		
-		//set different background colors for cards
-		initCards();
-		initChildCards();
-		initHistoryCards();
-		
 		//Initiate card for testing
-		currentChosenCard= new CardView((CardView)verticalLayout_mainView.getComponent(4));
-		currentChosenCard.expandCardView();
-		currentChosenCard.removeTransparency();
+		try {
+			currentChosenCard = MmowgliDB.createCardView(MmowgliDB.oneCardQuery(5));
+			//currentChosenCard.expandCardView();
+			//currentChosenCard.removeTransparency();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//set different background colors for cards
+		displayCardList(topcards, verticalLayout_mainView);
+		displayCardList(cardsToChildView, verticalLayout_childView);
+		displayCardList(cardsToHistoryView, verticalLayout_historyView);
 
 		//search button
 		nativeButton_search.setCaption(null);
@@ -198,71 +203,6 @@ public class CardExplorationView extends CustomComponent {
 		}
 	}
 	
-	/**
-	 * Initialize Cards that need to be added to the Main View of the Card Explorer
-	 * 	Should only be used after a query is made to get the corresponding CardList 
-	 * 	from the database.
-	 */
-	private void initCards(){
-		
-		//while(cardsToMainView.size() > 0){
-		while(topcards.size() > 0){
-			
-			//get the current first node of the card list
-			//Card currentCardData = cardsToMainView.getCard();
-			Card currentCardData = topcards.getCard();
-			
-			//create a new card view using the card data.
-			CardView newCard = MmowgliDB.createCardView(currentCardData);
-			//newCard.setCardType(cardType);
-			
-			//add card to the component
-			verticalLayout_mainView.addComponent(newCard);	
-			
-			styleCardView(verticalLayout_mainView, newCard);
-		}
-	}
-	
-	public void initChildCards(){
-
-		while(cardsToChildView.size() > 0){
-			
-			//System.out.println("init cards: " + i);
-			
-			//get the current first node of the card list
-			Card currentCardData = cardsToChildView.getCard();
-			
-			//create a new card view using the card data.
-			CardView newCard = MmowgliDB.createCardView(currentCardData);
-			//newCard.setCardType(cardType);	
-			
-			//add card to the component
-			verticalLayout_childView.addComponent(newCard);	
-			
-			styleCardView(verticalLayout_childView, newCard);
-
-		}
-	}
-	
-	public void initHistoryCards(){
-		while(cardsToHistoryView.size() > 0){
-			
-			//System.out.println("init cards: " + i);
-			
-			//get the current first node of the card list
-			Card currentCardData = cardsToHistoryView.getCard();
-			
-			//create a new card view using the card data.
-			CardView newCard = MmowgliDB.createCardView(currentCardData);
-			//newCard.setCardType(cardType);
-			
-			//add card to the component
-			verticalLayout_historyView.addComponent(newCard);
-			
-			styleCardView(verticalLayout_historyView, newCard);
-		}
-		
-	}
 	
 	/**
 	 * This method removes all the cards in the exploration view
@@ -277,17 +217,16 @@ public class CardExplorationView extends CustomComponent {
 	/**
 	 * This method allows you to set 
 	 */
-	public void setNewChosenCard(CardView card){
+	public void setNewChosenCard(Card cardData){
 		//clear the views
 		clearExplorationView();
 		
-		//set the card as the new current card
-		currentChosenCard = new CardView(card);
-		
+		//set the card as the new current card and display it
+		currentChosenCard = MmowgliDB.createCardView(cardData);;
 		
 		//get the cards children and display them
 		try {
-			CardList children = MmowgliDB.allChildrenQuery(Integer.parseInt(card.getCardId()));
+			CardList children = MmowgliDB.allChildrenQuery(cardData.cardId);
 			displayCardList(children, verticalLayout_childView);
 			
 		} catch (SQLException e) {
@@ -297,7 +236,7 @@ public class CardExplorationView extends CustomComponent {
 		
 		//get the main cards and display them
 		try {
-			CardList main = MmowgliDB.allSiblingQuery(Integer.parseInt(card.getCardId()));
+			CardList main = MmowgliDB.allSiblingQuery(cardData.cardId);
 			displayCardList(main, verticalLayout_mainView);
 					
 		} catch (SQLException e) {
@@ -306,7 +245,7 @@ public class CardExplorationView extends CustomComponent {
 		
 		//get the history cards and display them
 		try {
-			CardList history = MmowgliDB.allParentQuery(Integer.parseInt(card.getCardId()));
+			CardList history = MmowgliDB.allParentQuery(cardData.cardId);
 			displayCardList(history, verticalLayout_historyView);
 			
 			
@@ -317,6 +256,12 @@ public class CardExplorationView extends CustomComponent {
 		
 	}
 	
+	/**
+	 * This method takes in a list of card data and displays it to the card explorer
+	 * 
+	 * @param currentList	-> List of card data
+	 * @param toDisplay		-> which view to add the card views to.
+	 */
 	private void displayCardList(CardList currentList, VerticalLayout toDisplay){
 		while(currentList.size() > 0){
 			
@@ -325,12 +270,17 @@ public class CardExplorationView extends CustomComponent {
 			
 			//create a new card view using the card data.
 			CardView newCard = MmowgliDB.createCardView(currentCardData);
-			//newCard.setCardType(cardType);	
 			
 			//add card to the component
 			toDisplay.addComponent(newCard);	
-			
 			styleCardView(toDisplay, newCard);
+			
+			//if the chosen card is equal to the current card in the list of data
+			//	then display the card
+			if(newCard.getCardId().equalsIgnoreCase(currentChosenCard.getCardId())){
+				newCard.expandCardView();
+				newCard.removeTransparency();
+			}
 
 		}
 	}
