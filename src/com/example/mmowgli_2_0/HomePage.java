@@ -297,14 +297,13 @@ public class HomePage extends CustomComponent {
 			
 			@Override
 			public void buttonClick(ClickEvent event){
-				//TODO add a popup window to add a card.
 				
 				//get card data from database
 				try {
 					Card data = MmowgliDB.oneCardQuery(Integer.parseInt(baseCard.getCardId()));
 					
 					cardExplorationView.setNewChosenCard(data);
-					
+				
 				} catch (NumberFormatException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -327,7 +326,6 @@ public class HomePage extends CustomComponent {
 			
 			@Override
 			public void buttonClick(ClickEvent event){
-				//TODO add a popup window to add a card.
 				
 				//get card data list from database
 				try {
@@ -335,6 +333,8 @@ public class HomePage extends CustomComponent {
 					
 					//clear the card explorer
 					cardExplorationView.clearExplorationView();
+					
+					cardExplorationView.setDisplayingHistory(false);
 					
 					//display the tagged cards
 					cardExplorationView.displayCardList(data, cardExplorationView.getVerticalLayout_mainView());

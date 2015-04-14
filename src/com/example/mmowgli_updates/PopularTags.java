@@ -41,8 +41,7 @@ public class PopularTags extends CustomComponent {
 		setCompositionRoot(mainLayout);
 
 		// TODO add user code here
-		//gridLayout_2.setRowExpandRatio(rowIndex, ratio);
-		//initPopularTags();
+
 	}
 	
 	public GridLayout getLink_container() {

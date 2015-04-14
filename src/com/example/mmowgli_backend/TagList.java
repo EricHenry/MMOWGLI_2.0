@@ -1,7 +1,8 @@
 /*
  * Program Name: TagList.java
  * Author: Youssef Rizk
- * Date Modified: 3/28/15
+ * Date Created: 3/28/15
+ * Date Modified: 4/14/15
  * 
  * This class creates a basic Doubly-Linked List that holds a string within each node.
  * The list can perform basic functions such as adding a node to the end of the list,
@@ -114,6 +115,29 @@ public class TagList
 		numElements--;
 		
 		return frontTag;
+	}
+	
+	/*
+	 * checkTagExists - returns true if the tag is in the list and false if it is not
+	 */
+	public boolean checkTagExists(String tag)
+	{
+		if(isEmpty())
+		{
+			return false;
+		}
+		
+		Node trav = front;
+
+		while(trav != null)
+		{
+			if(tag.equals(trav.item))
+			{
+				return true;
+			}
+			trav = trav.next;
+		}
+		return false;
 	}
 	
 }

@@ -113,11 +113,10 @@ public class MmowgliDB
 			connectionProps.put("user", userName);
 			connectionProps.put("password", password);
 			
-			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-			
 			/** The connection to the database is established by forming the
 			 * url address using the private variables set in the header of the class.
 			 */
+			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			conn = DriverManager.getConnection("jdbc:mysql://"
 					+ serverName + ":" + portNumber + "/" + dbName,
 					connectionProps);
@@ -139,6 +138,7 @@ public class MmowgliDB
 		try
 		{
 			conn.close();
+			conn = null;
 		}
 		catch (Exception e) 
 		{
@@ -1102,11 +1102,12 @@ public class MmowgliDB
 	 */
 	public static boolean addCardQuery(Card card) throws SQLException
 	{
+		/**Connection object created */
+		Connection conn = null;
+		
 		/**Checks first to see if the card is a valid type */
 		if(card.cardType.equals("Root1") || card.cardType.equals("Root2") || card.cardType.equals("Expand") || card.cardType.equals("Adapt") || card.cardType.equals("Counter") || card.cardType.equals("Explore"))
 		{
-			/**Connection object created */
-			Connection conn = null;
 			
 			/**Hard-coded query - to insert the new card into the database */
 			String query = ""
@@ -1122,11 +1123,17 @@ public class MmowgliDB
 			
 			/** The query is executed to add the card */
 			stmnt.executeUpdate(query);
+			stmnt.close();
+			stmnt = null;
 			
+			/** The connection is closed before returning */
+			closeConnection(conn);
 			return true;
 		}
 		else //insertion failed
 		{
+			/** The connection is closed before returning */
+			closeConnection(conn);
 			return false;
 		}
 		
@@ -1167,6 +1174,11 @@ public class MmowgliDB
 			/** The Result Set is initialized and set to receive the returned query results */
 			update = stmnt.executeUpdate(query);
 		}
+		stmnt.close();
+		stmnt = null;
+		
+		/** The connection is closed before returning */
+		closeConnection(conn);
 
 		/** a 1 means the query execution was successful */
 		if(update == 1)
@@ -1234,6 +1246,9 @@ public class MmowgliDB
 		
 		/** The query is executed */
 		int update = stmnt.executeUpdate(query);
+		
+		/** The connection is closed before returning */
+		closeConnection(conn);
 
 		/** a 1 means the query execution was successful */
 		if(update == 1)
@@ -1350,6 +1365,9 @@ public class MmowgliDB
 		
 		/** The second query is executed */
 		int update2 = stmnt.executeUpdate(query2);
+		
+		/** The connection is closed before returning */
+		closeConnection(conn);
 
 		/** a 1 means the query execution was successful */
 		if(update1 == 1 && update2 == 1)
@@ -1392,6 +1410,9 @@ public class MmowgliDB
 			
 			/** The query is executed */
 			int update = stmnt.executeUpdate(query);
+			
+			/** The connection is closed before returning */
+			closeConnection(conn);
 
 			/** a 1 means the query execution was successful */
 			if(update == 1)
@@ -1467,6 +1488,9 @@ public class MmowgliDB
 			
 		/** The query is executed */
 		int update = stmnt.executeUpdate(query);
+		
+		/** The connection is closed before returning */
+		closeConnection(conn);
 
 		/** a 1 means the query execution was successful */
 		if(update == 1)
@@ -1506,6 +1530,9 @@ public class MmowgliDB
 		/** The query is executed to delete the card */
 		int update = stmnt.executeUpdate(query);
 		
+		/** The connection is closed before returning */
+		closeConnection(conn);
+		
 		if(update == 0 )
 		{
 			return true;
@@ -1538,6 +1565,9 @@ public class MmowgliDB
 		/** The query is executed to delete the tags from a certain card */
 		int update = stmnt.executeUpdate(query);
 		
+		/** The connection is closed before returning */
+		closeConnection(conn);
+		
 		if(update == 0 )
 		{
 			return true;
@@ -1569,6 +1599,9 @@ public class MmowgliDB
 		
 		/** The query is executed */
 		int update = stmnt.executeUpdate(query);
+		
+		/** The connection is closed before returning */
+		closeConnection(conn);
 		
 		/** a 0 means the query execution was successful */
 		if(update == 0)
@@ -1614,6 +1647,9 @@ public class MmowgliDB
 			/** The query is executed */
 			int update = stmnt.executeUpdate(query);
 			
+			/** The connection is closed before returning */
+			closeConnection(conn);
+			
 			/** a 0 means the query execution was successful */
 			if(update == 0)
 			{
@@ -1648,6 +1684,9 @@ public class MmowgliDB
 		
 		/** The query is executed */
 		int update = stmnt.executeUpdate(query);
+		
+		/** The connection is closed before returning */
+		closeConnection(conn);
 		
 		/** a 0 means the query execution was successful */
 		if(update == 0)
@@ -1697,6 +1736,9 @@ public class MmowgliDB
 		int update3 = stmnt.executeUpdate(query3);
 		int update4 = stmnt.executeUpdate(query4);
 		int update5 = stmnt.executeUpdate(query5);
+		
+		/** The connection is closed before returning */
+		closeConnection(conn);
 			
 		/** a 1 means the query execution was successful */
 		if(update1 == 0 && update2 == 0 && update3 == 0 && update4 == 0 && update5 == 0)
