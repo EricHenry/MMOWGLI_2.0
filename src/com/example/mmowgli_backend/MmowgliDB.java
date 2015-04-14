@@ -10,8 +10,17 @@
 
 package com.example.mmowgli_backend;
 
-import java.sql.*;
-import java.util.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Properties;
+
+import com.example.mmowgli_explore.CardView;
+import com.example.mmowgli_updates.BaseCardView;
 
 
 public class MmowgliDB 
@@ -40,6 +49,49 @@ public class MmowgliDB
 	
 	/** The number of top tag results to return */
 	private static int topTags = 15;
+	
+	/**
+	 * *********************** HELPER METHODS ADDED BY ERIC ***********************
+	 */
+	
+	/**
+	 * This method translates a Card object to a CardView Object
+	 * @param cardData	-> Card from database
+	 * @return			-> CardView with card Information
+	 */
+	public static CardView createCardView(Card cardData){
+		
+		//get the current card data
+		String id = Integer.toString(cardData.cardId);
+		String pId = Integer.toString(cardData.playerId);
+		String cardText = cardData.textUser;
+		String cardType = cardData.cardType;
+		String parent = Integer.toString(cardData.parent);
+		String votes = Integer.toString(cardData.votes);
+		String date = new SimpleDateFormat("MM/dd/yyyy").format(cardData.time.getDate());
+		
+		return new CardView(id, pId, cardText, cardType, parent, votes, date);
+		
+	}
+	
+	/**
+	 * This method translates a Card object to a BaseCardView Object
+	 * @param cardData	-> Card from database
+	 * @return			-> BaseCardView with card Information
+	 */
+	public static BaseCardView createBaseCardView(Card cardData){
+		
+		//get the current card data
+		String id = Integer.toString(cardData.cardId);
+		String pId = Integer.toString(cardData.playerId);
+		String cardText = cardData.textUser;
+		String cardType = cardData.cardType;
+		String date = new SimpleDateFormat("MM/dd/yyyy").format(cardData.time.getDate());
+		
+		//create a new card view using the card data.
+		return new BaseCardView(id, pId, cardText, cardType, date);
+
+	}
 	
 	/**
 	 * *********************** HELPER METHODS BELOW ***********************

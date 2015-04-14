@@ -212,18 +212,9 @@ public class CardExplorationView extends CustomComponent {
 			//Card currentCardData = cardsToMainView.getCard();
 			Card currentCardData = topcards.getCard();
 			
-			//get the current card data
-			String id = Integer.toString(currentCardData.cardId);
-			String pId = Integer.toString(currentCardData.playerId);
-			String cardText = currentCardData.textUser;
-			String cardType = currentCardData.cardType;
-			String parent = Integer.toString(currentCardData.parent);
-			String votes = Integer.toString(currentCardData.votes);
-			String date = new SimpleDateFormat("MM/dd/yyyy").format(currentCardData.time.getDate());
-			
 			//create a new card view using the card data.
-			CardView newCard = new CardView(id, pId, cardText, cardType, parent, votes, date);
-			newCard.setCardType(cardType);
+			CardView newCard = MmowgliDB.createCardView(currentCardData);
+			//newCard.setCardType(cardType);
 			
 			//add card to the component
 			verticalLayout_mainView.addComponent(newCard);	
@@ -241,18 +232,9 @@ public class CardExplorationView extends CustomComponent {
 			//get the current first node of the card list
 			Card currentCardData = cardsToChildView.getCard();
 			
-			//get the current card data
-			String id = Integer.toString(currentCardData.cardId);
-			String pId = Integer.toString(currentCardData.playerId);
-			String cardText = currentCardData.textUser;
-			String cardType = currentCardData.cardType;
-			String parent = Integer.toString(currentCardData.parent);
-			String votes = Integer.toString(currentCardData.votes);
-			String date = new SimpleDateFormat("MM/dd/yyyy").format(currentCardData.time.getDate());
-			
 			//create a new card view using the card data.
-			CardView newCard = new CardView(id, pId, cardText, cardType, parent, votes, date);
-			newCard.setCardType(cardType);	
+			CardView newCard = MmowgliDB.createCardView(currentCardData);
+			//newCard.setCardType(cardType);	
 			
 			//add card to the component
 			verticalLayout_childView.addComponent(newCard);	
@@ -270,18 +252,9 @@ public class CardExplorationView extends CustomComponent {
 			//get the current first node of the card list
 			Card currentCardData = cardsToHistoryView.getCard();
 			
-			//get the current card data
-			String id = Integer.toString(currentCardData.cardId);
-			String pId = Integer.toString(currentCardData.playerId);
-			String cardText = currentCardData.textUser;
-			String cardType = currentCardData.cardType;
-			String parent = Integer.toString(currentCardData.parent);
-			String votes = Integer.toString(currentCardData.votes);
-			String date = new SimpleDateFormat("MM/dd/yyyy").format(currentCardData.time.getDate());
-			
 			//create a new card view using the card data.
-			CardView newCard = new CardView(id, pId, cardText, cardType, parent, votes, date);
-			newCard.setCardType(cardType);	
+			CardView newCard = MmowgliDB.createCardView(currentCardData);
+			//newCard.setCardType(cardType);
 			
 			//add card to the component
 			verticalLayout_historyView.addComponent(newCard);
@@ -290,6 +263,78 @@ public class CardExplorationView extends CustomComponent {
 		}
 		
 	}
+	
+	/**
+	 * This method removes all the cards in the exploration view
+	 * 
+	 */
+	public void clearExplorationView(){
+		verticalLayout_mainView.removeAllComponents();
+		verticalLayout_childView.removeAllComponents();
+		verticalLayout_historyView.removeAllComponents();
+	}
+	
+	/**
+	 * This method allows you to set 
+	 */
+	public void setNewChosenCard(CardView card){
+		//clear the views
+		clearExplorationView();
+		
+		//set the card as the new current card
+		currentChosenCard = new CardView(card);
+		
+		
+		//get the cards children and display them
+		try {
+			CardList children = MmowgliDB.allChildrenQuery(Integer.parseInt(card.getCardId()));
+			displayCardList(children, verticalLayout_childView);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//get the main cards and display them
+		try {
+			CardList main = MmowgliDB.allSiblingQuery(Integer.parseInt(card.getCardId()));
+			displayCardList(main, verticalLayout_mainView);
+					
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		//get the history cards and display them
+		try {
+			CardList history = MmowgliDB.allParentQuery(Integer.parseInt(card.getCardId()));
+			displayCardList(history, verticalLayout_historyView);
+			
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+	
+	private void displayCardList(CardList currentList, VerticalLayout toDisplay){
+		while(currentList.size() > 0){
+			
+			//get the current first node of the card list
+			Card currentCardData = currentList.getCard();
+			
+			//create a new card view using the card data.
+			CardView newCard = MmowgliDB.createCardView(currentCardData);
+			//newCard.setCardType(cardType);	
+			
+			//add card to the component
+			toDisplay.addComponent(newCard);	
+			
+			styleCardView(toDisplay, newCard);
+
+		}
+	}
+	
 	
 	/**
 	 * 
