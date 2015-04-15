@@ -89,10 +89,6 @@
   		text-decoration: none;
   		color: #4D51AC;
   	}
-  	
-  	.v-verticallayout-white{
-   		background: none repeat scroll 0% 0% #FFF;
-   	}
   
 	.v-panel-borderless {
 		border: 0;
@@ -130,15 +126,18 @@
 /* --------------- VIDEO DISPLAYER DROPDOWN --------------- */
 
 	.v-nativebutton-videoDisplay {
-		border: 0px;
-		border-radius: 1.250em;
+		border-width: 1px 1px 0px;
+		border-style: solid solid none #949494;
+		border-color: #000 -moz-use-text-color -moz-use-text-color;
+		border-top-left-radius: 0.50em;
+		border-top-right-radius: 0.50em;
 		text-align: center;
   		height: 1.250em;
   		background-color: #CCCCCC;
 	}
 	
 	.videoDisplay .v-icon{	//THIS HANDLES THE CHILD CLASS OF THE VIDEO DISPLAY BUTTON
-  		padding-bottom: 0.688em;
+  		padding-bottom: 0.5em;
 	}
 	
 	.v-label-videoDescription {
@@ -148,45 +147,30 @@
 		 text-align: left;
 	}
 	
+	.v-verticallayout-videoBackground{
+   		background: none repeat scroll 0% 0% #CCC;
+   		border-bottom-right-radius: 0.5em;
+		border-bottom-left-radius: 0.5em;
+		border-bottom: 1px solid #949494;
+		border-right: 1px solid;
+   	}
+	
 	.v-label-videoTitle {
 	
 	}
 
 /* --------------- GAME UPDATER --------------- */
 
-  //Updater Button stylings
-  	.v-nativebutton-counter {
-	  	border: 0px;
-	  	border-radius: 1.563em;
-  		background-color: rgb(236,157,186);
-  		color: #4D51AC;
-  	}
-  
-  	.v-nativebutton-expand {
-	  	border: 0px;
- 	 	border-radius: 1.563em;
-	  	background-color: rgb(250,207,156);
-  		color: #4D51AC;
- 	 }
-  
-  	.v-nativebutton-adapt {
-  		border: 0px;
-  		border-radius: 1.563em;
-  		background-color: rgb(133,209,241);
-  		color: #4D51AC;
-  	}
-  
-	.v-nativebutton-explore {
-	  	border: 0px;
-	  	border-radius: 1.563em;
-	  	background-color: rgb(219,233,154);
-	  	color: #4D51AC;
-	}
+  //Updater grid spacing
+  .v-horizontallayout-updaterMiddleContainer .v-expand { 
+  	padding-top: 2em;
+  }
 	
   //Custom Component Stylings
 	.v-customcomponent-updateBorders{
   		border-right: 0.188em solid #7E7FB5;
 	}
+	
 	
   //Tags stylings
   	.v-nativebutton-tag{
@@ -225,6 +209,34 @@
   		border-top-left-radius: 1.063em;
   		border:0;
   		background-color: #B8D438;
+	}
+	
+	.v-slot-cardTypeRoot1 {
+  		border-top-right-radius:1.063em;
+  		border-top-left-radius: 1.063em;
+  		border:0;
+  		background-color: #005800;
+	}
+	
+	.v-slot-cardTypeRoot2 {
+  		border-top-right-radius:1.063em;
+  		border-top-left-radius: 1.063em;
+  		border:0;
+  		background-color: #00006B;
+	}
+	
+	.v-slot-cardTypeIdea1 {
+  		border-top-right-radius:1.063em;
+  		border-top-left-radius: 1.063em;
+  		border:0;
+  		background-color: #005800;
+	}
+	
+	.v-slot-cardTypeIdea2 {
+  		border-top-right-radius:1.063em;
+  		border-top-left-radius: 1.063em;
+  		border:0;
+  		background-color: #00006B;
 	}
   
   //mini cards
@@ -270,6 +282,14 @@
    		text-align: center;
 	}
 	
+  //Card explorer Panel styling
+	.v-panel-cardExplorerPanels {
+  		border: 1px solid;
+  		border-radius: 0.5em;
+		background: none repeat scroll 0% 0% #FFF;
+		text-align: center;
+	}
+	
   //Transparency
 	.v-customcomponent-transparent{
   		opacity: 0.4;
@@ -294,8 +314,19 @@
 	.v-label-center {
   		padding-top: 0.313em;
   		font-weight: bold;
+  		//color: #4D51AC;
+  		//color: #000;
+  		color: #FFF;
 	}
-  
+  	
+  	.v-label-topIdeaCard{
+  		padding-top: 0.313em;
+  		font-weight: bold;
+  		//color: #4D51AC;
+  		//color: #000;
+  		color: #FFF;
+  	}
+  	
 	.v-link-center {
   		padding-top: 0.313em;
   		font-weight: bold;
@@ -330,6 +361,64 @@
   		border-bottom: 0.063em solid #949494;
   		padding-bottom: 0.313em;
 	}
+
+/* --------------- BASE CARD VIEW --------------- */
+
+  //Updater Button stylings
+  	.v-nativebutton-counter {
+	  	border: 0px;
+	  	border-radius: 1.563em;
+  		background-color: rgb(236,157,186);
+  		//color: #4D51AC;
+  		color: #fff;
+  	}
+  
+  	.v-nativebutton-expand {
+	  	border: 0px;
+ 	 	border-radius: 1.563em;
+	  	background-color: rgb(250,207,156);
+  		//color: #4D51AC;
+  		color: #fff;
+ 	 }
+  
+  	.v-nativebutton-adapt {
+  		border: 0px;
+  		border-radius: 1.563em;
+  		background-color: rgb(133,209,241);
+  		//color: #4D51AC;
+  		color: #fff;
+  	}
+  
+	.v-nativebutton-explore {
+	  	border: 0px;
+	  	border-radius: 1.563em;
+	  	background-color: rgb(219,233,154);
+	  	//color: #4D51AC;
+  		color: #fff;
+	}
+	
+	.v-nativebutton-root1 {
+	  	border: 0px;
+	  	border-radius: 1.563em;
+	  	background-color: #005800;
+	  	//color: #4D51AC;
+  		color: #fff;
+	}
+	
+	.v-nativebutton-root2 {
+	  	border: 0px;
+	  	border-radius: 1.563em;
+	  	background-color: #00006B;
+	  	//color: #4D51AC;
+  		color: #fff;
+	}
+	
+	.v-horizontallayout-baseCardPadding {
+		padding-top: 3px;
+		padding-left: 15px;
+	}
+	
+	
 
 /* --------------- FOOTER --------------- */
   

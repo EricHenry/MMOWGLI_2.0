@@ -60,7 +60,7 @@ public class RootCards extends CustomComponent {
 
 		// TODO add user code here
 		
-		Embedded myVid = new Embedded("BlackSwan", new ExternalResource("https://youtu.be/fAfRuU78X34"));
+		//Embedded myVid = new Embedded("BlackSwan", new ExternalResource("https://youtu.be/fAfRuU78X34"));
 		
 		//Set the toggle Settings
 		initToggle();

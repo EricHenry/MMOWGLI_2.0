@@ -46,6 +46,7 @@ public class BaseCardView extends CustomComponent {
 		setCompositionRoot(mainLayout);
 
 		// TODO add user code here
+		
 	}
 	
 	/**
@@ -66,15 +67,16 @@ public class BaseCardView extends CustomComponent {
 		
 		//Set Attribute values
 		this.cardId = id;
-		nativeButton_text.setCaption(cardType + ": " + cardText);
+		nativeButton_text.setCaption(cardType + ": " + cardText.substring(0, 23) + "...");
 		//nativeButton_text.setId(id);
-		link_user.setCaption(playerId + "  ");
+		link_user.setCaption("User"+playerId);
 		link_date.setCaption(" " + date);
 		this.cardType = cardType;
 		
 		//styling
 		nativeButton_text.setStyleName(this.cardType.toLowerCase());
 		label_by.setValue(null);
+		horizontalLayout_userData.setStyleName("baseCardPadding");
 	}
 
 	public Link getLink_date() {
@@ -161,7 +163,6 @@ public class BaseCardView extends CustomComponent {
 		label_by.setImmediate(false);
 		label_by.setWidth("-1px");
 		label_by.setHeight("-1px");
-		label_by.setValue("Label");
 		horizontalLayout_userData.addComponent(label_by);
 		
 		// link_user

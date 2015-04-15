@@ -66,15 +66,11 @@ public class VideoDisplayer extends CustomComponent {
 		// TODO add user code here
 		
 		Flash myVid = new Flash(null, new ExternalResource("http://www.youtube.com/v/watch?v=fAfRuU78X34"));
-		//myVid.setAlternateText("Vaadin Eclipse Quickstart video");
-		//myVid.setType(Embedded.TYPE_OBJECT);
-		//myVid.setMimeType("application/x-shockwave-flash");
 		myVid.setParameter("allowFullScreen", "true");
 		myVid.setWidth(350.0f, Unit.PIXELS);
 		myVid.setHeight(255.0f, Unit.PIXELS);
 	    test_layout.addComponent(myVid, 0);
 		
-		//embedded_BlackSwan.setType(Embedded.TYPE_OBJECT);
 		
 		//Set the toggle Settings
 		initToggle();
@@ -91,10 +87,7 @@ public class VideoDisplayer extends CustomComponent {
 				+ "and methodically knocking people's hats off--then, I account it high time to get to sea as soon as I can.");
 		
 		videoDescription.setStyleName("videoDescription");
-		
-		//verticalLayout_3.setStyleName("center");
-		verticalLayout_root.setStyleName("white");
-		//panel_1.setStyleName("borderless");
+		verticalLayout_root.setStyleName("videoBackground");
 		
 	}
 	
@@ -118,19 +111,11 @@ public class VideoDisplayer extends CustomComponent {
 				//else the root cards are now visible -> add space on screen
 				if(showRootCards == false)
 				{
-					//rootButton_Ratio = 40.0f;
 					mainLayout.setExpandRatio(verticalLayout_root, 0.05f);
-							
-					//handle the spacing of the different updates 
-					//verticalLayout_3.setExpandRatio(horizontalLayout_1, 2.25f);
 				}
 				else 
 				{
-					//rootButton_Ratio = 5.0f;
 					mainLayout.setExpandRatio(verticalLayout_root, 0.33f);
-							
-					//handle the spacing of the different updates 
-					//verticalLayout_3.setExpandRatio(horizontalLayout_1, 3.0f);
 
 				}
 						
