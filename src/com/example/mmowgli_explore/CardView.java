@@ -149,52 +149,8 @@ public class CardView extends CustomComponent {
 		
 		shrinkCardView();
 		
-		//Popup stuff
-		PopupView pop;
-		
-		if(cardType.equalsIgnoreCase("Idea1") || cardType.equalsIgnoreCase("Idea2")){
-			RootCardCreator creatorRoot = new RootCardCreator();
-			
-			pop = new PopupView(new PopupView.Content(){
-
-				@Override
-				public String getMinimizedValueAsHTML() {
-					// TODO Auto-generated method stub
-					return null;
-				}
-
-				@Override
-				public Component getPopupComponent() {
-					// TODO Auto-generated method stub
-					return creatorRoot;
-				}
-				
-			});
-			
-		}else{
-		
-				CardCreator creator = new CardCreator();
-		
-				pop = new PopupView(new PopupView.Content(){
-
-					@Override
-					public String getMinimizedValueAsHTML() {
-						// TODO Auto-generated method stub
-						return null;
-					}
-
-					@Override
-					public Component getPopupComponent() {
-						// TODO Auto-generated method stub
-						return creator;
-					}
-			
-				});
-		}
-		
-		mainLayout.addComponent(pop);
-		setAddCardButtonListener(pop);
-		//END POPUP
+		//POPUP stlying
+		initPopupStyling();
 	}
 	
 	/**
@@ -380,6 +336,55 @@ public class CardView extends CustomComponent {
 	 * *********************** PRIVATE HELPER METHODS BELOW ***********************
 	 */
 	
+	private void initPopupStyling(){
+		//Popup stuff
+				PopupView pop;
+				
+				if(cardType.getValue().equalsIgnoreCase("Idea1") || cardType.getValue().equalsIgnoreCase("Idea2")){
+					RootCardCreator creatorRoot = new RootCardCreator();
+					
+					pop = new PopupView(new PopupView.Content(){
+
+						@Override
+						public String getMinimizedValueAsHTML() {
+							// TODO Auto-generated method stub
+							return null;
+						}
+
+						@Override
+						public Component getPopupComponent() {
+							// TODO Auto-generated method stub
+							return creatorRoot;
+						}
+						
+					});
+					
+				}else{
+				
+						CardCreator creator = new CardCreator();
+				
+						pop = new PopupView(new PopupView.Content(){
+
+							@Override
+							public String getMinimizedValueAsHTML() {
+								// TODO Auto-generated method stub
+								return null;
+							}
+
+							@Override
+							public Component getPopupComponent() {
+								// TODO Auto-generated method stub
+								return creator;
+							}
+					
+						});
+				}
+				
+				mainLayout.addComponent(pop);
+				setAddCardButtonListener(pop);
+				//END POPUP
+	}
+ 
 	private void initCardVotesStyle(){
 		//check if the card has been voted
 		try {
@@ -426,8 +431,10 @@ public class CardView extends CustomComponent {
 		}
 	}
 	
-     
-    
+     /******* HERE START BACK HERE! **********/
+    public void setCreateCardListener(CardCreator creator){
+    	//creator.get
+    }
 	
 	/**
 	 * Add Default Click Listener for the Add Card Button

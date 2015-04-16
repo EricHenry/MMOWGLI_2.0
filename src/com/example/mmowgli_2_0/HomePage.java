@@ -441,8 +441,10 @@ public class HomePage extends CustomComponent {
 				
 				CardList activePath = new CardList();
 				try {
+					int cardId = Integer.parseInt(cardExplorationView.getCurrentChosenCard().getCardId());
+					
 					//get the active path from DB
-					activePath = MmowgliDB.activePath(-2, activePath);
+					activePath = MmowgliDB.activePath(cardId, activePath);
 					
 					//scroll down to the Card explorer
 					panel_2.setScrollTop(1000);
