@@ -211,18 +211,18 @@
   		background-color: #B8D438;
 	}
 	
-	.v-slot-cardTypeRoot1 {
-  		border-top-right-radius:1.063em;
-  		border-top-left-radius: 1.063em;
-  		border:0;
-  		background-color: #005800;
-	}
-	
 	.v-slot-cardTypeRoot2 {
   		border-top-right-radius:1.063em;
   		border-top-left-radius: 1.063em;
   		border:0;
   		background-color: #00006B;
+	}
+	
+	.v-slot-cardTypeRoot1 {
+  		border-top-right-radius:1.063em;
+  		border-top-left-radius: 1.063em;
+  		border:0;
+  		background-color: #005800;
 	}
 	
 	.v-slot-cardTypeIdea1 {
@@ -397,6 +397,14 @@
   		color: #fff;
 	}
 	
+	.v-nativebutton-root2 {
+	  	border: 0px;
+	  	border-radius: 1.563em;
+	  	background-color: #00006B;
+	  	//color: #4D51AC;
+  		color: #fff;
+	}
+	
 	.v-nativebutton-root1 {
 	  	border: 0px;
 	  	border-radius: 1.563em;
@@ -405,10 +413,18 @@
   		color: #fff;
 	}
 	
-	.v-nativebutton-root2 {
+	.v-nativebutton-idea2 {
 	  	border: 0px;
 	  	border-radius: 1.563em;
 	  	background-color: #00006B;
+	  	//color: #4D51AC;
+  		color: #fff;
+	}
+	
+	.v-nativebutton-idea1 {
+	  	border: 0px;
+	  	border-radius: 1.563em;
+	  	background-color: #005800;
 	  	//color: #4D51AC;
   		color: #fff;
 	}
@@ -418,40 +434,115 @@
 		padding-left: 15px;
 	}
 	
+/* --------------- STATIC IDEA CARDS --------------- */  
+  	//root button styling
+ 	.v-nativebutton-Root2 {
+		//background-image: url(images/icons/updates/greenPanel.png);
+		background-color: #00006B;
+		border: 0px;
+		//border-radius: 15px;
+		color: #fff;
+		text-align: center;
+	}
+	
+	.v-nativebutton-Root1 {
+		//background-image: url(images/icons/updates/bluePanel.png);
+		background-color: #005800;
+		border: 0px;
+		//border-radius: 15px;
+		color: #fff;
+		text-align: center;
+	}
+	
+	.v-gridlayout-ideaCards {
+		margin-top: 55px;
+	}
+	
+	.v-verticallayout-idea1 {
+		border: 1px solid;
+		border-radius: 10px;
+	}
+	
+	.v-verticallayout-idea2 {
+		border: 1px solid;
+		border-radius: 10px;
+	}
+	
+	.v-label-idea1 {
+		color: #000;
+		font-weight: bold;
+	}
+	
+	.v-label-boldBlack {
+		color: #000;
+		font-weight: bold;
+	}
+	
 	
 
-/* --------------- FOOTER --------------- */
+/* --------------- POPUP VIEW STYLING --------------- */
   
+	.v-tabsheet-tabitemcell-Adapt {
+		background-color: rgb(133,209,241);
+  		//color: #4D51AC;
+  		color: #fff;
+  		padding-right: 13px;
+	}
 
+	.v-tabsheet-tabitemcell-Expand {
+		background-color: rgb(250,207,156);
+  		//color: #4D51AC;
+  		color: #fff;
+  		padding-left: 13px;
+		padding-right: 12px;
+	}
+	
+	.v-tabsheet-tabitemcell-Explore {
+		background-color: rgb(219,233,154);
+	  	//color: #4D51AC;
+  		color: #fff;
+  		padding-right: 12px;
+	}
+	
+	.v-tabsheet-tabitemcell-Counter {
+		background-color: rgb(236,157,186);
+  		//color: #4D51AC;
+  		color: #fff;
+  		padding-right: 12px;
+	}
+	
+	.v-tabsheet-tabitemcell-Root1 {
+		background-color: #005800;
+  		//color: #4D51AC;
+  		color: #fff;
+  		padding-left: 15px;
+		padding-right: 15px;
+	}
 
+	.v-tabsheet-tabitemcell-Root2 {
+		background-color: #00006B;
+  		//color: #4D51AC;
+  		color: #fff;
+  		padding-right: 15px;
+	}
 
-
-
+	.v-tabsheet-tabitemcell-Root2Main {
+		background-color: #00006B;
+  		//color: #4D51AC;
+  		color: #fff;
+  		padding-right: 15px;
+		padding-left: 15px;
+	}
+	
 
 	  
 
   
 
-  
-  	//root button styling
- 	.v-nativebutton-root1 {
-		background-image: url(images/icons/updates/bluePanel.png);
-		border: 0px;
-		border-radius: 15px;
-	}
-	
-	.v-nativebutton-root2 {
-		background-image: url(images/icons/updates/greenPanel.png);
-		border: 0px;
-		border-radius: 15px;
-	}
-	
 
   
 
    
-
-//Card styling - Card Explorer
 
   
 

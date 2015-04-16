@@ -62,7 +62,7 @@ public class HomePageUpdates extends CustomComponent {
 		setCompositionRoot(mainLayout);
 
 		// TODO add user code here
-		mainLayout.setStyleName("GRRR");
+		//mainLayout.setStyleName("GRRR");
 		
 		//set CSS styling
 		trendingCards.setStyleName("updateBorders");
@@ -161,13 +161,13 @@ public class HomePageUpdates extends CustomComponent {
 		mainLayout = new GridLayout();
 		mainLayout.setImmediate(false);
 		mainLayout.setWidth("100%");
-		mainLayout.setHeight("730px");
+		mainLayout.setHeight("800px");
 		mainLayout.setMargin(false);
 		mainLayout.setRows(3);
 		
 		// top-level component properties
 		setWidth("100.0%");
-		setHeight("730px");
+		setHeight("800px");
 		
 		// horizontalLayout_topContainer
 		horizontalLayout_topContainer = buildHorizontalLayout_topContainer();

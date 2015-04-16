@@ -22,6 +22,7 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.NativeButton;
 import com.vaadin.ui.Panel;
+import com.vaadin.ui.PopupView;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
@@ -71,6 +72,8 @@ public class CardExplorationView extends CustomComponent {
 	private boolean displayingHistory = false;
 	private boolean displayingSiblings = false;
 	private boolean displayingChlidren = false;
+	
+	private PopupView popup = new PopupView(null, new CardCreator());
 
 	/**
 	 * The constructor should first build the main layout, set the composition
@@ -106,7 +109,7 @@ public class CardExplorationView extends CustomComponent {
 		panel_history.setStyleName("cardExplorerPanels");
 		panel_cardChildren.setStyleName("cardExplorerPanels");
 		
-		
+		//mainLayout.addComponent(popup);
 	}
 	
 
@@ -120,6 +123,8 @@ public class CardExplorationView extends CustomComponent {
 		verticalLayout_historyView.removeAllComponents();
 	}
 
+	
+	
 	/**
 	 * This method allows you to reset the Card Explorer View using the a Card's
 	 * data that is taken in as a parameter
@@ -191,7 +196,10 @@ public class CardExplorationView extends CustomComponent {
 
 			// create a new card view using the card data.
 			CardView newCard = MmowgliDB.createCardView(currentCardData);
-
+			
+			//POPUP
+			//newCard.setAddCardButtonListener(popup);
+			
 			// add card to the component
 			toDisplay.addComponent(newCard);
 			styleCardView(toDisplay, newCard);
@@ -212,7 +220,6 @@ public class CardExplorationView extends CustomComponent {
 		
 		//scroll to the chosenCard if it is found
 		if(foundChosenCard == true){
-			System.out.println("position " + chosenCardPosition);
 			
 			if(chosenCardPosition < 2){
 				panel_currentCards.setScrollTop(0);
@@ -258,12 +265,25 @@ public class CardExplorationView extends CustomComponent {
 								clickedCard.expandCardView();
 								clickedCard.removeTransparency();
 								
-
+								
 							} catch (NullPointerException e) {
 								clickedCard.expandCardView();
 								clickedCard.removeTransparency();
 							}
-
+							
+							//update the database of the clicked card
+							try {
+								
+								MmowgliDB.addPlayerHistoryQuery(Integer.parseInt(clickedCard.getCardId()), 1);
+							
+							} catch (NumberFormatException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							} catch (SQLException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+							
 							// Set the clicked card as the new current card
 							currentChosenCard = new CardView(clickedCard);
 
@@ -340,6 +360,9 @@ public class CardExplorationView extends CustomComponent {
 
 							// display the card in the card explorer
 							setNewChosenCard(newCard);
+							
+							//update database of new clicked card
+							MmowgliDB.addPlayerHistoryQuery(newCard.cardId, 1);
 
 						} catch (NumberFormatException e) {
 							// TODO Auto-generated catch block
