@@ -9,7 +9,9 @@ package com.example.mmowgli_2_0;
 
 import java.sql.SQLException;
 
+import com.example.mmowgli_backend.BestPathManager;
 import com.example.mmowgli_backend.Card;
+import com.example.mmowgli_backend.CardExplorationManager;
 import com.example.mmowgli_backend.CardList;
 import com.example.mmowgli_backend.MmowgliDB;
 import com.example.mmowgli_backend.TagList;
@@ -98,7 +100,7 @@ public class HomePage extends CustomComponent {
 		
 		try {
 			//get the list from the database
-			CardList topcards = MmowgliDB.trendingCardsQuery(48);
+			CardList topcards = MmowgliDB.trendingCardsQuery(1000);
 			
 			//cycle through the list and add display it
 			while(topcards.size() > 0){
@@ -107,7 +109,7 @@ public class HomePage extends CustomComponent {
 				Card currentCardData = topcards.getCard();
 				
 				//create a new card view using the card data.
-				BaseCardView newCard = MmowgliDB.createBaseCardView(currentCardData);
+				BaseCardView newCard = CardExplorationManager.createBaseCardView(currentCardData);
 				
 				//add click listener
 				setUpdaterButtonListener(newCard);
@@ -139,7 +141,7 @@ public class HomePage extends CustomComponent {
 			int column = 0;			//the current column of the gridlayout to store a link
 			
 			//get the list from the database
-			TagList topTags = MmowgliDB.trendingTagsQuery(48);
+			TagList topTags = MmowgliDB.trendingTagsQuery(1000);
 			
 			//cycle through the list and add display it
 			while(topTags.size() > 0){
@@ -192,7 +194,7 @@ public class HomePage extends CustomComponent {
 				Card currentCardData = topcards.getCard();
 				
 				//create a new card view using the card data.
-				BaseCardView newCard = MmowgliDB.createBaseCardView(currentCardData);
+				BaseCardView newCard = CardExplorationManager.createBaseCardView(currentCardData);
 				
 				//add click listener
 				setUpdaterButtonListener(newCard);
@@ -227,7 +229,7 @@ public class HomePage extends CustomComponent {
 				Card currentCardData = topcards.getCard();
 				
 				//create a new card view using the card data.
-				BaseCardView newCard = MmowgliDB.createBaseCardView(currentCardData);
+				BaseCardView newCard = CardExplorationManager.createBaseCardView(currentCardData);
 				
 				//add click listener
 				setUpdaterButtonListener(newCard);
@@ -306,7 +308,7 @@ public class HomePage extends CustomComponent {
 				Card currentCardData = history.getEndCard();
 				
 				//create a new card view using the card data.
-				BaseCardView newCard = MmowgliDB.createBaseCardView(currentCardData);
+				BaseCardView newCard = CardExplorationManager.createBaseCardView(currentCardData);
 				
 				//add click listener
 				setUpdaterButtonListener(newCard);
@@ -444,7 +446,7 @@ public class HomePage extends CustomComponent {
 					int cardId = Integer.parseInt(cardExplorationView.getCurrentChosenCard().getCardId());
 					
 					//get the active path from DB
-					activePath = MmowgliDB.activePath(cardId, activePath);
+					activePath = BestPathManager.activePath(cardId, activePath);
 					
 					//scroll down to the Card explorer
 					panel_2.setScrollTop(1000);
