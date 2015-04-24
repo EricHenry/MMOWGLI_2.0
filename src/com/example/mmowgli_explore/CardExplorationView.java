@@ -110,6 +110,8 @@ public class CardExplorationView extends CustomComponent {
 		panel_history.setStyleName("cardExplorerPanels");
 		panel_cardChildren.setStyleName("cardExplorerPanels");
 		
+		mainLayout.setStyleName("barPadding");
+		
 		//mainLayout.addComponent(popup);
 	}
 	

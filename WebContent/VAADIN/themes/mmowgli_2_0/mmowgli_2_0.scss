@@ -290,6 +290,16 @@
 		text-align: center;
 	}
 	
+	//add space to the bottom of the of the Card Explorers Panel, 
+	//	this is so you can see the bottom border of the last card inside the container
+	.v-panel-cardExplorerPanels .v-panel-content-cardExplorerPanels .v-verticallayout{
+		padding-bottom: 6px;
+	}
+	
+	.v-horizontallayout-barPadding .v-expand {
+		padding-right: 5px;
+	}
+	
   //Transparency
 	.v-customcomponent-transparent{
   		opacity: 0.4;
@@ -487,32 +497,40 @@
 /* --------------- POPUP VIEW STYLING --------------- */
   
 	.v-tabsheet-tabitemcell-Adapt {
-		background-color: rgb(133,209,241);
+		//background-color: rgb(133,209,241);
   		//color: #4D51AC;
+  		background-color: #09A5E4;
   		color: #fff;
   		padding-right: 13px;
+  		opacity: 0.4;
 	}
 
 	.v-tabsheet-tabitemcell-Expand {
-		background-color: rgb(250,207,156);
+		//background-color: rgb(250,207,156);
   		//color: #4D51AC;
+  		background-color: #F79E3A;
   		color: #fff;
   		padding-left: 13px;
 		padding-right: 12px;
+		opacity: 0.4;
 	}
 	
 	.v-tabsheet-tabitemcell-Explore {
-		background-color: rgb(219,233,154);
+		//background-color: rgb(219,233,154);
 	  	//color: #4D51AC;
+	  	background-color: #B8D438;
   		color: #fff;
   		padding-right: 12px;
+  		opacity: 0.4;
 	}
 	
 	.v-tabsheet-tabitemcell-Counter {
-		background-color: rgb(236,157,186);
+		//background-color: rgb(236,157,186);
   		//color: #4D51AC;
+  		background-color: #D51C5B;
   		color: #fff;
   		padding-right: 12px;
+  		opacity: 0.4;
 	}
 	
 	.v-tabsheet-tabitemcell-Root1 {
@@ -521,6 +539,7 @@
   		color: #fff;
   		padding-left: 15px;
 		padding-right: 15px;
+		opacity: 0.4;
 	}
 
 	.v-tabsheet-tabitemcell-Root2 {
@@ -528,6 +547,7 @@
   		//color: #4D51AC;
   		color: #fff;
   		padding-right: 15px;
+  		opacity: 0.4;
 	}
 
 	.v-tabsheet-tabitemcell-Root2Main {
@@ -546,13 +566,18 @@
 		line-height: 37px;
 		font-size: 15px;
 		font-weight: 300;
+		//opacity: 0.4;
 	  }
-
-  
+  	
+  	.v-tabsheet-tabitemcell-focus{
+  		opacity: 1;
+  	}
+  	
 	.v-tabsheet-tabitemcell .v-tabsheet-tabitem-selected .v-caption.v-caption {
 		font-weight:bold;
-		border-bottom-color: #000;
-		color: #000;
+		border-bottom-color: #fff;
+		color: #fff;
+
 		//border-bottom-color: #197DE1;
 		//color: #197DE1;
   	}
