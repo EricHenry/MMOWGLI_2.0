@@ -108,10 +108,12 @@ public class CardExplorationView extends CustomComponent {
 		// panel styling
 		panel_currentCards.setStyleName("cardExplorerPanels");
 		panel_history.setStyleName("cardExplorerPanels");
-		panel_cardChildren.setStyleName("cardExplorerPanels");
+		panel_cardChildren.setStyleName("childPanel");
 		
-		mainLayout.setStyleName("barPadding");
+		//mainLayout.setStyleName("barPadding");
 		
+		//verticalLayout_4.setStyleName("searchSortBorder");
+		horizontalLayout_1.setStyleName("topBar");
 		//mainLayout.addComponent(popup);
 	}
 	
@@ -474,12 +476,12 @@ public class CardExplorationView extends CustomComponent {
 		// common part: create layout
 		mainLayout = new HorizontalLayout();
 		mainLayout.setImmediate(false);
-		mainLayout.setWidth("100%");
+		mainLayout.setWidth("1100px");
 		mainLayout.setHeight("37.5em");
 		mainLayout.setMargin(false);
 		
 		// top-level component properties
-		setWidth("100.0%");
+		setWidth("1100px");
 		setHeight("37.5em");
 		
 		// verticalLayout_2
@@ -512,6 +514,7 @@ public class CardExplorationView extends CustomComponent {
 		
 		// label_history
 		label_history = new Label();
+		label_history.setStyleName("title");
 		label_history.setImmediate(false);
 		label_history.setWidth("-1px");
 		label_history.setHeight("-1px");
@@ -561,6 +564,7 @@ public class CardExplorationView extends CustomComponent {
 		
 		// label_mainTitle
 		label_mainTitle = new Label();
+		label_mainTitle.setStyleName("title");
 		label_mainTitle.setImmediate(false);
 		label_mainTitle.setWidth("-1px");
 		label_mainTitle.setHeight("-1px");
@@ -610,6 +614,7 @@ public class CardExplorationView extends CustomComponent {
 		
 		// label_childTitle
 		label_childTitle = new Label();
+		label_childTitle.setStyleName("title");
 		label_childTitle.setImmediate(false);
 		label_childTitle.setWidth("-1px");
 		label_childTitle.setHeight("-1px");

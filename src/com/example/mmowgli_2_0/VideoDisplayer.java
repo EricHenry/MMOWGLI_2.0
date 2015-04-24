@@ -201,6 +201,7 @@ public class VideoDisplayer extends CustomComponent {
 		
 		// videoTitle
 		videoTitle = new Label();
+		videoTitle.setStyleName("title");
 		videoTitle.setImmediate(false);
 		videoTitle.setWidth("-1px");
 		videoTitle.setHeight("-1px");

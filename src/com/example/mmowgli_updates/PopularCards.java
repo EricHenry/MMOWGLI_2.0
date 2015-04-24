@@ -70,6 +70,7 @@ public class PopularCards extends CustomComponent {
 		
 		// label_popular
 		label_popular = new Label();
+		label_popular.setStyleName("title");
 		label_popular.setImmediate(false);
 		label_popular.setWidth("-1px");
 		label_popular.setHeight("-1px");

@@ -70,6 +70,7 @@ public class PopularTags extends CustomComponent {
 		
 		// label_title
 		label_title = new Label();
+		label_title.setStyleName("title");
 		label_title.setImmediate(false);
 		label_title.setWidth("-1px");
 		label_title.setHeight("-1px");

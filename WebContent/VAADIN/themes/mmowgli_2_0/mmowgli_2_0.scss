@@ -96,6 +96,9 @@
 		text-align: center;
 	}
   
+  	.v-label-title {
+  		font-weight: bold;
+  	}
   
 
 /* --------------- HOME PAGE TOP BAR --------------- */
@@ -290,14 +293,34 @@
 		text-align: center;
 	}
 	
+	.v-panel-childPanel {
+		border: 1px solid;
+		border-bottom-right-radius:0.5em;
+  		border-bottom-left-radius: 0.5em;
+	}
+	
+	.v-slot-topBar {
+		border-top: 1px solid;
+		border-top-right-radius:0.5em;
+  		border-top-left-radius: 0.5em;
+  		border-right: 1px solid;
+  		border-left: 1px solid;
+  		border-bottom: 0.5px solid;
+	}
+	
+	.v-horizontallayout-topBar {
+		padding-top: 5px;
+		padding-left: 5px;
+	}
+	
 	//add space to the bottom of the of the Card Explorers Panel, 
 	//	this is so you can see the bottom border of the last card inside the container
 	.v-panel-cardExplorerPanels .v-panel-content-cardExplorerPanels .v-verticallayout{
 		padding-bottom: 6px;
 	}
 	
-	.v-horizontallayout-barPadding .v-expand {
-		padding-right: 5px;
+	.v-panel-childPanel .v-panel-content-childPanel .v-verticallayout{
+		padding-bottom: 6px;
 	}
 	
   //Transparency
@@ -371,6 +394,7 @@
   		border-bottom: 0.063em solid #949494;
   		padding-bottom: 0.313em;
 	}
+	
 
 /* --------------- BASE CARD VIEW --------------- */
 
@@ -551,7 +575,7 @@
 	}
 
 	.v-tabsheet-tabitemcell-Root2Main {
-		background-color: #00006B;
+		background-color: #005800;
   		//color: #4D51AC;
   		color: #fff;
   		padding-right: 15px;

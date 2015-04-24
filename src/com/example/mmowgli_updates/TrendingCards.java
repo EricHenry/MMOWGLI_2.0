@@ -74,6 +74,7 @@ public class TrendingCards extends CustomComponent {
 		
 		// label_trending
 		label_trending = new Label();
+		label_trending.setStyleName("title");
 		label_trending.setImmediate(false);
 		label_trending.setWidth("-1px");
 		label_trending.setHeight("-1px");

@@ -71,6 +71,7 @@ public class RecentlyPlayed extends CustomComponent {
 		
 		// label_played
 		label_played = new Label();
+		label_played.setStyleName("title");
 		label_played.setImmediate(false);
 		label_played.setWidth("-1px");
 		label_played.setHeight("-1px");

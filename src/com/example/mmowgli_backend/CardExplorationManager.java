@@ -29,9 +29,6 @@ public class CardExplorationManager {
 		
 		//convert date 
 		Date date = new Date(cardData.time.getTime());
-		//System.out.println("CARDVIEW: Date form DB = " + date2.toString());
-		
-		//String date = new SimpleDateFormat("MM/dd/yyyy").format(cardData.time.getDate());
 		
 		return new CardView(id, pId, cardText, cardType, parent, votes, date.toString());
 		
@@ -52,9 +49,6 @@ public class CardExplorationManager {
 		
 		//convert date 
 		Date date = new Date(cardData.time.getTime());
-		//System.out.println("CARDVIEW: Date form DB = " + date2.toString());
-				
-		//String date = new SimpleDateFormat("MM/dd/yyyy").format(cardData.time.getDate());
 		
 		//create a new card view using the card data.
 		return new BaseCardView(id, pId, cardText, cardType, date.toString());

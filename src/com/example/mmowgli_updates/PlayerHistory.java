@@ -70,6 +70,7 @@ public class PlayerHistory extends CustomComponent {
 		
 		// label_History
 		label_History = new Label();
+		label_History.setStyleName("title");
 		label_History.setImmediate(false);
 		label_History.setWidth("-1px");
 		label_History.setHeight("-1px");
