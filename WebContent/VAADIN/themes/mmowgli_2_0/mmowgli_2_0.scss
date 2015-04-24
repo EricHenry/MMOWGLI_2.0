@@ -368,7 +368,8 @@
   	.v-nativebutton-counter {
 	  	border: 0px;
 	  	border-radius: 1.563em;
-  		background-color: rgb(236,157,186);
+	  	background-color: #D51C5B;
+  		//background-color: rgb(236,157,186);
   		//color: #4D51AC;
   		color: #fff;
   	}
@@ -376,7 +377,8 @@
   	.v-nativebutton-expand {
 	  	border: 0px;
  	 	border-radius: 1.563em;
-	  	background-color: rgb(250,207,156);
+	  	//background-color: rgb(250,207,156);
+	  	background-color: #F79E3A;
   		//color: #4D51AC;
   		color: #fff;
  	 }
@@ -384,16 +386,18 @@
   	.v-nativebutton-adapt {
   		border: 0px;
   		border-radius: 1.563em;
-  		background-color: rgb(133,209,241);
+  		//background-color: rgb(133,209,241);
   		//color: #4D51AC;
+  		background-color: #09A5E4;
   		color: #fff;
   	}
   
 	.v-nativebutton-explore {
 	  	border: 0px;
 	  	border-radius: 1.563em;
-	  	background-color: rgb(219,233,154);
+	  	//background-color: rgb(219,233,154);
 	  	//color: #4D51AC;
+	  	background-color: #B8D438;
   		color: #fff;
 	}
 	
@@ -534,13 +538,24 @@
 		padding-left: 15px;
 	}
 	
-
-	  
+//TEST
+	  .v-tabsheet-tabitemcell .v-caption {
+	  	color:#fff;
+	  	cursor: pointer;
+		text-align: center;
+		line-height: 37px;
+		font-size: 15px;
+		font-weight: 300;
+	  }
 
   
-
-
-  
+	.v-tabsheet-tabitemcell .v-tabsheet-tabitem-selected .v-caption.v-caption {
+		font-weight:bold;
+		border-bottom-color: #000;
+		color: #000;
+		//border-bottom-color: #197DE1;
+		//color: #197DE1;
+  	}
 
    
 
