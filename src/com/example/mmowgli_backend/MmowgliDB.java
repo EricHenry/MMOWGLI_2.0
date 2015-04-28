@@ -558,7 +558,8 @@ public class MmowgliDB
 		String query = ""
 				+ "select CardID, PlayerID, TextUser, CardType, Parent, Votes, Time "
 				+ "from card "
-				+ "where Parent = " + idNum + " ";
+				+ "where Parent = " + idNum + " "
+				+ "order by Votes asc ";
 		
 		/** A new Card Object linked list is initialized */ 
 		CardList cards = new CardList();

@@ -290,8 +290,9 @@ public class CardExplorationView extends CustomComponent {
 							}
 							
 							// Set the clicked card as the new current card
-							currentChosenCard = new CardView(clickedCard);
-
+							//currentChosenCard = new CardView(clickedCard);
+							currentChosenCard = clickedCard;
+							
 							try {
 								// remove current children
 								verticalLayout_childView.removeAllComponents();
