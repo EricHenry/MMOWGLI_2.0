@@ -50,6 +50,8 @@ public class MmowgliDB
 	/** The number of top tag results to return */
 	private static int topTags = 15;
 	
+	public static int numOfCards = 2000;
+	
 	
 	/**
 	 * *********************** HELPER METHODS BELOW ***********************
@@ -60,6 +62,7 @@ public class MmowgliDB
 	 * It takes the parameter of a specific connection and the query that goes
 	 * with that function call for error tracking.
 	 */
+
 	private static Connection openConnection(Connection conn, String query)
 	{
 		try {

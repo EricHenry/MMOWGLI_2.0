@@ -397,7 +397,7 @@ public class CardView extends CustomComponent {
 						});
 						
 						//setListener
-						setSubmitNewCardButtonListener(creator);
+						setSubmitNewCardButtonListener(creator, this.cardId);
 				}
 				
 				mainLayout.addComponent(pop);
@@ -476,7 +476,7 @@ public class CardView extends CustomComponent {
 	 * 
 	 * @param creator
 	 */
-	public void setSubmitNewCardButtonListener(CardCreator creator){
+	public void setSubmitNewCardButtonListener(CardCreator creator, String id){
 		creator.getNativeButton_submit().addClickListener(new NativeButton.ClickListener(){
 			
 			@Override
@@ -490,23 +490,57 @@ public class CardView extends CustomComponent {
 					newCardText = creator.getTextArea_Expand().getValue();
 					
 					//clear the input
-					creator.getTextArea_Expand().setValue(null);
-					System.out.println(newCardText);
+					creator.getTextArea_Expand().setValue("");
+					//System.out.println(newCardText);
 				} else if (newCardType.equalsIgnoreCase("explore")){
 					newCardText = creator.getTextArea_Explore().getValue();
-					System.out.println(newCardText);
+					//System.out.println(newCardText);
+					//clear the input
+					creator.getTextArea_Explore().setValue("");
+					
 				} else if (newCardType.equalsIgnoreCase("counter")){
 					newCardText = creator.getTextArea_Counter().getValue();
-					System.out.println(newCardText);
+					//System.out.println(newCardText);
+					//clear the input
+					creator.getTextArea_Counter().setValue("");
 				} else {
 					newCardText = creator.getTextArea_Adapt().getValue();
-					System.out.println(newCardText);
+					
+					//clear the input
+					creator.getTextArea_Adapt().setValue("");
+					//System.out.println(newCardText);
 				}
 				
-				//if()
+				//if the card text is not null continue creating the card
+				if(!newCardText.equalsIgnoreCase(null) && !newCardText.equalsIgnoreCase("\n") && !newCardText.equalsIgnoreCase("") && !newCardText.equalsIgnoreCase(" ")){
+					//set an id
+					newCard.cardId = MmowgliDB.numOfCards;
+					//increment the next available card id
+					MmowgliDB.numOfCards += 1;
+					
+					//set the player id -> our test player's id is 0
+					newCard.playerId = 0;
+					
+					//set the card's text
+					newCard.textUser = newCardText;
+					
+					//set the type of card being created.
+					newCard.cardType = newCardType;
+					
+					//set parent's id
+					newCard.parent = Integer.parseInt(id);
+					
+					try {
+						MmowgliDB.addCardQuery(newCard);
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+				}
 				
-				java.util.Date now = new java.util.Date();
-				Timestamp timeNow = new java.sql.Timestamp(now.getTime());
+				//java.util.Date now = new java.util.Date();
+				//Timestamp timeNow = new java.sql.Timestamp(now.getTime());
 			}
 		});
 	}
