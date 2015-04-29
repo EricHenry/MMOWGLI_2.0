@@ -296,7 +296,7 @@ public class CardView extends CustomComponent {
 		showTags();
 		
 		horizontalLayout_cardText.setHeight("100%");
-		mainLayout.setExpandRatio(horizontalLayout_cardLinks, 0.1f);
+		mainLayout.setExpandRatio(horizontalLayout_cardLinks, 0.13f);
 		mainLayout.setHeight("200px");
 		isMini = false;
 	}
@@ -306,34 +306,35 @@ public class CardView extends CustomComponent {
 		
 		TagList tags;
 		
-		System.out.println("INSIDE SHOW TAGS");
+		//System.out.println("INSIDE SHOW TAGS");
 		
 		if(!importedTags){
 			
-		//get the tag list from the DB
-		try {
-			tags = MmowgliDB.oneCardTagsQuery(Integer.parseInt(cardId));
+			//get the tag list from the DB
+			try {
+				tags = MmowgliDB.oneCardTagsQuery(Integer.parseInt(cardId));
 			
-			//Check if the card has tags.
-			if (tags != null && tags.size() != 0){
-				//show tags
-				while(!tags.isEmpty()){
-					System.out.println("\t TRYING TO MAKE LABELS");
-					Link tag = new Link();
-					tag.setCaption("#" + tags.getTag());
-					horizontalLayout_tags.addComponent(tag);
+				//Check if the card has tags.
+				if (tags != null && tags.size() != 0){
+					//show tags
+					while(!tags.isEmpty()){
+						//System.out.println("\t TRYING TO MAKE LABELS");
+						Link tag = new Link();
+						tag.setCaption("#" + tags.getTag());
+						tag.setStyleName("link");
+						horizontalLayout_tags.addComponent(tag);
+					}
 				}
-			}
 			
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		
-		importedTags = true;
+			importedTags = true;
 		}
 		
 	}
