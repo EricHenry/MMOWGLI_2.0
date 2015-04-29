@@ -169,6 +169,7 @@ public class RootCards extends CustomComponent {
 				Card newCard = new Card();
 				String newCardType = creator.getTabSheet().getSelectedTab().getCaption();
 				String newCardText;
+				String tags;
 				
 				//System.out.println(newCardTypeString);
 				if (newCardType.equalsIgnoreCase("Root1")){
@@ -207,6 +208,11 @@ public class RootCards extends CustomComponent {
 					//set parent's id
 					newCard.parent = Integer.parseInt(id);
 					
+					
+					//Check if there are any tags 
+					//tags = creator.
+					
+					//add this new card to the DB
 					try {
 						MmowgliDB.addCardQuery(newCard);
 					} catch (SQLException e) {
