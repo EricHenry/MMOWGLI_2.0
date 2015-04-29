@@ -8,6 +8,7 @@
 package com.example.mmowgli_explore;
 
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
 import com.example.mmowgli_backend.Card;
 import com.example.mmowgli_backend.MmowgliDB;
@@ -66,7 +67,7 @@ public class CardView extends CustomComponent {
 	private String parent;
 	private String playerId;
 	private boolean importedTags			= false;
-	private boolean isMini 					= true;
+	//private boolean isMini 					= true;
 	private boolean isFavorite 				= false;
 	private boolean upvoted 				= false;
 	private boolean downvoted 				= false;
@@ -283,7 +284,7 @@ public class CardView extends CustomComponent {
 		horizontalLayout_cardText.setHeight("-1");
 		mainLayout.setExpandRatio(horizontalLayout_cardLinks, 1.0f);
 		mainLayout.setHeight("120px");
-		isMini = true;
+		//isMini = true;
 	}
 	
 	/**
@@ -298,7 +299,7 @@ public class CardView extends CustomComponent {
 		horizontalLayout_cardText.setHeight("100%");
 		mainLayout.setExpandRatio(horizontalLayout_cardLinks, 0.13f);
 		mainLayout.setHeight("200px");
-		isMini = false;
+		//isMini = false;
 	}
 	
 	private void showTags(){
@@ -377,6 +378,7 @@ public class CardView extends CustomComponent {
 	/**
 	 * *********************** PRIVATE HELPER METHODS BELOW ***********************
 	 */
+
 	
 	private void initPopupStyling(){
 		//Popup stuff
@@ -589,14 +591,40 @@ public class CardView extends CustomComponent {
 						e.printStackTrace();
 					}
 					
+					String tagsList = creator.getTextArea_tag().getValue();
+					
+					//check to see if there are tags
+					if(!tagsList.equalsIgnoreCase("") && !tagsList.equalsIgnoreCase(null) && !tagsList.equalsIgnoreCase("\n")){
+						//split the string into idividual tags
+						String tags[] = tagsList.split(" ");
+						
+						//get the time stamp
+						java.util.Date now = new java.util.Date();
+						Timestamp timeNow = new java.sql.Timestamp(now.getTime());
+						
+						TagList convertedTags = new TagList();
+						
+						for(String currentTag : tags){
+							//System.out.println("TAG - " + currentTag);
+							convertedTags.addTag(currentTag);
+						}
+						
+						
+						//put tag info in Database
+						try {
+							MmowgliDB.addTagsQuery(convertedTags, newCard.cardId, timeNow);
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
+						creator.getTextArea_tag().setValue("");
+					}
+					
 				}else {
 					//tell the user that the field is empty
 				}
-					
-				
-				
-				//java.util.Date now = new java.util.Date();
-				//Timestamp timeNow = new java.sql.Timestamp(now.getTime());
+
 			}
 		});
 	}
@@ -658,15 +686,39 @@ public class CardView extends CustomComponent {
 						e.printStackTrace();
 					}
 					
+					String tagsList = creator.getTextArea_tags().getValue();
+					
+					//check to see if there are tags
+					if(!tagsList.equalsIgnoreCase("") && !tagsList.equalsIgnoreCase(null) && !tagsList.equalsIgnoreCase("\n")){
+						//split the string into idividual tags
+						String tags[] = tagsList.split(" ");
+						
+						//get the time stamp
+						java.util.Date now = new java.util.Date();
+						Timestamp timeNow = new java.sql.Timestamp(now.getTime());
+						
+						TagList convertedTags = new TagList();
+						
+						for(String currentTag : tags){
+							//System.out.println("TAG - " + currentTag);
+							convertedTags.addTag(currentTag);
+						}
+						
+						//put tag info in Database
+						try {
+							MmowgliDB.addTagsQuery(convertedTags, newCard.cardId, timeNow);
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
+						creator.getTextArea_tags().setValue("");
+					}
 					
 				}else {
 					//tell the user that the field is empty
 				}
 					
-				
-				
-				//java.util.Date now = new java.util.Date();
-				//Timestamp timeNow = new java.sql.Timestamp(now.getTime());
 			}
 		});
 		

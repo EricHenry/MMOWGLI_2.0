@@ -67,7 +67,12 @@ public class BaseCardView extends CustomComponent {
 		
 		//Set Attribute values
 		this.cardId = id;
-		nativeButton_text.setCaption(cardType + ": " + cardText.substring(0, 23) + "...");
+		
+		if(cardText.length() < 24)
+			nativeButton_text.setCaption(cardType + ": " + cardText);
+		else
+			nativeButton_text.setCaption(cardType + ": " + cardText.substring(0, 23) + "...");
+		
 		//nativeButton_text.setId(id);
 		link_user.setCaption("User"+playerId);
 		link_date.setCaption(" " + date);
