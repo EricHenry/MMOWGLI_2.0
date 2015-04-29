@@ -355,6 +355,11 @@ public class CardView extends CustomComponent {
 						}
 						
 					});
+					
+					//set the listener 
+					
+					setSubmitNewRootCardButtonListener(creatorRoot, this.cardId);
+					
 				} else if(cardType.getValue().equalsIgnoreCase("Idea2")){
 					RootCardCreator creatorRoot = new RootCardCreator();
 					creatorRoot.getTabSheet().removeTab(creatorRoot.getTabSheet().getTab(creatorRoot.getVerticalLayout_Root1()));
@@ -375,6 +380,10 @@ public class CardView extends CustomComponent {
 						}
 						
 					});
+					
+					//set the listener 
+					
+					setSubmitNewRootCardButtonListener(creatorRoot, this.cardId);
 				
 				}else{
 				
@@ -476,7 +485,7 @@ public class CardView extends CustomComponent {
 	 * 
 	 * @param creator
 	 */
-	public void setSubmitNewCardButtonListener(CardCreator creator, String id){
+	private void setSubmitNewCardButtonListener(CardCreator creator, String id){
 		creator.getNativeButton_submit().addClickListener(new NativeButton.ClickListener(){
 			
 			@Override
@@ -514,9 +523,12 @@ public class CardView extends CustomComponent {
 				//if the card text is not null continue creating the card
 				if(!newCardText.equalsIgnoreCase(null) && !newCardText.equalsIgnoreCase("\n") && !newCardText.equalsIgnoreCase("") && !newCardText.equalsIgnoreCase(" ")){
 					//set an id
-					newCard.cardId = MmowgliDB.numOfCards;
-					//increment the next available card id
-					MmowgliDB.numOfCards += 1;
+					try {
+						newCard.cardId = MmowgliDB.lastCardQuery() + 1;
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					
 					//set the player id -> our test player's id is 0
 					newCard.playerId = 0;
@@ -537,12 +549,87 @@ public class CardView extends CustomComponent {
 						e.printStackTrace();
 					}
 					
+				}else {
+					//tell the user that the field is empty
 				}
+					
+				
 				
 				//java.util.Date now = new java.util.Date();
 				//Timestamp timeNow = new java.sql.Timestamp(now.getTime());
 			}
 		});
+	}
+	
+	/**
+	 * 
+	 * @param creator
+	 */
+	private void setSubmitNewRootCardButtonListener(RootCardCreator creator, String id){
+		creator.getNativeButton_submit().addClickListener(new NativeButton.ClickListener(){
+			
+			@Override
+			public void buttonClick(ClickEvent event){
+				Card newCard = new Card();
+				String newCardType = creator.getTabSheet().getSelectedTab().getCaption();
+				String newCardText;
+				
+				//System.out.println(newCardTypeString);
+				if (newCardType.equalsIgnoreCase("Root1")){
+					newCardText = creator.getTextArea_Root1().getValue();
+					
+					//clear the input
+					creator.getTextArea_Root1().setValue("");
+					//System.out.println(newCardText);
+				} else {
+					newCardText = creator.getTextArea_Root2().getValue();
+					//System.out.println(newCardText);
+					//clear the input
+					creator.getTextArea_Root2().setValue("");
+				}
+				
+				//if the card text is not null continue creating the card
+				if(!newCardText.equalsIgnoreCase(null) && !newCardText.equalsIgnoreCase("\n") && !newCardText.equalsIgnoreCase("") && !newCardText.equalsIgnoreCase(" ")){
+					
+					//set an id
+					try {
+						newCard.cardId = MmowgliDB.lastCardQuery() + 1;
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
+					//set the player id -> our test player's id is 0
+					newCard.playerId = 0;
+					
+					//set the card's text
+					newCard.textUser = newCardText;
+					
+					//set the type of card being created.
+					newCard.cardType = newCardType;
+					
+					//set parent's id
+					newCard.parent = Integer.parseInt(id);
+					
+					try {
+						MmowgliDB.addCardQuery(newCard);
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+					
+				}else {
+					//tell the user that the field is empty
+				}
+					
+				
+				
+				//java.util.Date now = new java.util.Date();
+				//Timestamp timeNow = new java.sql.Timestamp(now.getTime());
+			}
+		});
+		
 	}
 
 	/**

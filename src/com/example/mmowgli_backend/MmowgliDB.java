@@ -2,21 +2,18 @@
  * Program Name: MmowgliDB.java
  * Author: Youssef Rizk
  * Date Created: 3/20/15
- * Date Last Modified: 4/2/15
+ * Date Last Modified: 4/28/15
  * 
- * This class creates 
+ * This class manages all of the calls for the mmowgli proof of concept design
+ * calls to the database. It contains methods that create, delete, and retrieve entries 
+ * in the database. Calls return Card, CardList, TagList, and Player objects. They may
+ * also return int or boolean values to test whether or not the method completed its task.
  * 
  */
 
 package com.example.mmowgli_backend;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
+import java.sql.*;
 import java.util.Properties;
 
 import com.example.mmowgli_explore.CardView;
@@ -50,7 +47,6 @@ public class MmowgliDB
 	/** The number of top tag results to return */
 	private static int topTags = 15;
 	
-	public static int numOfCards = 2000;
 	
 	
 	/**
@@ -1054,7 +1050,51 @@ public class MmowgliDB
 		return cards;
 	}
 	
-	
+	/**
+	 * lastCardQuery - Returns the ID of the last card played 
+	 */
+	public static int lastCardQuery() throws SQLException
+	{
+
+        int lastCardId = 0;	/**To hold the ID of the last card played */
+
+		/**Connection object created */
+		Connection conn = null;
+		
+		/**Hard-coded query - returns the last card ID entered in the database */
+		String query = ""
+				+ "select CardID "
+				+ "from card "
+				+ "order by CardID desc "
+				+ "limit 1 ";
+
+		/** The connection to the database is opened */
+		conn = openConnection(conn, query);
+
+		/** A statement object is initialized from the connection to execute the query */
+		Statement stmnt = conn.createStatement();
+		
+		/** The Result Set is initialized and set to receive the returned query results */
+		ResultSet results = stmnt.executeQuery(query);
+		
+		/**Checks if the result set is empty and returns 0 */
+		if (!results.next())
+		{
+			/** The connection is closed before returning */
+			closeConnection(conn);
+			return lastCardId;
+		}
+		else 
+		{
+			/** Assigns the cardID of the last card in the database to the variable */
+			lastCardId = results.getInt(1);
+		}
+			
+		/** The connection is closed before returning the id of the last card */
+		closeConnection(conn);
+			
+		return lastCardId;
+	}
 	
 	/**
 	 * *********************** INSERTION QUERIES BELOW ***********************
