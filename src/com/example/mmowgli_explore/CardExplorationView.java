@@ -192,18 +192,10 @@ public class CardExplorationView extends CustomComponent {
 		
 		while (currentList.size() > 0) {
 			
-			Card currentCardData;
-			//if(toDisplay.getId().equalsIgnoreCase("history"))
-				currentCardData = currentList.getEndCard();
-			//else	
-				// get the current first node of the card list
-			//	currentCardData = currentList.getCard();
+			Card currentCardData = currentList.getEndCard();
 
 			// create a new card view using the card data.
 			CardView newCard = CardExplorationManager.createCardView(currentCardData);
-			
-			//POPUP
-			//newCard.setAddCardButtonListener(popup);
 			
 			// add card to the component
 			toDisplay.addComponent(newCard);
@@ -231,7 +223,54 @@ public class CardExplorationView extends CustomComponent {
 			}
 			if(chosenCardPosition >= 2){
 				panel_currentCards.setScrollTop((130 * (chosenCardPosition - 1)));
-				System.out.println(125 * (chosenCardPosition - 1));
+				//System.out.println(125 * (chosenCardPosition - 1));
+			}
+			
+		}else {
+			//panel_currentCards.setScrollTop(0);
+		}
+		
+	}
+	
+	public void displayBestCardPathList(CardList currentList, VerticalLayout toDisplay) {
+		boolean foundChosenCard = false;
+		int chosenCardPosition = 0;
+		
+		
+		while (currentList.size() > 0) {
+			
+			Card currentCardData = currentList.getCard();
+
+			// create a new card view using the card data.
+			CardView newCard = CardExplorationManager.createCardView(currentCardData);
+			
+			// add card to the component
+			toDisplay.addComponent(newCard);
+			styleCardView(toDisplay, newCard);
+
+			// if the chosen card is equal to the current card in the list of
+			// data
+			// then display the card
+			if (newCard.getCardId().equalsIgnoreCase(currentChosenCard.getCardId())) {
+				newCard.expandCardView();
+				newCard.removeTransparency();
+				currentChosenCard = newCard;
+				
+				foundChosenCard = true;
+				chosenCardPosition = toDisplay.getComponentIndex(newCard);
+			}
+
+		}
+		
+		//scroll to the chosenCard if it is found
+		if(foundChosenCard == true){
+			
+			if(chosenCardPosition < 2){
+				panel_currentCards.setScrollTop(0);
+			}
+			if(chosenCardPosition >= 2){
+				panel_currentCards.setScrollTop((130 * (chosenCardPosition - 1)));
+				//System.out.println(125 * (chosenCardPosition - 1));
 			}
 			
 		}else {
