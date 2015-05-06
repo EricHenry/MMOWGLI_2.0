@@ -1,7 +1,9 @@
 /**
  * @Author: Eric H Correia
  *
- * This class creates 
+ * This class creates a container to hold the top 5 most popular cards played so far during the game
+ * 
+ * The cards are displayed as BaseCardView Components
  * 
  */
 
@@ -31,9 +33,6 @@ public class PopularCards extends CustomComponent {
 	public PopularCards() {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
-
-		// TODO add user code here
-		//initPopularCardsList();
 		
 	}
 

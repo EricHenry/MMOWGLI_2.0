@@ -33,7 +33,6 @@ public class Mmowgli_2_0UI extends UI {
 	private HorizontalLayout content = new HorizontalLayout();
 	private Panel mainWindow = new Panel();
 	private HomePage home = new HomePage();
-	private ExplorePage explore = new ExplorePage();
 	
 	@WebServlet(value = "/*", asyncSupported = true)
 	@VaadinServletConfiguration(productionMode = false, ui = Mmowgli_2_0UI.class)
@@ -45,38 +44,11 @@ public class Mmowgli_2_0UI extends UI {
 	protected void init(VaadinRequest request) {
 		
 
-		mainWindow.setContent(content);
-		
+		mainWindow.setContent(content);		
 		content.addComponent(home);
-		//content.addComponent(explore);
-		//content.setWidth("1366px");
-		//content.setHeight("800px");
-
-		//setContent(main);
 		content.setSizeFull();
 		setContent(content);
 		
-		//set the aspect ratio
-		//split.setExpandRatio(staticbar, 0.1f);
-		//split.setExpandRatio(homePage, 1.0f);
-		
-		//Event Handler
-//		doclist.addValueChangeListener(new ValueChangeListener() {
-//			@Override
-//			public void valueChange(
-//					com.vaadin.data.Property.ValueChangeEvent event) {
-//				// TODO Auto-generated method stub
-//				//display the data once it is chosen by the doclist
-//				docView.setPropertyDataSource(new TextFileProperty((File) event.getProperty().getValue()));
-//
-//			}
-//
-//		});
-		//Send events after choosing the file to show
-		//doclist.setImmediate(true);
-		
-		//selection isnt enabled for tables automatically, so we will enable it here
-		//doclist.setSelectable(true);
 		
 	}
 

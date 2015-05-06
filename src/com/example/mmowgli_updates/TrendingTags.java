@@ -1,7 +1,8 @@
 /**
  * @Author: Eric H Correia
  *
- * This class creates 
+ * This class creates a container to hold the top 15 trending tags 
+ * 	played so far during a certain amount of time
  * 
  */
 
@@ -34,10 +35,6 @@ public class TrendingTags extends CustomComponent {
 	public TrendingTags() {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
-
-		// TODO add user code here
-		//gridLayout_2.setRowExpandRatio(rowIndex, ratio);
-		//initPopularTags();
 	}
 	
 	public GridLayout getLink_container() {

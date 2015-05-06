@@ -1,7 +1,8 @@
 /**
  * @Author: Eric H Correia
  *
- * This class creates 
+ * This class creates a idea card that is clickable. If the idea card is clicked, 
+ * 	a popup box appears to create a new root card
  * 
  */
 
@@ -61,7 +62,7 @@ public class RootCards extends CustomComponent {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		// TODO add user code here
+		//Set Styling
 		
 		//root cards formatting
 		root_button1.setStyleName("Root1");
@@ -83,9 +84,9 @@ public class RootCards extends CustomComponent {
 	}
 	
 	/**
-	 * 
+	 *  Depending on the type of root card created, this function creates the appropriate type of card creator
 	 */
-	public void initPopupView(){
+	private void initPopupView(){
 		PopupView pop1;		
 		
 		RootCardCreator creator1 = new RootCardCreator();
@@ -160,8 +161,10 @@ public class RootCards extends CustomComponent {
 	}
 	
 	/**
+	 * Sets the listener for the Idea Card Buttons to be able to create new cards.
 	 * 
-	 * @param creator
+	 * @param creator - Component that appears in the popup box to create a new card
+	 * @param id	  - The id of the card that is creating a new card
 	 */
 	private void setSubmitNewRootCardButtonListener(RootCardCreator creator, String id){
 		creator.getNativeButton_submit().addClickListener(new NativeButton.ClickListener(){

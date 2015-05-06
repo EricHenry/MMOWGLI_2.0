@@ -1,7 +1,9 @@
 /**
  * @Author: Eric H Correia
  *
- * This class creates 
+ * This class creates a container to hold the last 5 cards that the user has clicked on.
+ * 
+ * The cards are displayed as BaseCardView Components
  * 
  */
 
@@ -32,8 +34,6 @@ public class PlayerHistory extends CustomComponent {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		// TODO add user code here
-		//initPopularCardsList();
 		
 	}
 

@@ -1,7 +1,7 @@
 /**
  * @Author: Eric H Correia
  *
- * This class creates 
+ * This class creates creates the static sidebar to be displayed on every MMOWGLI page 
  * 
  */
 
@@ -68,13 +68,15 @@ public class SideBar extends CustomComponent {
 	public SideBar() {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
-
-		// TODO add user code here
-		//button_blog.setIcon(new ThemeResource("../../../Images/buttons/gameBlog.png"));
-		//set the style name of the buttons allowing you to specifically edit them in CSS
-		//nButton_home.setStyleName("borderless");
-		//nButton_profile.setStyleName("borderless");
 		
+		//set style
+		setSideBarStyling();
+	}
+	
+	/**
+	 * This function sets the basic style for the side bar
+	 */
+	private void setSideBarStyling(){
 		//user info
 		horizontalLayout_user.setStyleName("userLayout");
 		

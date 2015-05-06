@@ -1,7 +1,9 @@
 /**
  * @Author: Eric H Correia
  *
- * This class creates 
+ * This class creates a component to show a user's card and relative information.
+ * 	The CardView Objects allow for the ability to create cards, upvote, downvote,
+ * 	favorite cards, and find common tags.
  * 
  */
 
@@ -86,31 +88,8 @@ public class CardView extends CustomComponent {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		// TODO add user code here
-		//initCardStyling();
-		
-		//shrinkCardView();
 	}
 
-	/**
-	 * Construct a card object with a specified unique identifier
-	 * 
-	 * @param id -> unique identifier of the card
-	 */
-	public CardView(String id) {
-		buildMainLayout();
-		setCompositionRoot(mainLayout);
-
-		// TODO add user code here
-		
-		//set the unique identifier of this card.
-		this.cardId = id;
-		
-		initCardStyling();
-		
-		shrinkCardView();
-	}
-	
 	/**
 	 * Constructor with specified card data.
 	 * 
@@ -152,35 +131,11 @@ public class CardView extends CustomComponent {
 		//POPUP stlying
 		initPopupStyling();
 	}
-	
+		
 	/**
-	 * Copy Constructor
-
+	 * This method sets the basic card styling for a CardView Object
 	 */
-/*	public CardView(CardView copy){
-		this.cardId = copy.getCardId();
-		this.nativeButton_downvote = copy.getNativeButton_downvote();
-		this.nativeButton_favorite = copy.getNativeButton_favorite();
-		this.nativeButton_upvote = copy.getNativeButton_upvote();
-		this.gridLayout_cardInfo = copy.getGridLayout_cardInfo();
-		this.horizontalLayout_cardLinks = copy.getHorizontalLayout_cardLinks();
-		this.horizontalLayout_cardText = copy.getHorizontalLayout_cardText();
-		this.isMini = copy.isMini();
-		this.cardType = copy.getCardType();
-		this.date = copy.getDate();
-		this.voteCount = copy.getVoteCount();
-		this.user = copy.getUser();
-		this.mainLayout = copy.getMainLayout();
-		this.nativeButton_addCard = copy.getNativeButton_addCard();
-		this.nativeButton_text = copy.getNativeButton_text();
-		this.voteContainer = copy.getVoteContainer();
-		this.parent = copy.getCardParent();
-	}*/
-	
-	/**
-	 * Test initStyling class
-	 */
-	public void initCardStyling(){
+	private void initCardStyling(){
 		//set topbar label & link styling
 		cardType.setStyleName("center");
 		user.setStyleName("center");
@@ -223,9 +178,9 @@ public class CardView extends CustomComponent {
 	}
 
 	/**
-	 * Test initStyling class
+	 * This method specifically sets the styling for a CardView Object that is an idea card
 	 */
-	public void initIdeaCardStyling(){
+	private void initIdeaCardStyling(){
 		
 		//remove superflusous data from card
 		gridLayout_cardInfo.removeComponent(user);
@@ -302,6 +257,9 @@ public class CardView extends CustomComponent {
 		//isMini = false;
 	}
 	
+	/**
+	 * This method shows the tags for an active card
+	 */
 	private void showTags(){
 		horizontalLayout_tags.setVisible(true);
 		
@@ -355,31 +313,9 @@ public class CardView extends CustomComponent {
 	}
 	
 	/**
-	 * 
-	 * @param card -> The CardView to test against
-	 * @return
-	 * 		- True if the card ids are equal
+	 * This method shows a specific card creator component 
+	 * 	depending on what card it is being created from
 	 */
-	/*public boolean equals(CardView card){
-		
-		//catch if the current card is null
-		try{
-			if(this.cardId != card.getCardId())
-				return false;
-			else 
-				return true;
-		}catch(NullPointerException e){
-			return false;
-		}
-		
-	}*/
-
-	
-	/**
-	 * *********************** PRIVATE HELPER METHODS BELOW ***********************
-	 */
-
-	
 	private void initPopupStyling(){
 		//Popup stuff
 				PopupView pop;
@@ -461,6 +397,10 @@ public class CardView extends CustomComponent {
 				//END POPUP
 	}
  
+	/**
+	 * This method sets the appropriate icons for voting buttons
+	 * 	when a card is first created.
+	 */
 	private void initCardVotesStyle(){
 		//check if the card has been voted
 		try {
@@ -488,6 +428,12 @@ public class CardView extends CustomComponent {
 		}
 	}
 	
+	/**
+	 * This method sets the appropriate icon for the favorite button
+	 * 	when a card is first created.
+	 * 
+	 * e.g. if a card is a favorite of the user it will show a highlighted star
+	 */
 	private void initCardFavoriteStyle(){
 		//check if the card is a favorite
 		try {
@@ -524,8 +470,10 @@ public class CardView extends CustomComponent {
 	}
 	
 	/**
+	 * A Method to listen if the button to submit the new card info has been clicked.
 	 * 
-	 * @param creator
+	 * @param creator	-> A new CardCreator Component of a specific card.
+	 * @param id		-> ID of the card that is creating a new card
 	 */
 	private void setSubmitNewCardButtonListener(CardCreator creator, String id){
 		creator.getNativeButton_submit().addClickListener(new NativeButton.ClickListener(){
@@ -630,8 +578,10 @@ public class CardView extends CustomComponent {
 	}
 	
 	/**
+	 * A Method to listen if the button to submit the ROOT card has been clicked.
 	 * 
-	 * @param creator
+	 * @param creator	-> A new CardCreator Component of a specific card.
+	 * @param id		-> ID of the card that is creating a new card
 	 */
 	private void setSubmitNewRootCardButtonListener(RootCardCreator creator, String id){
 		creator.getNativeButton_submit().addClickListener(new NativeButton.ClickListener(){
@@ -955,124 +905,6 @@ public class CardView extends CustomComponent {
 		});
 	}
 	
-
-	/**
-	 * *********************** GETTER-SETTER METHODS BELOW ***********************
-	 */
-	
-/*	public GridLayout getGridLayout_cardInfo() {
-		return gridLayout_cardInfo;
-	}
-
-	public void setGridLayout_cardInfo(GridLayout gridLayout_cardInfo) {
-		this.gridLayout_cardInfo = gridLayout_cardInfo;
-	}
-
-	public NativeButton getNativeButton_favorite() {
-		return nativeButton_favorite;
-	}
-
-	public void setNativeButton_favorite(NativeButton nativeButton_favorite) {
-		this.nativeButton_favorite = nativeButton_favorite;
-	}
-
-	public VerticalLayout getVoteContainer() {
-		return voteContainer;
-	}
-
-	public void setVoteContainer(VerticalLayout voteContainer) {
-		this.voteContainer = voteContainer;
-	}
-
-	public NativeButton getNativeButton_downvote() {
-		return nativeButton_downvote;
-	}
-
-	public void setNativeButton_downvote(NativeButton nativeButton_downvote) {
-		this.nativeButton_downvote = nativeButton_downvote;
-	}
-
-	public NativeButton getNativeButton_upvote() {
-		return nativeButton_upvote;
-	}
-
-	public void setNativeButton_upvote(NativeButton nativeButton_upvote) {
-		this.nativeButton_upvote = nativeButton_upvote;
-	}
-
-	public Label getVoteCount() {
-		return voteCount;
-	}
-
-	public void setVoteCount(Label voteCount) {
-		this.voteCount = voteCount;
-	}
-
-	public Label getDate() {
-		return date;
-	}
-
-	public void setDate(Label date) {
-		this.date = date;
-	}
-
-	public Link getUser() {
-		return user;
-	}
-
-	public void setUser(Link user) {
-		this.user = user;
-	}
-
-	public Label getCardType() {
-		return cardType;
-	}
-
-	public void setCardType(Label cardType) {
-		this.cardType = cardType;
-	}
-	public boolean isMini() {
-		return isMini;
-	}
-
-	public void setMini(boolean isMini) {
-		this.isMini = isMini;
-	}
-	
-	public VerticalLayout getMainLayout() {
-		return mainLayout;
-	}
-
-	public void setMainLayout(VerticalLayout mainLayout) {
-		this.mainLayout = mainLayout;
-	}
-	
-	public HorizontalLayout getHorizontalLayout_cardLinks() {
-		return horizontalLayout_cardLinks;
-	}
-
-	public void setHorizontalLayout_cardLinks(
-			HorizontalLayout horizontalLayout_cardLinks) {
-		this.horizontalLayout_cardLinks = horizontalLayout_cardLinks;
-	}
-
-	public NativeButton getNativeButton_addCard() {
-		return nativeButton_addCard;
-	}
-
-	public void setNativeButton_addCard(NativeButton nativeButton_addCard) {
-		this.nativeButton_addCard = nativeButton_addCard;
-	}
-
-	public HorizontalLayout getHorizontalLayout_cardText() {
-		return horizontalLayout_cardText;
-	}
-
-	public void setHorizontalLayout_cardText(
-			HorizontalLayout horizontalLayout_cardText) {
-		this.horizontalLayout_cardText = horizontalLayout_cardText;
-	}
-*/
 	public NativeButton getNativeButton_text() {
 		return nativeButton_text;
 	}

@@ -1,7 +1,9 @@
 /**
  * @Author: Eric H Correia
  *
- * This class creates 
+ * This class creates a container to hold the top 5 most recently cards played.
+ * 
+ * The cards are displayed as BaseCardView Components
  * 
  */
 
@@ -31,10 +33,6 @@ public class RecentlyPlayed extends CustomComponent {
 	public RecentlyPlayed() {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
-
-		// TODO add user code here
-		
-		//initRecentCardsList();
 		
 	}
 	

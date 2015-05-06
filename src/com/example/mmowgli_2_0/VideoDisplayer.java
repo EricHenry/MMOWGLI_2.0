@@ -1,7 +1,7 @@
 /**
  * @Author: Eric H Correia
  *
- * This class creates 
+ * This class creates a collapsible container to hold the MMOWGLI video and Description of the game.
  * 
  */
 
@@ -63,8 +63,7 @@ public class VideoDisplayer extends CustomComponent {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		// TODO add user code here
-		
+		//grab the video from youtube and display it
 		Flash myVid = new Flash(null, new ExternalResource("http://www.youtube.com/v/watch?v=fAfRuU78X34"));
 		myVid.setParameter("allowFullScreen", "true");
 		myVid.setWidth(350.0f, Unit.PIXELS);
@@ -75,7 +74,7 @@ public class VideoDisplayer extends CustomComponent {
 		//Set the toggle Settings
 		initToggle();
 		
-		//Video text
+		//Creates the video text 
 		videoTitle.setValue("WELCOME TO THE BLACKSWAN MMOWGLI GAME");
 		videoDescription.setValue("Call me Ishmael. Some years ago--never mind how long precisely--having little or no money in my purse, "
 				+ "and nothing particular to interest me on shore, I thought I would sail about a little and see the watery "
@@ -91,6 +90,9 @@ public class VideoDisplayer extends CustomComponent {
 		
 	}
 	
+	/**
+	 * Sets the listener that allows the video displayer to be collapsible
+	 */
 	private void initToggle(){
 		
 		//toogle root cards

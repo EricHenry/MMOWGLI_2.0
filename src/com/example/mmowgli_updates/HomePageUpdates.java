@@ -1,7 +1,8 @@
 /**
  * @Author: Eric H Correia
  *
- * This class creates 
+ * This class creates a container to hold the different 
+ * 	types of updaters(Trending tags, Trending cards, Recently Played, Most Popular) on the homepage.
  * 
  */
 
@@ -61,8 +62,7 @@ public class HomePageUpdates extends CustomComponent {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		// TODO add user code here
-		//mainLayout.setStyleName("GRRR");
+		//STYLING
 		
 		//set CSS styling
 		trendingCards.setStyleName("updateBorders");
@@ -88,8 +88,6 @@ public class HomePageUpdates extends CustomComponent {
 		label_3.setIcon(new ThemeResource("images/icons/updates/horizLine.png"));
 		
 	}
-	
-	//private initilize 
 
 	public PopularCards getPopularCards() {
 		return popularCards;

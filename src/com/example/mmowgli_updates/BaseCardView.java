@@ -1,7 +1,9 @@
 /**
  * @Author: Eric H Correia
  *
- * This class creates 
+ * This class creates a card view with the basic information. 
+ * 
+ * When the base card view is clicked, it populates in the card explorer.
  * 
  */
 
@@ -44,13 +46,10 @@ public class BaseCardView extends CustomComponent {
 	public BaseCardView() {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
-
-		// TODO add user code here
 		
 	}
 	
 	/**
-	 * 
 	 * This constructor allows for the creation of basic card view with specific information
 	 * 
 	 * @param id			-> Id of the card

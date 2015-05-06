@@ -1,3 +1,11 @@
+/**
+ * @author Eric H Correia
+ * 
+ * This is a manager class provides an API to transform Card Objects to 
+ * 	either CardView Objects or BaseCardView Objects 
+ * 
+ */
+
 package com.example.mmowgli_backend;
 
 import java.sql.Date;
@@ -7,10 +15,6 @@ import com.example.mmowgli_explore.CardView;
 import com.example.mmowgli_updates.BaseCardView;
 
 public class CardExplorationManager {
-	
-	/**
-	 * *********************** HELPER METHODS ADDED BY ERIC ***********************
-	 */
 	
 	/**
 	 * This method translates a Card object to a CardView Object

@@ -1,7 +1,7 @@
 /**
  * @Author: Eric H Correia
  *
- * This class creates 
+ * This class creates a container to hold the top 15 most popular tags played so far during the game
  * 
  */
 
@@ -35,8 +35,6 @@ public class PopularTags extends CustomComponent {
 	public PopularTags() {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
-
-		// TODO add user code here
 	}
 	
 	public GridLayout getLink_container() {
