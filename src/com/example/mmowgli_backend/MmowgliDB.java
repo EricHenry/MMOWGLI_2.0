@@ -30,7 +30,7 @@ public class MmowgliDB
 	private final static String userName = "root";
 
 	/** The password for the MySQL account (or empty for anonymous) */
-	private final static String password = "";
+	private final static String password = "root";
 
 	/** The name of the computer running MySQL */
 	private final static String serverName = "localhost";
